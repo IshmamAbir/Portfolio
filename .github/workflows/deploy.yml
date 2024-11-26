@@ -1,29 +1,33 @@
-name: Build and Deploy Script
+name: Build & Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
-  build:
+  # Build job
+  deploy:
     runs-on: ubuntu-latest
-    steps:
-    
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-    - name: Adding Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
-    - name: Install Dependencies
-      run: npm install
 
-    - name: Build Angular App
-      run: npm run build
-    - name: Deploy to gh pages
-      run: |
-        npx angular-cli-ghpages --dir=dist/portfolio
-      env:
-        CI: true
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Github pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npm run ng -- deploy --repo="https://github.com/IshmamAbir/portfolio.git" --base-href=/portfolio/ --name=IshmamAbir --email=ishmam130@gmail.com
