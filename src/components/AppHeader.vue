@@ -284,7 +284,7 @@ export default {
   },
   data() {
     return {
-      langValue: "en",
+      langValue: navigator.language,
       socialIcons: [
         { class: "", href: "", icon: "" },
         { class: "", href: "", icon: "" },

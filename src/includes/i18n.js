@@ -4,7 +4,7 @@ import ja from "@/locales/ja.json";
 
 export default createI18n({
   // locale: 'ja',
-  locale: navigator.languages[0].split("-")[0],
+  locale: navigator.languages[0].split("-")[0] === "ja" ? "ja" : "en",
   fallbackLocale: "ja",
   messages: {
     en,
