@@ -19,28 +19,38 @@
               />
             </div>
             <div class="title-area">
-              <h4 class="title">Nevine Acotanza</h4>
-              <span>Chief Operating Officer</span>
+              <h4 class="title">ISHMAM ABIR CHOWDHURY</h4>
+              <span>Software Development Engineer</span>
             </div>
             <div class="description">
               <p>
-                I am available for freelance work. Connect with me via and call
-                in to my account.
+                Connect with me via email or other social media channels. Get to
+                know more about me.
               </p>
-              <span class="phone"
+              <!-- <span class="phone"
                 >Phone: <a href="tel:01941043264">+01234567890</a></span
-              >
+              > -->
               <span class="mail"
                 >Email:
-                <a href="mailto:admin@example.com">admin@example.com</a></span
+                <a href="mailto:ishmam.cse@gmail.com"
+                  >ishmam.cse@gmail.com</a
+                ></span
               >
             </div>
             <div class="social-area">
-              <div class="name">FIND WITH ME</div>
+              <div class="name">FIND ME IN</div>
               <div class="social-icone">
-                <a href="#"><i data-feather="mail"></i></a>
-                <a href="#"><i data-feather="linkedin"></i></a>
-                <a href="#"><i data-feather="instagram"></i></a>
+                <a href="mailto:ishmam.cse@gmail.com"
+                  ><i data-feather="mail"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/ishmam-abir/"
+                  target="_blank"
+                  ><i data-feather="linkedin"></i
+                ></a>
+                <a href="https://github.com/IshmamAbir" target="_blank"
+                  ><i data-feather="github"></i
+                ></a>
               </div>
             </div>
           </div>

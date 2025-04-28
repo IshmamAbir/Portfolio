@@ -13,11 +13,9 @@
               </a>
             </div>
             <p class="description mt--30">
-              © 2021. All rights reserved by
-              <a
-                target="_blank"
-                href="https://themeforest.net/user/rainbow-themes/portfolio"
-                >Rainbow-Themes.</a
+              © {{ new Date().getFullYear() }}. All rights reserved by
+              <a target="_blank" href="https://www.linkedin.com/in/ishmam-abir/"
+                >Ishmam Abir Chowdhury.</a
               >
             </p>
           </div>
