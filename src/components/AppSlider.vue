@@ -76,6 +76,7 @@ export default {
         strings: [
           "Software Engineer",
           "Web Developer",
+          "Open Source Contributor",
           "Photographer ",
           "Videographer",
         ],
@@ -84,7 +85,7 @@ export default {
         smartBackspace: true,
         shuffle: true,
         showCursor: false,
-        backSpeed: 35,
+        backSpeed: 45,
         autoInsertCss: true,
       },
     };

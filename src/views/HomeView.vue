@@ -34,7 +34,7 @@
 
     <!-- Back to  top Start -->
     <div class="backto-top">
-      <div>
+      <div @click="gotoTop" :style="{ color: 'white', visibility: visibility }">
         <i data-feather="arrow-up"></i>
         <!-- <vue-feather class="" type="arrow-up"></vue-feather> -->
       </div>
@@ -72,10 +72,25 @@ export default defineComponent({
     SingleBlog,
     AppBlog,
   },
+  data() {
+    return {
+      visibility: "hidden",
+    };
+  },
   mounted() {
     this.initParticleJS();
   },
   methods: {
+    gotoTop() {
+      this.$vuetify.goTo(0, {
+        duration: 300,
+        offset: 0,
+        easing: "easeInOutCubic",
+      });
+      window.setTimeout(() => {
+        this.visibility = "hidden";
+      }, 300);
+    },
     initParticleJS() {
       // eslint-disable-next-line no-undef
       particlesJS(

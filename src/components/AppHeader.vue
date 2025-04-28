@@ -305,6 +305,10 @@ export default {
 
 <style scoped>
 .toggle-on-color {
+  --toggle-width: 3rem;
+  --toggle-height: 1.25rem;
+  --toggle-border: 0.125rem;
+  --toggle-font-size: 0.75rem;
   --toggle-bg-on: var(--color-primary);
   --toggle-border-on: var(--color-subtitle);
   --toggle-text-on: #ffffff;
