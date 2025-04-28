@@ -12,6 +12,7 @@
   "dependencies": {
     "@duskmoon/vue3-typed-js": "^0.0.4",
     "@mdi/font": "5.9.55",
+    "@vueform/toggle": "^2.1.4",
     "pinia": "^2.0.32",
     "roboto-fontface": "*",
     "vue": "^3.2.47",

@@ -12,6 +12,22 @@
       <nav id="sideNavs" class="mainmenu-nav navbar-example2">
         <ul class="primary-menu nav nav-pills">
           <li class="nav-item">
+            <a class="nav-link smoth-animation-two active"
+              ><v-icon class="pr-2">mdi-translate</v-icon>
+              {{ langValue === "en" ? "English" : "日本語" }}
+              <Toggle
+                class="z-index-1 ml-3 toggle-on-color toggle-off-color"
+                on-label="EN"
+                off-label="JA"
+                false-value="ja"
+                true-value="en"
+                v-model="langValue"
+                @change="changeLanguage"
+              />
+            </a>
+          </li>
+          <v-divider color="red" />
+          <li class="nav-item">
             <a class="nav-link smoth-animation-two active" href="#home">
               <!-- <vue-feather type="home" /> -->
               <i data-feather="home"></i>
@@ -258,10 +274,17 @@
   <!-- End Popup Mobile Menu  -->
 </template>
 <script>
+import Toggle from "@vueform/toggle";
+import "@vueform/toggle/themes/default.css";
+
 export default {
   name: "AppHeader",
+  components: {
+    Toggle,
+  },
   data() {
     return {
+      langValue: "en",
       socialIcons: [
         { class: "", href: "", icon: "" },
         { class: "", href: "", icon: "" },
@@ -272,5 +295,21 @@ export default {
       ],
     };
   },
+  methods: {
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+    },
+  },
 };
 </script>
+
+<style scoped>
+.toggle-on-color {
+  --toggle-bg-on: var(--color-primary);
+  --toggle-border-on: var(--color-subtitle);
+  --toggle-text-on: #ffffff;
+  --toggle-bg-off: #093d86e6;
+  --toggle-border-off: #093d86e6;
+  --toggle-text-off: #ffffff;
+}
+</style>
