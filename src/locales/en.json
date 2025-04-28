@@ -1,1 +1,9 @@
-{}
+{
+  "header": {
+    "home": "Home",
+    "education": "Education",
+    "contacts": "Contacts",
+    "experience": "Experience",
+    "projects": "Projects"
+  }
+}

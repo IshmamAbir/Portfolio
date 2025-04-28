@@ -31,7 +31,7 @@
             <a class="nav-link smoth-animation-two active" href="#home">
               <!-- <vue-feather type="home" /> -->
               <i data-feather="home"></i>
-              Home
+              {{ $t("header.home") }}
             </a>
           </li>
           <li class="nav-item">
