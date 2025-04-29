@@ -73,17 +73,18 @@
               <div class="personal-experience-inner mt--40">
                 <div class="row">
                   <!-- Start Skill List Area  -->
+                  <!-- TODO: change number of 'col-lg-7' for bigger size card  -->
                   <div class="col-lg-7 col-md-12 col-12">
                     <div class="content">
                       <!-- <span class="subtitle">2007 - 2010</span> -->
                       <h4 class="maintitle">Education Quality</h4>
-                      <div
-                        class="experience-list"
-                        v-for="item in timeline"
-                        :key="item.id"
-                      >
+                      <div class="experience-list">
                         <!-- Start Single List  -->
-                        <div class="resume-single-list">
+                        <div
+                          class="resume-single-list"
+                          v-for="item in timeline"
+                          :key="item.id"
+                        >
                           <div class="inner">
                             <div class="heading">
                               <div class="title">
@@ -612,8 +613,8 @@ export default {
       timeline: [
         {
           id: 1,
-          jobTitle: "xyz title",
-          companyName: "Abc Company",
+          jobTitle: "BSc in CSE",
+          companyName: "International Islamic University Chittagong",
           startTime: "Jan 2023",
           endTime: "Apr 2023",
           jobDescription:

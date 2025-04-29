@@ -3,6 +3,9 @@
     <!-- start slider area -->
     <app-slider />
 
+    <!-- Start education Area  -->
+    <app-education />
+
     <!-- Start Service Area -->
     <app-service-area />
 
@@ -57,6 +60,7 @@ import AppPricingArea from "@/components/AppPricingArea.vue";
 import SinglePortfolio from "@/components/SinglePortfolio.vue";
 import SingleBlog from "@/components/SingleBlog.vue";
 import AppBlog from "@/components/AppBlog.vue";
+import AppEducation from "../components/AppEducation.vue";
 
 export default defineComponent({
   name: "HomeView",
@@ -71,6 +75,7 @@ export default defineComponent({
     SinglePortfolio,
     SingleBlog,
     AppBlog,
+    AppEducation,
   },
   data() {
     return {

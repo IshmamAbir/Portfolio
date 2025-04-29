@@ -1,4 +1,7 @@
 {
+  "common": {
+    "continuing": "Continuing"
+  },
   "header": {
     "home": "Home",
     "education": "Education",
