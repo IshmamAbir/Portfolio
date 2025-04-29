@@ -284,7 +284,7 @@ export default {
   },
   data() {
     return {
-      langValue: navigator.language,
+      langValue: navigator.languages[0].split("-")[0],
       socialIcons: [
         { class: "", href: "", icon: "" },
         { class: "", href: "", icon: "" },
