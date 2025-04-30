@@ -11,7 +11,7 @@
             data-aos-once="true"
           >
             <!-- <span class="subtitle">Features</span> -->
-            <h2 class="title">Education Qualification</h2>
+            <h2 class="title">{{ $t("education.education_header") }}</h2>
           </div>
         </div>
       </div>
@@ -49,8 +49,9 @@
                           }}</span>
                         </div>
                       </div>
-                      <p class="description">
-                        {{ item.jobDescription }}
+                      <p class="description justify-text">
+                        <!-- {{ item.description }} -->
+                        {{ item[`description_${$i18n.locale}`] }}
                       </p>
                     </div>
                   </div>
@@ -61,35 +62,6 @@
             <!-- End Skill List Area  -->
           </div>
         </div>
-
-        <!-- Start Single Service -->
-        <!-- <div
-          data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="500"
-          data-aos-once="true"
-          class="col-lg-6 col-xl-4 col-md-6 col-sm-12 col-12 mt--50 mt_md--30 mt_sm--30"
-        >
-          <div class="rn-service">
-            <div class="inner">
-              <div class="icon">
-                <i data-feather="tv"></i>
-              </div>
-              <div class="content">
-                <h4 class="title"><a href="#">App Development</a></h4>
-                <p class="description">
-                  I throw myself down among the tall grass by the stream as I
-                  lie close to the earth.
-                </p>
-                <a class="read-more-button" href="#"
-                  ><i class="feather-arrow-right"></i
-                ></a>
-              </div>
-            </div>
-            <a class="over-link" href="#"></a>
-          </div>
-        </div> -->
-        <!-- End SIngle Service -->
       </div>
     </div>
   </div>
@@ -105,10 +77,12 @@ export default {
           id: 1,
           degree: "BSc in CSE",
           institutionName: "International Islamic University Chittagong",
-          startTime: "Jan 2023",
-          endTime: "Apr 2023",
-          jobDescription:
-            "iohnroegjrogjrgs wsetws sgd fdhdg fgpjm nosim abir ishmam roh afnan alamgir chowdhury tght htksr.",
+          startTime: "Mar 2016",
+          endTime: "Mar 2021",
+          description_en:
+            "I completed my 4-year Bachelor's degree in Computer Science and Engineering at the International Islamic University Chittagong. During my time there, I actively participated in programming contests and hackathons. I also collaborated on various team projects and gained valuable experience in team leadership. Throughout my studies, I developed several web applications, which allowed me to gather practical, hands-on experience in web development.",
+          description_ja:
+            "私はチッタゴンの国際イスラーム大学でコンピュータサイエンスおよび工学の4年間の学士号を取得しました。大学生活の中で、プログラミングコンテストやハッカソンに積極的に参加しました。また、チームでのプロジェクトにも取り組み、チームリーダーとしての経験も積みました。多くのウェブアプリケーションを開発し、ウェブ開発における実践的な経験を積むことができました。",
         },
         {
           id: 2,
@@ -116,8 +90,10 @@ export default {
           institutionName: "Notre Dame College, Dhaka",
           startTime: null,
           endTime: "2015",
-          jobDescription:
-            "gnan ir chowdhury random tupminrg etom abc install the software kop coop maxvalue mcdonalds iftar tght htksr.",
+          description_en:
+            "I completed my Higher Secondary Certificate in Science from Notre Dame College, the top-ranked college in Bangladesh. During my time there, I experienced significant academic growth and had the opportunity to build connections with many talented individuals from across the country. These connections have since expanded globally, with many now leading industries around the world. Additionally, I actively participated in various co-curricular activities, including photography, sports, Olympiads, and more.",
+          description_ja:
+            "私はバングラデシュで最も評価の高い大学であるノートルダム・カレッジで理科の高等学校卒業証書を取得しました。そこでの学びを通じて、私は大きな学問的成長を遂げ、全国各地から集まった才能ある多くの人々と交流を深めました。これらのつながりは現在、世界中に広がり、多くがさまざまな業界でリーダーとして活躍しています。また、写真、スポーツ、オリンピアードなど、さまざまな課外活動にも積極的に参加しました。",
         },
         {
           id: 3,
@@ -125,8 +101,10 @@ export default {
           institutionName: "St. Placid's High School, Chittagong",
           startTime: null,
           endTime: "2013",
-          jobDescription:
-            "gnan ir chowdhury random tupminrg etom abc install the software kop coop maxvalue mcdonalds iftar tght htksr.",
+          description_en:
+            "I obtained my Secondary School Certificate in Science from St. Placid's High School, a renowned institution in Chittagong. In addition to my academic achievements, I actively participated in various sports competitions, including soccer, volleyball, table tennis, and basketball. I was also involved in several co-curricular activities, such as Scouts, the Red Cross, Science Olympiads, and many others.",
+          description_ja:
+            "私はチッタゴンの名門校であるセント・プラシッド高校で、理科の中等学校卒業証書を取得しました。学業の成果に加えて、サッカー、バレーボール、卓球、バスケットボールなど、さまざまなスポーツ競技に積極的に参加しました。また、スカウト活動や赤十字など、数多くの課外活動にも参加しました。",
         },
       ],
     };
