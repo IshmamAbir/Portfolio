@@ -1,9 +1,15 @@
 {
+  "common": {
+    "continuing": "Continuing"
+  },
   "header": {
     "home": "ホーム",
     "education": "学歴",
     "contacts": "Contacts",
     "experience": "経験",
     "projects": "プロジェクト"
+  },
+  "education": {
+    "education_header": "学歴"
   }
 }

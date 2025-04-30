@@ -20081,4 +20081,9 @@ body.white-version {
   color: var(--color-white) !important;
 }
 
+.justify-text {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 /*# sourceMappingURL=../maps/style.css.map */

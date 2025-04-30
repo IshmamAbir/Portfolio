@@ -1,9 +1,15 @@
 {
+  "common": {
+    "continuing": "Continuing"
+  },
   "header": {
     "home": "Home",
     "education": "Education",
     "contacts": "Contacts",
     "experience": "Experience",
     "projects": "Projects"
+  },
+  "education": {
+    "education_header": "Education Qualification"
   }
 }
