@@ -7,9 +7,16 @@
     "education": "Education",
     "contacts": "Contacts",
     "experience": "Experience",
-    "projects": "Projects"
+    "projects": "Projects",
+    "skill": "Skills & Achievements"
   },
   "education": {
     "education_header": "Education Qualification"
+  },
+  "skill": {
+    "skill_header": "Skills",
+    "technical_skills": "Technical Skills",
+    "achievements": "Achievements",
+    "certifications": "Certifications"
   }
 }

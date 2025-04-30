@@ -41,6 +41,13 @@
               {{ $t("header.education") }}
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link smoth-animation-two" href="#skills">
+              <!-- <vue-feather type="layers" /> -->
+              <i data-feather="layers"></i>
+              {{ $t("header.skill") }}
+            </a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#features">
@@ -180,12 +187,19 @@
       <div class="content">
         <ul class="primary-menu nav nav-pills">
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two active" href="#home">Home</a>
+            <a class="nav-link smoth-animation-two active" href="#home">{{
+              $t("header.home")
+            }}</a>
           </li>
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#educations">{{
               $t("header.education")
             }}</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link smoth-animation-two" href="#skills">
+              {{ $t("header.skill") }}
+            </a>
           </li>
 
           <li class="nav-item">

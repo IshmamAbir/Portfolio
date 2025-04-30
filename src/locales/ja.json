@@ -7,9 +7,16 @@
     "education": "学歴",
     "contacts": "Contacts",
     "experience": "経験",
-    "projects": "プロジェクト"
+    "projects": "プロジェクト",
+    "skill": "スキル & 実績"
   },
   "education": {
     "education_header": "学歴"
+  },
+  "skill": {
+    "skill_header": "スキル",
+    "technical_skills": "技術スキル",
+    "achievements": "実績",
+    "certifications": "認証"
   }
 }
