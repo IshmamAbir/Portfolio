@@ -6,7 +6,7 @@
     >
       <div class="logo-area">
         <a href="#home">
-          <img src="@/assets/images/ishmam.jpeg" alt="personal-logo" />
+          <img src="@/assets/images/ishmam_pic.jpg" alt="personal-logo" />
         </a>
       </div>
       <nav id="sideNavs" class="mainmenu-nav navbar-example2">
@@ -34,6 +34,14 @@
               {{ $t("header.home") }}
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link smoth-animation-two" href="#educations">
+              <!-- <vue-feather type="briefcase" /> -->
+              <i data-feather="briefcase"></i>
+              {{ $t("header.education") }}
+            </a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#features">
               <!-- <vue-feather type="briefcase" /> -->
@@ -174,6 +182,12 @@
           <li class="nav-item">
             <a class="nav-link smoth-animation-two active" href="#home">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link smoth-animation-two" href="#educations">{{
+              $t("header.education")
+            }}</a>
+          </li>
+
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#features"
               >Features</a
