@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="section-title text-center">
-            <span class="subtitle">7+ Years of Experience</span>
+            <!-- <span class="subtitle">7+ Years of Experience</span> -->
             <h2 class="title">{{ $t("skill.skill_header") }}</h2>
           </div>
         </div>
@@ -62,108 +62,34 @@
               aria-labelledby="professional-tab"
             >
               <div class="personal-experience-inner mt--40">
-                <div class="row row--40">
+                <div
+                  class="row row--40"
+                  v-for="(item, index) in skillList"
+                  :key="item"
+                >
                   <!-- Start Single Progressbar  -->
                   <div class="col-lg-6 col-md-6 col-12">
-                    <div class="progress-wrapper">
+                    <div class="progress-wrapper" v-if="index % 2 === 0">
                       <div class="content">
-                        <span class="subtitle">Features</span>
-                        <h4 class="maintitle">Design Skill</h4>
+                        <!-- <span class="subtitle">Features</span>
+                        <h4 class="maintitle">Design Skill</h4> -->
                         <!-- Start Single Progress Charts -->
                         <div class="progress-charts">
-                          <h6 class="heading heading-h6">PHOTOSHOT</h6>
+                          <h6 class="heading heading-h6">{{ item.name }}</h6>
                           <div class="progress">
                             <div
                               class="progress-bar wow fadeInLeft"
                               data-wow-duration="0.5s"
                               data-wow-delay=".3s"
                               role="progressbar"
-                              style="width: 100%"
+                              :style="'width: ' + item.percentage + '%'"
                               aria-valuenow="85"
                               aria-valuemin="0"
                               aria-valuemax="100"
                             >
-                              <span class="percent-label">100%</span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">FIGMA</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.6s"
-                              data-wow-delay=".4s"
-                              role="progressbar"
-                              style="width: 95%"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">95%</span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">ADOBE XD</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.7s"
-                              data-wow-delay=".5s"
-                              role="progressbar"
-                              style="width: 60%"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">60%</span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">ADOBE ILLUSTRATOR</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.8s"
-                              data-wow-delay=".6s"
-                              role="progressbar"
-                              style="width: 70%"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">70%</span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">DESIGN</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.9s"
-                              data-wow-delay=".7s"
-                              role="progressbar"
-                              style="width: 90%"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">90%</span>
+                              <span class="percent-label">
+                                {{ item.percentage }}%
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -172,108 +98,29 @@
                     </div>
                   </div>
                   <!-- End Single Progressbar  -->
-
                   <!-- Start Single Progressbar  -->
                   <div class="col-lg-6 col-md-6 col-12 mt_sm--60">
-                    <div class="progress-wrapper">
+                    <div class="progress-wrapper" v-if="index % 2 !== 0">
                       <div class="content">
-                        <span class="subtitle">Features</span>
-                        <h4 class="maintitle">Development Skill</h4>
+                        <!-- <span class="subtitle">Features</span>
+                        <h4 class="maintitle">Development Skill</h4> -->
                         <!-- Start Single Progress Charts -->
                         <div class="progress-charts">
-                          <h6 class="heading heading-h6">HTML</h6>
+                          <h6 class="heading heading-h6">{{ item.name }}</h6>
                           <div class="progress">
                             <div
                               class="progress-bar wow fadeInLeft"
                               data-wow-duration="0.5s"
                               data-wow-delay=".3s"
                               role="progressbar"
-                              style="width: 85%"
+                              :style="'width: ' + item.percentage + '%'"
                               aria-valuenow="85"
                               aria-valuemin="0"
                               aria-valuemax="100"
                             >
-                              <span class="percent-label">85%</span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">CSS</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.6s"
-                              data-wow-delay=".4s"
-                              role="progressbar"
-                              style="width: 80%"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">80%</span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">JAVASCRIPT</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.7s"
-                              data-wow-delay=".5s"
-                              role="progressbar"
-                              style="width: 90%"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">90%</span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">SOFTWARE</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.8s"
-                              data-wow-delay=".6s"
-                              role="progressbar"
-                              style="width: 75%"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">75%</span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">PLUGIN</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.9s"
-                              data-wow-delay=".7s"
-                              role="progressbar"
-                              style="width: 70%"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">70%</span>
+                              <span class="percent-label">
+                                {{ item.percentage }}%
+                              </span>
                             </div>
                           </div>
                         </div>
@@ -297,13 +144,13 @@
               <div class="personal-experience-inner mt--40">
                 <div class="row">
                   <!-- Start Skill List Area 2nd  -->
-                  <div class="col-lg-8 col-md-12 col-12 mt_md--60 mt_sm--60">
+                  <div class="col-lg-10 col-md-12 col-12 mt_md--60 mt_sm--60">
                     <div class="content">
-                      <!-- <span class="subtitle">2007 - 2010</span> -->
-                      <h4 class="maintitle">Job Experience</h4>
+                      <!-- <span class="subtitle">2007 - 2010</span>
+                       <h4 class="maintitle">Job Experience {{$t('skill.certifications')}}</h4> -->
                       <div
                         class="experience-list"
-                        v-for="item in timeline"
+                        v-for="item in certificationList"
                         :key="item.id"
                       >
                         <!-- Start Single List  -->
@@ -312,7 +159,9 @@
                             <div class="heading">
                               <div class="title">
                                 <h4>{{ item.jobTitle }}</h4>
-                                <span>{{ item.companyName }}</span>
+                                <span>
+                                  {{ item.companyName }}
+                                </span>
                               </div>
                               <div class="date-of-time">
                                 <span
@@ -548,32 +397,75 @@
 
 <script>
 export default {
-  name: "AppResume",
+  name: "AppSkills",
   data() {
     return {
-      timeline: [
+      certificationList: [
         {
           id: 1,
-          jobTitle: "BSc in CSE",
-          companyName: "International Islamic University Chittagong",
-          startTime: "Jan 2023",
-          endTime: "Apr 2023",
+          jobTitle: "Complete Vue Developer Bootcamp",
+          companyName: "ZTM Academy (Udemy)",
+          companyUrl:
+            "https://www.udemy.com/course/complete-vue-js-developer-zero-to-mastery-vuex/",
+          startTime: "Mar 2023",
+          endTime: "Aug 2023",
+          jobDescription:
+            "This certification course helped me to learn the basics of VueJs 3, a progressive javascript framework",
+        },
+        {
+          id: 1,
+          jobTitle: "BJET Advanced Course",
+          companyName: "University of Miyazaki, Japan",
+          companyUrl: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
+          startTime: "Oct 2022",
+          endTime: "Dec 2022",
           jobDescription:
             "iohnroegjrogjrgs wsetws sgd fdhdg fgpjm nosim abir ishmam roh afnan alamgir chowdhury tght htksr.",
         },
         {
           id: 2,
-          jobTitle: "Associate Software Engineer",
-          companyName: "C Company",
-          startTime: "Dec 2010",
-          endTime: "Apr 2020",
+          jobTitle: "BJET Basic Course",
+          companyName: "BJET Center (Online Class)",
+          companyUrl: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
+          startTime: "Apr 2022",
+          endTime: "Sept 2022",
+          jobDescription:
+            "iohnroegjrogjrgs wsetws sgd fdhdg fgpjm nosim abir ishmam roh afnan alamgir chowdhury tght htksr.",
+        },
+        {
+          id: 3,
+          jobTitle: "Java From Basic to Professional",
+          companyName: "PONDIT",
+          companyUrl: "https://pondit.com/",
+          startTime: "May 2020",
+          endTime: "Dec 2020",
+          jobDescription:
+            "iohnroegjrogjrgs wsetws sgd fdhdg fgpjm nosim abir ishmam roh afnan alamgir chowdhury tght htksr.",
+        },
+        {
+          id: 2,
+          jobTitle: "Ultimate Java Development & Certification Course",
+          companyName: "EDUONIX ",
+          companyUrl: "https://www.eduonix.com/certificate/1d146674ae",
+          startTime: "May 2020",
+          endTime: "Jul 2020",
           jobDescription:
             "gnan ir chowdhury random tupminrg etom abc install the software kop coop maxvalue mcdonalds iftar tght htksr.",
         },
       ],
-      skillList: [],
+      skillList: [
+        { name: "Java", percentage: 90 },
+        { name: "Golang", percentage: 90 },
+        { name: "VueJs", percentage: 70 },
+        { name: "Vuetify", percentage: 80 },
+        { name: "Mysql", percentage: 70 },
+        { name: "Github Action", percentage: 86 },
+        { name: "Redis", percentage: 80 },
+        { name: "Postgres", percentage: 70 },
+        { name: "", percentage: 90 },
+        { name: "", percentage: 90 },
+      ],
       achievementList: [],
-      certificationList: [],
     };
   },
 };
