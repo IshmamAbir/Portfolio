@@ -6,7 +6,7 @@
     "home": "ホーム",
     "education": "学歴",
     "contacts": "Contacts",
-    "experience": "経験",
+    "experience": "実務経験",
     "projects": "プロジェクト",
     "skill": "スキル & 実績"
   },
@@ -18,5 +18,8 @@
     "technical_skills": "技術スキル",
     "achievements": "実績",
     "certifications": "認証"
+  },
+  "experience": {
+    "experience_header": "実務経験"
   }
 }

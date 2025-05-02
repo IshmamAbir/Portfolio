@@ -6,6 +6,9 @@
     <!-- Start education Area  -->
     <app-education />
 
+    <!-- Start Experience Area  -->
+    <app-job-experience />
+
     <!-- Start Skill List Area  -->
     <app-skills-certification-achievements />
 
@@ -65,6 +68,7 @@ import SingleBlog from "@/components/SingleBlog.vue";
 import AppBlog from "@/components/AppBlog.vue";
 import AppEducation from "@/components/AppEducation.vue";
 import AppSkillsCertificationAchievements from "@/components/AppSkillsCertificationAchievements.vue";
+import AppJobExperience from "@/components/AppJobExperience.vue";
 
 export default defineComponent({
   name: "HomeView",
@@ -81,6 +85,7 @@ export default defineComponent({
     AppBlog,
     AppEducation,
     AppSkillsCertificationAchievements,
+    AppJobExperience,
   },
   data() {
     return {

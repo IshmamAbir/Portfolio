@@ -18,5 +18,8 @@
     "technical_skills": "Technical Skills",
     "achievements": "Achievements",
     "certifications": "Certifications"
+  },
+  "experience": {
+    "experience_header": "Work Experience"
   }
 }
