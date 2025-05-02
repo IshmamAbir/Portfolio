@@ -32,9 +32,19 @@
             :src="companyData.imgUrl"
           />
           <div class="news-details">
-            <span class="date">2 May, 2021 - item Id {{ itemId }}</span>
+            <span v-if="companyData.endTime === null" class="date">
+              {{ companyData.startTime }} - {{ $t("common.continuing") }}</span
+            >
+            <span v-else class="date">
+              {{ companyData.startTime }} - {{ companyData.endTime }}</span
+            >
 
-            <h2 class="title">Digital Marketo to Their New Office.</h2>
+            <h2 class="title">
+              {{ companyData.position }} -
+              <a :href="companyData.companyWebsite" target="_blank">{{
+                companyData.companyName
+              }}</a>
+            </h2>
             <p>
               I Worked as a Backend Developer where I used Java Springboot as my
               primary framework and used Postgres as my database.
