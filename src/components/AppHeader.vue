@@ -37,7 +37,7 @@
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#educations">
               <!-- <vue-feather type="briefcase" /> -->
-              <i data-feather="briefcase"></i>
+              <i data-feather="book-open"></i>
               {{ $t("header.education") }}
             </a>
           </li>
