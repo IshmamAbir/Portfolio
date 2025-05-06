@@ -151,13 +151,13 @@
                     <div class="content">
                       <!-- <span class="subtitle">2007 - 2010</span>
                        <h4 class="maintitle">Job Experience {{$t('skill.certifications')}}</h4> -->
-                      <div
-                        class="experience-list"
-                        v-for="item in certificationList"
-                        :key="item.id"
-                      >
+                      <div class="experience-list">
                         <!-- Start Single List  -->
-                        <div class="resume-single-list">
+                        <div
+                          class="resume-single-list"
+                          v-for="item in certificationList"
+                          :key="item.id"
+                        >
                           <div class="inner">
                             <div class="heading">
                               <div class="title">
@@ -203,10 +203,14 @@
               <div class="personal-experience-inner mt--40">
                 <div class="row">
                   <!-- Start Skill List Area  -->
-                  <div class="col-lg-6 col-md-12 col-12">
+                  <div
+                    class="col-lg-6 col-md-12 col-12"
+                    v-for="(item, index) in achievementList"
+                    :key="item.id"
+                  >
                     <div class="content">
-                      <span class="subtitle">2007 - 2010</span>
-                      <h4 class="maintitle">Company Experience</h4>
+                      <!-- <span class="subtitle">2007 - 2010</span>
+                      <h4 class="maintitle">Company Experience</h4> -->
                       <div class="experience-list">
                         <!-- Start Single List  -->
                         <div
@@ -219,171 +223,17 @@
                           <div class="inner">
                             <div class="heading">
                               <div class="title">
-                                <h4>Personal Portfolio April Fools</h4>
-                                <span>University of DVI (1997 - 2001)</span>
+                                <a :href="item.url" target="_blank">
+                                  <h4>{{ item.title }}</h4>
+                                </a>
+                                <span>{{ item.location }}</span>
                               </div>
                               <div class="date-of-time">
-                                <span>4.30/5</span>
+                                <span>{{ item.achieveTime }}</span>
                               </div>
                             </div>
                             <p class="description">
-                              The education should be very interactual. Ut
-                              tincidunt est ac dolor aliquam sodales. Phasellus
-                              sed mauris hendrerit, laoreet sem in, lobortis
-                              mauris hendrerit ante.
-                            </p>
-                          </div>
-                        </div>
-                        <!-- End Single List  -->
-
-                        <!-- Start Single List  -->
-                        <div
-                          data-aos="fade-up"
-                          data-aos-duration="500"
-                          data-aos-delay="500"
-                          data-aos-once="true"
-                          class="resume-single-list"
-                        >
-                          <div class="inner">
-                            <div class="heading">
-                              <div class="title">
-                                <h4>Examples Of Personal Portfolio</h4>
-                                <span>College of Studies (2000 - 2002)</span>
-                              </div>
-                              <div class="date-of-time">
-                                <span>4.50/5</span>
-                              </div>
-                            </div>
-                            <p class="description">
-                              Maecenas finibus nec sem ut imperdiet. Ut
-                              tincidunt est ac dolor aliquam sodales. Phasellus
-                              sed mauris hendrerit, laoreet sem in, lobortis
-                              mauris hendrerit ante.
-                            </p>
-                          </div>
-                        </div>
-                        <!-- End Single List  -->
-
-                        <!-- Start Single List  -->
-                        <div
-                          data-aos="fade-up"
-                          data-aos-duration="500"
-                          data-aos-delay="700"
-                          data-aos-once="true"
-                          class="resume-single-list"
-                        >
-                          <div class="inner">
-                            <div class="heading">
-                              <div class="title">
-                                <h4>Tips For Personal Portfolio</h4>
-                                <span>University of Studies (1997 - 2001)</span>
-                              </div>
-                              <div class="date-of-time">
-                                <span>4.80/5</span>
-                              </div>
-                            </div>
-                            <p class="description">
-                              If you are going to use a passage. Ut tincidunt
-                              est ac dolor aliquam sodales. Phasellus sed mauris
-                              hendrerit, laoreet sem in, lobortis mauris
-                              hendrerit ante.
-                            </p>
-                          </div>
-                        </div>
-                        <!-- End Single List  -->
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Skill List Area  -->
-
-                  <!-- Start Skill List Area 2nd  -->
-                  <div class="col-lg-6 col-md-12 col-12 mt_md--60 mt_sm--60">
-                    <div class="content">
-                      <span class="subtitle">2007 - 2010</span>
-                      <h4 class="maintitle">Job Experience</h4>
-                      <div class="experience-list">
-                        <!-- Start Single List  -->
-                        <div
-                          data-aos="fade-up"
-                          data-aos-duration="500"
-                          data-aos-delay="500"
-                          data-aos-once="true"
-                          class="resume-single-list"
-                        >
-                          <div class="inner">
-                            <div class="heading">
-                              <div class="title">
-                                <h4>Diploma in Web Development</h4>
-                                <span>BSE In CSE (2004 - 2008)</span>
-                              </div>
-                              <div class="date-of-time">
-                                <span>4.70/5</span>
-                              </div>
-                            </div>
-                            <p class="description">
-                              Contrary to popular belief. Ut tincidunt est ac
-                              dolor aliquam sodales. Phasellus sed mauris
-                              hendrerit, laoreet sem in, lobortis mauris
-                              hendrerit ante.
-                            </p>
-                          </div>
-                        </div>
-                        <!-- End Single List  -->
-
-                        <!-- Start Single List  -->
-                        <div
-                          data-aos="fade-up"
-                          data-aos-duration="500"
-                          data-aos-delay="700"
-                          data-aos-once="true"
-                          class="resume-single-list"
-                        >
-                          <div class="inner">
-                            <div class="heading">
-                              <div class="title">
-                                <h4>The Personal Portfolio Mystery</h4>
-                                <span>Job at Rainbow-Themes (2008 - 2016)</span>
-                              </div>
-                              <div class="date-of-time">
-                                <span>4.95/5</span>
-                              </div>
-                            </div>
-                            <p class="description">
-                              Generate Lorem Ipsum which looks. Ut tincidunt est
-                              ac dolor aliquam sodales. Phasellus sed mauris
-                              hendrerit, laoreet sem in, lobortis mauris
-                              hendrerit ante.
-                            </p>
-                          </div>
-                        </div>
-                        <!-- End Single List  -->
-
-                        <!-- Start Single List  -->
-                        <div
-                          data-aos="fade-up"
-                          data-aos-duration="500"
-                          data-aos-delay="900"
-                          data-aos-once="true"
-                          class="resume-single-list"
-                        >
-                          <div class="inner">
-                            <div class="heading">
-                              <div class="title">
-                                <h4>Diploma in Computer Science</h4>
-                                <span
-                                  >Works at Plugin Development (2016 -
-                                  2020)</span
-                                >
-                              </div>
-                              <div class="date-of-time">
-                                <span>5.00/5</span>
-                              </div>
-                            </div>
-                            <p class="description">
-                              Maecenas finibus nec sem ut imperdiet. Ut
-                              tincidunt est ac dolor aliquam sodales. Phasellus
-                              sed mauris hendrerit, laoreet sem in, lobortis
-                              mauris hendrerit ante.
+                              {{ item[`description_${$i18n.locale}`] }}
                             </p>
                           </div>
                         </div>
@@ -485,7 +335,30 @@ export default {
         { name: "Postgres", percentage: 70 },
         { name: "Docker", percentage: 65 },
       ],
-      achievementList: [],
+      achievementList: [
+        {
+          id: 1,
+          title: "Banglalink Code for a cause 2.0 Hackathon",
+          location: "Banglalink Headquarter, Dhaka, Bangladesh",
+          url: "https://www.linkedin.com/posts/ishmam-abir_sdgabrhackathon-codeabrforabraabrcauseabr2-activity-6642770546260054016-zpB3/",
+          achieveTime: "January 2020",
+          description_en:
+            "It was a national-level tech hackathon competition among students from across the country, and I secured fourth place.",
+          description_ja:
+            "これは全国の学生を対象とした技術系ハッカソンコンテストで、私は第4位を獲得しました。",
+        },
+        {
+          id: 2,
+          title: "IIUC Tech fest 2020",
+          location: "International Islamic University, Chittagong,, Bangladesh",
+          url: "https://www.linkedin.com/posts/ishmam-abir_techfest-contest-activity-6632335551154479104-ML17/",
+          achieveTime: "March 2020",
+          description_en:
+            "At the IIUC Tech Fest 2020, I achieved notable success by securing the championship in the App Development Contest and earning the runner-up position in the Idea Generation Competition. These accomplishments reflect my strong technical skills and creative problem-solving abilities.",
+          description_ja:
+            "IIUCテックフェスト2020では、アプリ開発コンテストで優勝し、アイデア創出コンペティションで準優勝を獲得するという顕著な成果を収めました。これらの実績は、私の高度な技術力と創造的な問題解決能力を示しています。",
+        },
+      ],
     };
   },
 };
