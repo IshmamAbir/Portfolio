@@ -159,9 +159,12 @@
                             <div class="heading">
                               <div class="title">
                                 <h4>{{ item.jobTitle }}</h4>
-                                <span>
-                                  {{ item.companyName }}
-                                </span>
+                                <a :href="item.companyUrl" target="_blank">
+                                  <span>
+                                    {{ item.companyName }}
+                                    <i class="feather-arrow-up-right" />
+                                  </span>
+                                </a>
                               </div>
                               <div class="date-of-time">
                                 <span
@@ -171,7 +174,7 @@
                               </div>
                             </div>
                             <p class="description">
-                              {{ item.jobDescription }}
+                              {{ item[`jobDescription_${$i18n.locale}`] }}
                             </p>
                           </div>
                         </div>
@@ -406,11 +409,13 @@ export default {
           jobTitle: "Complete Vue Developer Bootcamp",
           companyName: "ZTM Academy (Udemy)",
           companyUrl:
-            "https://www.udemy.com/course/complete-vue-js-developer-zero-to-mastery-vuex/",
+            "https://www.udemy.com/certificate/UC-fb340153-d620-4bff-9f15-516e15b98583/",
           startTime: "Mar 2023",
-          endTime: "Aug 2023",
-          jobDescription:
-            "This certification course helped me to learn the basics of VueJs 3, a progressive javascript framework",
+          endTime: "Jul 2023",
+          jobDescription_en:
+            "This certification course from Udemy helped me to learn the basics of VueJs 3, a progressive javascript framework.",
+          jobDescription_ja:
+            "Udemyのこの認定コースは、プログレッシブJavaScriptフレームワークであるVueJs 3の基礎を学ぶのに役立ちました。",
         },
         {
           id: 1,
@@ -419,8 +424,10 @@ export default {
           companyUrl: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
           startTime: "Oct 2022",
           endTime: "Dec 2022",
-          jobDescription:
-            "iohnroegjrogjrgs wsetws sgd fdhdg fgpjm nosim abir ishmam roh afnan alamgir chowdhury tght htksr.",
+          jobDescription_en:
+            "The BJET Advanced Course, conducted by the University of Miyazaki, is a continuation of the fully funded BJET Basic Course held in Japan. This program provides participants with hands-on experience through internships at Japanese companies, while simultaneously offering in-depth training in the Japanese language and work culture at University of Miyazaki.",
+          jobDescription_ja:
+            "宮崎大学が提供するBJETアドバンスコースは、日本で実施される全額支援のBJETベーシックコースを基礎として構成されています。このプログラムでは、日本企業でのインターンシップを通じて実践的な経験を積むと同時に、宮崎大学で日本語と日本のビジネス文化に関する包括的なトレーニングを受けることができます。",
         },
         {
           id: 2,
@@ -429,8 +436,10 @@ export default {
           companyUrl: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
           startTime: "Apr 2022",
           endTime: "Sept 2022",
-          jobDescription:
-            "iohnroegjrogjrgs wsetws sgd fdhdg fgpjm nosim abir ishmam roh afnan alamgir chowdhury tght htksr.",
+          jobDescription_en:
+            "BJET (Bangladesh-Japan ICT Engineers’ Training Program) is a skills development initiative designed to prepare Bangladeshi ICT professionals for careers in Japan’s tech industry. The program offers training in Japanese language, business culture, and IT skills.",
+          jobDescription_ja:
+            "BJET（バングラデシュ・日本ICTエンジニア研修プログラム）は、バングラデシュのICT専門家が日本のテクノロジー業界で活躍できるよう育成することを目的としたスキル開発プログラムです。このプログラムでは、日本語、ビジネス文化、ITスキルの研修を提供しています。",
         },
         {
           id: 3,
@@ -439,31 +448,36 @@ export default {
           companyUrl: "https://pondit.com/",
           startTime: "May 2020",
           endTime: "Dec 2020",
-          jobDescription:
-            "iohnroegjrogjrgs wsetws sgd fdhdg fgpjm nosim abir ishmam roh afnan alamgir chowdhury tght htksr.",
+          jobDescription_en:
+            "Pondit is a Bangladesh-based online training platform dedicated to equipping learners with in-demand ICT and professional skills. Various courses are led by experienced mentors from leading software companies in Bangladesh, ensuring practical, industry-relevant training. Beyond courses, Pondit offers internships, industrial attachments, and workshops, fostering career readiness and bridging the gap between education and employment.",
+          jobDescription_ja:
+            "Ponditは、バングラデシュを拠点とするオンライントレーニングプラットフォームで、学習者に需要の高いICTスキルと専門スキルを身につけさせることに特化しています。バングラデシュの大手ソフトウェア企業出身の経験豊富なメンターが指導する様々なコースを通じて、実践的で業界に即したトレーニングを提供しています。コース以外にも、Ponditはインターンシップ、実務研修、ワークショップなどを提供し、キャリア準備を促進し、教育と就職のギャップを埋める支援を行っています。",
         },
         {
-          id: 2,
+          id: 4,
           jobTitle: "Ultimate Java Development & Certification Course",
           companyName: "EDUONIX ",
           companyUrl: "https://www.eduonix.com/certificate/1d146674ae",
           startTime: "May 2020",
           endTime: "Jul 2020",
-          jobDescription:
-            "gnan ir chowdhury random tupminrg etom abc install the software kop coop maxvalue mcdonalds iftar tght htksr.",
+          jobDescription_en:
+            "Eduonix Learning Solutions is an e-learning platform, offering a wide range of online courses in technology, design, business, and personal development.",
+          jobDescription_ja:
+            "Eduonix Learning Solutions は、テクノロジー、デザイン、ビジネス、自己啓発の幅広いオンライン コースを提供する e ラーニング プラットフォームです。",
         },
       ],
       skillList: [
         { name: "Java", percentage: 90 },
         { name: "Golang", percentage: 90 },
-        { name: "VueJs", percentage: 70 },
-        { name: "Vuetify", percentage: 80 },
+        { name: "Springboot", percentage: 85 },
+        { name: "VueJs 3", percentage: 70 },
+        { name: "Vuetify 3", percentage: 80 },
         { name: "Mysql", percentage: 70 },
-        { name: "Github Action", percentage: 86 },
+        { name: "Github", percentage: 90 },
+        { name: "Github Action", percentage: 85 },
         { name: "Redis", percentage: 80 },
         { name: "Postgres", percentage: 70 },
-        { name: "", percentage: 90 },
-        { name: "", percentage: 90 },
+        { name: "Docker", percentage: 65 },
       ],
       achievementList: [],
     };
