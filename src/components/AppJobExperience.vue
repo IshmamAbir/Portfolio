@@ -110,7 +110,36 @@ export default {
           shortDescription_en: "I am currently working as a Software Development Engineer at Kodensya Co Ltd (株式会社興電舎). My main responsibilities include: Designing, coding, testing, and debugging company's core web applications. See details page for the complete technical details.",
           shortDescription_ja: "株式会社興電舎でソフトウェア開発エンジニアとして働いています。主な業務は、会社のコアとなるWebアプリケーションの設計、コーディング、テスト、デバッグです。技術的な詳細については、詳細ページをご覧ください。",
           description_en:
-            "",
+            `
+            <P>
+            Kodensha Co., Ltd., established in 1949 and headquartered in Miyazaki, Japan, has long been recognized for its expertise in electrical facility construction and the sale of industrial electrical equipment. In recent years, the company has expanded into the IT sector, offering innovative software solutions to support Digital Transformation (DX). By integrating advanced technology with its engineering roots, Kodensha is committed to driving efficiency, safety, and modernization across industries.
+            <P>
+            <h4>Job Description</h4>
+            <p>
+              At Kodensya, i was responsible for complete lifecycle of database design, designing, developing & maintaining their system software, upgrading their old softwares and create modularity with their new software.
+              I have implemented clean architecture using golang on this project without using any framework. Also, applied multi-module architecture so that old softwares can easily merged as a module to the current system as well as new modules can be introduced easily without modifying the whole systems in the backend. 
+              Also, I designed the frontend using Vuetify 3, a vueJs component framework and updated it to be user friendly.
+              This web aplicaaation is currently in live and our company and several other customers are using it, and we are also developing new features and modules that will scale this project.  
+            </p>
+              <h4>Technology I Used</h4>
+              <P>
+                Technology I got used here to level up my knowledge are given below
+                <ul>
+                  <li>
+                    <b>Golang</b> as backend.
+                  </li>  
+                  <li>
+                    <a href="https://gorm.io/index.html" target="_blank">Gorm</a> as the Full-Featured ORM library for golang.
+                  </li>
+                  <li>
+                    <a href="https://github.com/gorilla/mux" target="_blank">Gorilla mux</a> as HTTP router.
+                  </li>
+                  <li>
+                    
+                  </li>
+                </ul>
+              </p>
+            `,
           description_ja:
             "",
           imgUrl: "",
