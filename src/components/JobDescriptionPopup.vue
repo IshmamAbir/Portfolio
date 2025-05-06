@@ -45,17 +45,15 @@
                 companyData.companyName
               }}</a>
             </h2>
+            <!-- {{ companyData[`description_${$i18n.locale}`] }} -->
+            <div v-html="companyData[`description_${$i18n.locale}`]"></div>
             <p>
-              I Worked as a Backend Developer where I used Java Springboot as my
-              primary framework and used Postgres as my database.
-            </p>
-            <p>
-              -- {{ description }} -- Nobis eleifend option congue nihil
-              imperdiet doming id quod mazim placerat facer possim assum. Typi
-              non habent claritatem insitam; est usus legentis in iis qui facit
-              eorum claritatem. Investigationes demonstraverunt lectores legere
-              me lius quod ii legunt saepius. Claritas est etiam processus
-              dynamicus, qui sequitur mutationem consuetudium lectorum.
+              -- Nobis eleifend option congue nihil imperdiet doming id quod
+              mazim placerat facer possim assum. Typi non habent claritatem
+              insitam; est usus legentis in iis qui facit eorum claritatem.
+              Investigationes demonstraverunt lectores legere me lius quod ii
+              legunt saepius. Claritas est etiam processus dynamicus, qui
+              sequitur mutationem consuetudium lectorum.
             </p>
             <h4>Job Description</h4>
             <p>
