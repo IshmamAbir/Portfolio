@@ -21,5 +21,8 @@
   },
   "experience": {
     "experience_header": "実務経験"
+  },
+  "contact": {
+    "email": "メール"
   }
 }

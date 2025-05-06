@@ -21,5 +21,8 @@
   },
   "experience": {
     "experience_header": "Work Experience"
+  },
+  "contact": {
+    "email": "E-mail"
   }
 }

@@ -14,27 +14,26 @@
           <div class="contact-about-area">
             <div class="thumbnail">
               <img
-                src="@/assets/images/contact/contact1.png"
+                src="@/assets/images/contact/bottom_image.jpg"
                 alt="contact-img"
               />
             </div>
             <div class="title-area">
-              <h4 class="title">ISHMAM ABIR CHOWDHURY</h4>
+              <h4 class="title">{{ contactDetails.fullName.toUpperCase() }}</h4>
               <span>Software Development Engineer</span>
             </div>
             <div class="description">
               <p>
-                Connect with me via email or other social media channels. Get to
-                know more about me.
+                {{ contactDetails[`contactText_${$i18n.locale}`] }}
               </p>
               <!-- <span class="phone"
                 >Phone: <a href="tel:01941043264">+01234567890</a></span
               > -->
               <span class="mail"
-                >Email:
-                <a href="mailto:ishmam.cse@gmail.com"
-                  >ishmam.cse@gmail.com</a
-                ></span
+                >{{ $t("contact.email") }}:
+                <a :href="`mailto:` + contactDetails.email">{{
+                  contactDetails.email
+                }}</a></span
               >
             </div>
             <div class="social-area">
@@ -147,5 +146,18 @@
 <script>
 export default {
   name: "AppContact",
+  data() {
+    return {
+      contactDetails: {
+        fullName: "Ishmam Abir Chowdhury",
+        designation: "Software Development Engineer",
+        email: "ishmam.cse@gmail.com",
+        contactText_en:
+          "Feel free to connect with me via email or through my social media channels to learn more about me.",
+        contactText_ja:
+          "メールや各種ソーシャルメディアを通じて、お気軽にご連絡ください。私について詳しく知っていただけます。",
+      },
+    };
+  },
 };
 </script>
