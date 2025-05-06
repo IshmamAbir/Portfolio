@@ -52,6 +52,7 @@
               </a>
             </li>
           </ul>
+          <!-- start: Skill List  -->
           <!-- Start Tab Content Wrapper  -->
           <div class="rn-nav-content tab-content" id="myTabContents">
             <!-- Start Single Tab  -->
@@ -133,7 +134,9 @@
               </div>
             </div>
             <!-- End Single Tab  -->
+            <!-- end: Skill List -->
 
+            <!-- start: Certification List  -->
             <!-- Start Single Tab  -->
             <div
               class="tab-pane fade"
@@ -187,7 +190,9 @@
               </div>
             </div>
             <!-- End Single Tab  -->
+            <!-- end: Certification List  -->
 
+            <!-- start: Achievement List  -->
             <!-- Start Single Tab  -->
             <div
               class="tab-pane fade"
@@ -391,6 +396,7 @@
               </div>
             </div>
             <!-- End Single Tab  -->
+            <!-- end: Achievement List  -->
           </div>
         </div>
       </div>
