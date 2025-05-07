@@ -39,6 +39,11 @@
               {{ companyData.startTime }} - {{ companyData.endTime }}</span
             >
 
+            <span class="date">
+              <i class="feather feather-map-pin"></i>
+              {{ companyData.companyLocation }}
+            </span>
+
             <h2 class="title">
               {{ companyData.position }} -
               <a :href="companyData.companyWebsite" target="_blank">{{
@@ -47,15 +52,8 @@
             </h2>
             <!-- {{ companyData[`description_${$i18n.locale}`] }} -->
             <div v-html="companyData[`description_${$i18n.locale}`]"></div>
-            <p>
-              -- Nobis eleifend option congue nihil imperdiet doming id quod
-              mazim placerat facer possim assum. Typi non habent claritatem
-              insitam; est usus legentis in iis qui facit eorum claritatem.
-              Investigationes demonstraverunt lectores legere me lius quod ii
-              legunt saepius. Claritas est etiam processus dynamicus, qui
-              sequitur mutationem consuetudium lectorum.
-            </p>
-            <h4>Job Description</h4>
+
+            <!-- <h4>Job Description</h4>
             <p>
               Mauris tempor, orci id pellentesque convallis, massa mi congue
               eros, sed posuere massa nunc quis dui. Integer ornare varius mi,
@@ -63,9 +61,7 @@
               sit amet suscipit nisl. Sed eget nisl laoreet, suscipit enim nec,
               viverra eros. Nunc imperdiet risus leo, in rutrum erat dignissim
               id.
-            </p>
-
-            <h4>Technology Used</h4>
+            </p> -->
           </div>
         </div>
         <!-- End of .modal-body -->
