@@ -299,10 +299,87 @@ export default {
           shortDescription_en: "I got promoted to the Level 2 Associate Software Engineer at Brain Station 23. See details page for the complete technical details.",
           shortDescription_ja: "私は Brain Station 23 でレベル 2 アソシエイト ソフトウェア エンジニアに昇進しました。完全な技術的詳細については、詳細ページをご覧ください。",
           description_en:
-            ".",
+            `
+            <p>
+              Brain Station 23 is a top software development company from Bangladesh, providing custom software, web and mobile apps, and cloud solutions. Serving global clients across various industries, it leverages modern technologies and agile methods to deliver secure, scalable, and innovative digital solutions that drive business transformation.
+            </p>
+            <h4>Job Responsibilities</h4>
+            <p>
+              Main responsibilities include:
+              <ul>
+                <li>
+                  Developing well maintained apis using Java Spring Boot.
+                </li>
+                <li>
+                  Maintaining code quality through code reviews and code refactoring.
+                </li>
+                <li>
+                  Creating report design and implementing apis using Jasper Report.
+                </li>
+                <li>
+                  Designing, coding, testing, and debugging client's web applications.
+                </li>
+                <li>
+
+                </li>
+              </ul>
+            </p>
+            <h6>Framework, Tools & Technologies</h6>
+            <ul>
+              <li>
+                Java Spring Boot
+              </li>
+              <li>
+                Jasper Report
+              </li>
+              <li>
+                MySQL
+              </li>
+              <li>
+                Trello
+              </li>
+            </ul>
+            `,
           description_ja:
-            "",
-          imgUrl: "src/assets/images/blog/blog-big-01.jpg",
+            `
+            <p>
+              Brain Station 23 は、バングラデシュを代表する大手ソフトウェア開発会社であり、カスタムソフトウェア、Web・モバイルアプリ、クラウドソリューションを提供しています。さまざまな業界のグローバルクライアントにサービスを提供し、最新技術とアジャイル手法を活用して、安全でスケーラブル、かつ革新的なデジタルソリューションを提供し、ビジネスの変革を支援しています。
+            </p>
+            <h4>職務内容</h4>
+            <p>
+              主な担当業務は以下の通りです：
+              <ul>
+                <li>
+                  Java Spring Boot を使用した保守性の高い API の開発。
+                </li>
+                <li>
+                  コードレビューとリファクタリングを通じたコード品質の維持。
+                </li>
+                <li>
+                  Jasper Report を用いた帳票設計と API の実装。
+                </li>
+                <li>
+                  クライアントの Web アプリケーションの設計、コーディング、テスト、およびデバッグ。
+                </li>
+              </ul>
+            </p>
+            <h6>使用フレームワーク・ツール・技術</h6>
+            <ul>
+              <li>
+                Java Spring Boot
+              </li>
+              <li>
+                Jasper Report
+              </li>
+              <li>
+                MySQL
+              </li>
+              <li>
+                Trello
+              </li>
+            </ul>
+            `,
+          imgUrl: "src/assets/images/company/Brain-Station-23.jpg",
         },
         {
           id: 3,
@@ -314,10 +391,87 @@ export default {
           shortDescription_en: "I began my professional career as a full-time Associate Software Engineer at Brain Station 23 in 2021. It was a hybrid workplace, where I worked both remotely and onsite. Please refer to the details page for complete technical information.",
           shortDescription_ja: "私は2021年にBrain Station 23でフルタイムのアソシエイトソフトウェアエンジニアとしてキャリアをスタートしました。そこはハイブリッドな職場で、リモートワークとオフサイトワークの両方を行いました。完全な技術的詳細については、詳細ページをご覧ください。",
           description_en:
-            "",
+            `
+            <p>
+              Brain Station 23 is a top software development company from Bangladesh, providing custom software, web and mobile apps, and cloud solutions. Serving global clients across various industries, it leverages modern technologies and agile methods to deliver secure, scalable, and innovative digital solutions that drive business transformation.
+            </p>
+            <h4>Job Responsibilities</h4>
+            <p>
+              Main responsibilities include:
+              <ul>
+                <li>
+                  Developing well maintained apis using Java Spring Boot.
+                </li>
+                <li>
+                  Maintaining code quality through code reviews and code refactoring.
+                </li>
+                <li>
+                  Creating report design and implementing apis using Jasper Report.
+                </li>
+                <li>
+                  Designing, coding, testing, and debugging client's web applications.
+                </li>
+                <li>
+
+                </li>
+              </ul>
+            </p>
+            <h6>Framework, Tools & Technologies</h6>
+            <ul>
+              <li>
+                Java Spring Boot
+              </li>
+              <li>
+                Jasper Report
+              </li>
+              <li>
+                MySQL
+              </li>
+              <li>
+                Trello
+              </li>
+            </ul>
+            `,
           description_ja:
-            "",
-          imgUrl: "",
+            `
+            <p>
+              Brain Station 23 は、バングラデシュを代表する大手ソフトウェア開発会社であり、カスタムソフトウェア、Web・モバイルアプリ、クラウドソリューションを提供しています。さまざまな業界のグローバルクライアントにサービスを提供し、最新技術とアジャイル手法を活用して、安全でスケーラブル、かつ革新的なデジタルソリューションを提供し、ビジネスの変革を支援しています。
+            </p>
+            <h4>職務内容</h4>
+            <p>
+              主な担当業務は以下の通りです：
+              <ul>
+                <li>
+                  Java Spring Boot を使用した保守性の高い API の開発。
+                </li>
+                <li>
+                  コードレビューとリファクタリングを通じたコード品質の維持。
+                </li>
+                <li>
+                  Jasper Report を用いた帳票設計と API の実装。
+                </li>
+                <li>
+                  クライアントの Web アプリケーションの設計、コーディング、テスト、およびデバッグ。
+                </li>
+              </ul>
+            </p>
+            <h6>使用フレームワーク・ツール・技術</h6>
+            <ul>
+              <li>
+                Java Spring Boot
+              </li>
+              <li>
+                Jasper Report
+              </li>
+              <li>
+                MySQL
+              </li>
+              <li>
+                Trello
+              </li>
+            </ul>
+            `,
+          imgUrl: "src/assets/images/company/Brain-Station-23.jpg",
         },
         {
           id: 4,
