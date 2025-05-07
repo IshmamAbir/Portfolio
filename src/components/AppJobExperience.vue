@@ -107,6 +107,7 @@ export default {
           companyWebsite: "https://kodensya.co.jp/",
           startTime: "Jan 2023",
           endTime: null,
+          companyLocation:"Nobeoka, Miyazaki, Japan",
           shortDescription_en: "I am currently working as a Software Development Engineer at Kodensya Co Ltd (株式会社興電舎). My main responsibilities include: Designing, coding, testing, and debugging company's core web applications. See details page for the complete technical details.",
           shortDescription_ja: "株式会社興電舎でソフトウェア開発エンジニアとして働いています。主な業務は、会社のコアとなるWebアプリケーションの設計、コーディング、テスト、デバッグです。技術的な詳細については、詳細ページをご覧ください。",
           description_en:
@@ -296,12 +297,15 @@ export default {
           companyWebsite: "https://brainstation-23.com/",
           startTime: "Jan 2022",
           endTime: "Aug 2022",
+          companyLocation:"Dhaka, Bangladesh",
           shortDescription_en: "I got promoted to the Level 2 Associate Software Engineer at Brain Station 23. See details page for the complete technical details.",
           shortDescription_ja: "私は Brain Station 23 でレベル 2 アソシエイト ソフトウェア エンジニアに昇進しました。完全な技術的詳細については、詳細ページをご覧ください。",
           description_en:
             `
             <p>
               Brain Station 23 is a top software development company from Bangladesh, providing custom software, web and mobile apps, and cloud solutions. Serving global clients across various industries, it leverages modern technologies and agile methods to deliver secure, scalable, and innovative digital solutions that drive business transformation.
+              <br>
+              I was promoted to Level 2 Associate Software Engineer within just four months of joining as a Level 1. This was a significant achievement for me, especially considering that I was working at the largest software company in Bangladesh and competing with highly talented engineers from across the country.
             </p>
             <h4>Job Responsibilities</h4>
             <p>
@@ -311,6 +315,12 @@ export default {
                   Developing well maintained apis using Java Spring Boot.
                 </li>
                 <li>
+                  Responsible for complete story's requirement analysis, database design & create well organized apis.
+                </li>
+                <li>
+                  Creating MVP products with proper architecture. Implement database normalization.
+                </li>
+                <li>
                   Maintaining code quality through code reviews and code refactoring.
                 </li>
                 <li>
@@ -318,9 +328,6 @@ export default {
                 </li>
                 <li>
                   Designing, coding, testing, and debugging client's web applications.
-                </li>
-                <li>
-
                 </li>
               </ul>
             </p>
@@ -333,6 +340,9 @@ export default {
                 Jasper Report
               </li>
               <li>
+                Git
+              </li>
+              <li>
                 MySQL
               </li>
               <li>
@@ -343,23 +353,31 @@ export default {
           description_ja:
             `
             <p>
-              Brain Station 23 は、バングラデシュを代表する大手ソフトウェア開発会社であり、カスタムソフトウェア、Web・モバイルアプリ、クラウドソリューションを提供しています。さまざまな業界のグローバルクライアントにサービスを提供し、最新技術とアジャイル手法を活用して、安全でスケーラブル、かつ革新的なデジタルソリューションを提供し、ビジネスの変革を支援しています。
+              Brain Station 23はバングラデシュ発のトップソフトウェア開発企業であり、カスタムソフトウェア、Webおよびモバイルアプリ、クラウドソリューションを提供しています。さまざまな業界のグローバルクライアントにサービスを提供し、最新技術とアジャイル手法を活用して、安全でスケーラブルかつ革新的なデジタルソリューションを提供し、ビジネスの変革を推進しています。
+              <br>
+              入社からわずか4か月で、アソシエイトソフトウェアエンジニア レベル1からレベル2へ昇進しました。バングラデシュ最大のソフトウェア企業で、全国から集まった優秀なエンジニアたちと競い合う中での昇進は、私にとって非常に大きな成果でした。
             </p>
             <h4>職務内容</h4>
             <p>
-              主な担当業務は以下の通りです：
+              主な職務内容は以下の通りです：
               <ul>
                 <li>
-                  Java Spring Boot を使用した保守性の高い API の開発。
+                  Java Spring Bootを使用して保守性の高いAPIを開発する。
                 </li>
                 <li>
-                  コードレビューとリファクタリングを通じたコード品質の維持。
+                  ストーリーの要件分析、データベース設計、整理されたAPIの作成を担当する。
                 </li>
                 <li>
-                  Jasper Report を用いた帳票設計と API の実装。
+                  適切なアーキテクチャを用いたMVP製品の作成と、データベースの正規化を実装する。
                 </li>
                 <li>
-                  クライアントの Web アプリケーションの設計、コーディング、テスト、およびデバッグ。
+                  コードレビューやリファクタリングを通じてコード品質を維持する。
+                </li>
+                <li>
+                  Jasper Reportを使用して帳票の設計およびAPIを実装する。
+                </li>
+                <li>
+                  クライアントのWebアプリケーションの設計、コーディング、テスト、およびデバッグを行う。
                 </li>
               </ul>
             </p>
@@ -370,6 +388,9 @@ export default {
               </li>
               <li>
                 Jasper Report
+              </li>
+              <li>
+                Git
               </li>
               <li>
                 MySQL
@@ -388,6 +409,7 @@ export default {
           companyWebsite: "https://brainstation-23.com/",
           startTime: "Sept 2021",
           endTime: "Dec 2021",
+          companyLocation:"Dhaka, Bangladesh",
           shortDescription_en: "I began my professional career as a full-time Associate Software Engineer at Brain Station 23 in 2021. It was a hybrid workplace, where I worked both remotely and onsite. Please refer to the details page for complete technical information.",
           shortDescription_ja: "私は2021年にBrain Station 23でフルタイムのアソシエイトソフトウェアエンジニアとしてキャリアをスタートしました。そこはハイブリッドな職場で、リモートワークとオフサイトワークの両方を行いました。完全な技術的詳細については、詳細ページをご覧ください。",
           description_en:
@@ -410,9 +432,6 @@ export default {
                 </li>
                 <li>
                   Designing, coding, testing, and debugging client's web applications.
-                </li>
-                <li>
-
                 </li>
               </ul>
             </p>
@@ -480,12 +499,63 @@ export default {
           companyWebsite: "https://www.linkedin.com/company/brotech-it/",
           startTime: "Apr 2020",
           endTime: "Jan 2021",
+          companyLocation:"Chittagong, Bangladesh",
           shortDescription_en: "My responsibility was to build a website for a client using HTML, CSS, Bootstrap and JavaScript. I also worked on the backend using Node.js. Please refer to the details page for complete technical information.",
           shortDescription_ja: "私の責任は、HTML、CSS、Bootstrap、JavaScriptを使用してクライアントのウェブサイトを構築することでした。また、Node.jsを使用してバックエンドの開発にも取り組みました。完全な技術的詳細については、詳細ページをご覧ください。",
           description_en:
-            "",
+            `
+            <p>
+              BroTech is a startup technology company based in Chittagong, Bangladesh. I was responsible for developing websites and web applications on a contract basis, tailored to meet individual client requirements.
+            </p>
+            <h6>Framework, Tools & Technologies</h6>
+            <ul>
+              <li>
+                Java Spring Boot
+              </li>
+              <li>
+                Angular 
+              </li>
+              <li>
+                HTML
+              </li>
+              <li>
+                CSS
+              </li>
+              <li>
+                Bootstrap
+              </li>
+              <li>
+                Firebase
+              </li>
+            </ul>
+            `,
           description_ja:
-            "",
+            `
+            <p>
+              BroTechは、バングラデシュ・チッタゴンに拠点を置くスタートアップのテクノロジー企業です。私は契約ベースで、クライアントの要望に応じたWebサイトおよびWebアプリケーションの開発を担当していました。
+            </p>
+            <h6>使用フレームワーク・ツール・技術</h6>
+            <ul>
+              <li>
+                Java Spring Boot
+              </li>
+              <li>
+                Angular 
+              </li>
+              <li>
+                HTML
+              </li>
+              <li>
+                CSS
+              </li>
+              <li>
+                Bootstrap
+              </li>
+              <li>
+                Firebase
+              </li>
+            </ul>
+            `,
           imgUrl: "",
         },
       ],
