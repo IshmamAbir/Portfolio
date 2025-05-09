@@ -55,6 +55,13 @@
               {{ $t("header.skill") }}
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link smoth-animation-two" href="#project">
+              <!-- <vue-feather type="layers" /> -->
+              <i data-feather="code"></i>
+              {{ $t("header.projects") }}
+            </a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#features">
@@ -211,6 +218,11 @@
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#skills">
               {{ $t("header.skill") }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link smoth-animation-two" href="#project">
+              {{ $t("header.projects") }}
             </a>
           </li>
 

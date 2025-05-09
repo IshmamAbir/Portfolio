@@ -12,6 +12,9 @@
     <!-- Start Skill List Area  -->
     <app-skills-certification-achievements />
 
+    <!-- Start Project Area  -->
+    <app-projects />
+
     <!-- Start Service Area -->
     <app-service-area />
 
@@ -69,6 +72,7 @@ import AppBlog from "@/components/AppBlog.vue";
 import AppEducation from "@/components/AppEducation.vue";
 import AppSkillsCertificationAchievements from "@/components/AppSkillsCertificationAchievements.vue";
 import AppJobExperience from "@/components/AppJobExperience.vue";
+import AppProjects from "@/components/AppProjects.vue";
 
 export default defineComponent({
   name: "HomeView",
@@ -86,6 +90,7 @@ export default defineComponent({
     AppEducation,
     AppSkillsCertificationAchievements,
     AppJobExperience,
+    AppProjects,
   },
   data() {
     return {

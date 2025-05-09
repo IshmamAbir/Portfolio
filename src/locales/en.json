@@ -24,5 +24,8 @@
   },
   "contact": {
     "email": "E-mail"
+  },
+  "project": {
+    "project_header": "My Projects"
   }
 }

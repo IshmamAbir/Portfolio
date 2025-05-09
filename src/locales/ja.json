@@ -24,5 +24,8 @@
   },
   "contact": {
     "email": "メール"
+  },
+  "project": {
+    "project_header": "プロジェクト一覧"
   }
 }
