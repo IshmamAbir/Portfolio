@@ -34,8 +34,14 @@
 
             <div class="col-lg-6">
               <div class="text-content">
+                <v-chip
+                  class="mr-2 mb-4"
+                  v-for="item in projectData.technologyUsed"
+                >
+                  {{ item }}
+                </v-chip>
                 <h3>
-                  <span>Featured - Design</span>
+                  <!-- <span>Featured - Design</span> -->
                   {{ projectData.name }}
                 </h3>
                 <p class="mb--30">
