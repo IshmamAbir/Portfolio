@@ -26,6 +26,14 @@
     "email": "E-mail"
   },
   "project": {
-    "project_header": "My Projects"
+    "project_header": "My Projects",
+    "project_url": "Project Url"
+  },
+  "project_type": {
+    "open_source": "Open Source Project",
+    "professional": "Professional Project",
+    "personal": "Personal Project",
+    "academic": "Academic Project",
+    "freelance_work": "Freelance Work"
   }
 }

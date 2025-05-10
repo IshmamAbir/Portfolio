@@ -10,9 +10,9 @@
             data-aos-once="true"
             class="section-title text-center"
           >
-            <span class="subtitle">
+            <!-- <span class="subtitle">
               Visit my portfolio and keep your feedback
-            </span>
+            </span> -->
             <h2 class="title">{{ $t("project.project_header") }}</h2>
           </div>
         </div>
@@ -37,26 +37,43 @@
             "
           >
             <div class="inner">
-              <div class="thumbnail">
+              <div
+                class="thumbnail"
+                style="
+                  height: 250px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  overflow: hidden;
+                "
+              >
                 <a href="javascript:void(0)">
                   <img
-                    src="@/assets/images/portfolio/portfolio-01.jpg"
+                    :src="
+                      item.imgUrl && item.imgUrl !== ''
+                        ? item.imgUrl
+                        : 'src/assets/images/projects/github-logo.png'
+                    "
                     alt="Project Images"
+                    style="max-height: 100%; width: auto"
                   />
                 </a>
               </div>
               <div class="content">
                 <div class="category-info">
                   <div class="category-list">
-                    <a href="javascript:void(0)">Development</a>
+                    <a href="javascript:void(0)"></a>
                   </div>
-                  <div class="meta">
-                    <span
-                      ><a href="javascript:void(0)"
-                        ><i class="feather-heart"></i
-                      ></a>
-                      600</span
-                    >
+                  <div class="category-list">
+                    <span>
+                      <a
+                        style="text-transform: capitalize"
+                        href="javascript:void(0)"
+                      >
+                        <i class="feather-tag"></i>
+                        {{ getProjectType(item.projectType) }}
+                      </a>
+                    </span>
                   </div>
                 </div>
                 <h4 class="title">
@@ -79,6 +96,7 @@
 
 <script>
 import ProjectPopup from "./ProjectPopup.vue";
+import { ProjectTypeList } from "../enums/project-type";
 
 export default {
   name: "AppProjects",
@@ -94,20 +112,22 @@ export default {
           id: 6,
           name: "Go Service Level Transaction",
           url: "https://github.com/IshmamAbir/Go-Service_Level_Transaction",
-          imgUrl: null,
+          imgUrl: "src/assets/images/projects/github+golang.png",
+          projectType: "OPEN_SOURCE",
           myRole_en: "",
           myRole_ja: "",
           description_en:
             "This project presents a comprehensive approach to managing transactions in the business logic layer of a Go application, ensuring data consistency and integrity during complex operations involving multiple database tables.",
           description_ja:
             "このプロジェクトでは、Go アプリケーションのビジネス ロジック層でトランザクションを管理し、複数のデータベース テーブルが関係する複雑な操作中にデータの一貫性と整合性を確保するための包括的なアプローチを紹介します。",
-          technologyUsed: [""],
+          technologyUsed: ["Golang", "Postgres", "Gorm", "Gorilla/Mux"],
         },
         {
           id: 5,
           name: "Clean Architecture Go",
           url: "https://github.com/IshmamAbir/Clean-Architecture-Go-Postgres",
-          imgUrl: null,
+          imgUrl: "src/assets/images/projects/github+golang.png",
+          projectType: "OPEN_SOURCE",
           myRole_en: "",
           myRole_ja: "",
           description_en:
@@ -129,7 +149,8 @@ export default {
           id: 4,
           name: "Matrix Platform Limited",
           url: "https://matrixapparels.com/",
-          imgUrl: null,
+          imgUrl: "src/assets/images/projects/matrix_apparels.png",
+          projectType: "freelance_work",
           myRole_en:
             "Planning, Requirement Analysis, Designing, Frontend Design, Deployment, Maintenance.",
           myRole_ja:
@@ -151,7 +172,8 @@ export default {
           id: 3,
           name: "Décor Supplier UK",
           url: "https://decorsupplier.co.uk/",
-          imgUrl: null,
+          imgUrl: "src/assets/images/projects/decor_supplier.jpeg",
+          projectType: "freelance_work",
           myRole_en:
             "Planning, Meeting with the client, Requirement Analysis, Designing, Frontend Design & Modification.",
           myRole_ja:
@@ -169,10 +191,32 @@ export default {
           ],
         },
         {
+          id: 7,
+          name: "Weather Web App",
+          url: "https://weather-webapp-kodensya.netlify.app/#/",
+          imgUrl: "src/assets/images/projects/weather-webapp.jpeg",
+          projectType: "personal",
+          myRole_en:
+            "Requirement Analysis, Template Designing, Frontend Development,API Integration, Testing, Deployment.",
+          myRole_ja:
+            "要件分析、テンプレートデザイン、フロントエンド開発、API統合、テスト、展開。",
+          description_en:
+            "This project was the Technical Test for Kodensya.During the interview process, I was asked to build a weather web app using VueJs 3, OpenWeather API to get weather data and show it on the UI. I was responsible for the entire project, from start to deployment.",
+          description_ja:
+            "このプロジェクトは、Kodensyaの技術テストでした。面接の過程で、VueJs 3を使って天気のウェブアプリを作成し、OpenWeather APIを使って天気データを取得し、UIに表示するように指示されました。私はプロジェクトの開始から展開まで、全ての工程を担当しました。",
+          technologyUsed: [
+            "VueJs 3",
+            "OpenWeather API",
+            "Netlify",
+            "Bootstrap",
+          ],
+        },
+        {
           id: 2,
           name: "Spring Security Authentication App",
           url: "https://github.com/IshmamAbir/Authentication-App-Spring-Security",
           imgUrl: null,
+          projectType: "personal",
           myRole_en:
             "Planning, Requirement Analysis, Designing, Backend Development, Frontend Designing, Testing",
           myRole_ja:
@@ -196,7 +240,8 @@ export default {
           id: 1,
           name: "COVID-19 Tracker",
           url: "https://covid19-tracker-31b45.web.app",
-          imgUrl: null,
+          imgUrl: "src/assets/images/projects/covid_tracker.png",
+          projectType: "personal",
           myRole_en:
             "Planning, Requirement Analysis, Designing, Frontend Design, Deployment, Maintenance.",
           myRole_ja: "計画、要件分析、設計、フロントエンドデザイン、展開、保守",
@@ -212,19 +257,31 @@ export default {
             "Web API",
           ],
         },
-        {
-          id: 2,
-          name: "",
-          url: "",
-          imgUrl: null,
-          myRole_en: "",
-          myRole_ja: "",
-          description_en: "",
-          description_ja: "",
-          technologyUsed: [""],
-        },
+        // {
+        //   id: 2,
+        //   name: "",
+        //   url: "",
+        //   imgUrl: null,
+        //   projectType: "",
+        //   myRole_en: "",
+        //   myRole_ja: "",
+        //   description_en: "",
+        //   description_ja: "",
+        //   technologyUsed: [""],
+        // },
       ],
     };
+  },
+  methods: {
+    getProjectType(code) {
+      var projectType = ProjectTypeList.find(
+        (x) => x.code === code.toUpperCase()
+      );
+      // return projectType ? projectType.name : code;
+      return (
+        this.$t(`project_type.${projectType?.name?.toLowerCase()}`) || code
+      );
+    },
   },
 };
 </script>

@@ -26,6 +26,14 @@
     "email": "メール"
   },
   "project": {
-    "project_header": "プロジェクト一覧"
+    "project_header": "プロジェクト一覧",
+    "project_url": "プロジェクト Url"
+  },
+  "project_type": {
+    "open_source": "オープンソース",
+    "professional": "プロフェッショナル",
+    "personal": "個人",
+    "academic": "学術",
+    "freelance_work": "フリーランス"
   }
 }
