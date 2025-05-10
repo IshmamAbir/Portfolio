@@ -25,7 +25,11 @@
                 <div class="image">
                   <img
                     class="w-100"
-                    src="@/assets/images/portfolio/portfolio-04.jpg"
+                    :src="
+                      projectData.imgUrl && projectData.imgUrl !== ''
+                        ? projectData.imgUrl
+                        : 'src/assets/images/projects/github-logo.png'
+                    "
                     alt="slide"
                   />
                 </div>
@@ -35,35 +39,43 @@
             <div class="col-lg-6">
               <div class="text-content">
                 <v-chip
+                  variant="outlined"
+                  color="#ff014f"
+                  size="small"
+                  elevation="2"
                   class="mr-2 mb-4"
                   v-for="item in projectData.technologyUsed"
                 >
                   {{ item }}
                 </v-chip>
                 <h3>
-                  <!-- <span>Featured - Design</span> -->
-                  {{ projectData.name }}
+                  <a :href="projectData.url" target="_blank">
+                    {{ projectData.name }}
+                  </a>
                 </h3>
+                <p
+                  class="mb--30"
+                  v-html="projectData[`description_${$i18n.locale}`]"
+                ></p>
+                <h6  v-if="projectData[`myRole_${$i18n.locale}`] && projectData[`myRole_${$i18n.locale}`] !== ''">My Role & Responsibilities</h6>
+                <p
+                  class="mb--30" v-if="projectData[`myRole_${$i18n.locale}`] && projectData[`myRole_${$i18n.locale}`] !== ''"
+                  v-html="projectData[`myRole_${$i18n.locale}`]"
+                ></p>
+                <h6>Technologies Used</h6>
                 <p class="mb--30">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Cupiditate distinctio assumenda explicabo veniam temporibus
-                  eligendi.
+                  <ul>
+                    <li v-for="item in projectData.technologyUsed">
+                      {{ item }}
+                    </li>
+                  </ul>
                 </p>
                 <p>
-                  Consectetur adipisicing elit. Cupiditate distinctio assumenda.
-                  dolorum alias suscipit rerum maiores aliquam earum odit, nihil
-                  culpa quas iusto hic minus!
+                  {{ $t("project.project_url") }}:
+                  <a :href="projectData.url" target="_blank">
+                    Here <i class="feather-external-link"></i>
+                  </a>
                 </p>
-                <div class="button-group mt--20">
-                  <a href="#" class="rn-btn thumbs-icon">
-                    <span>LIKE THIS</span>
-                    <i data-feather="thumbs-up"></i>
-                  </a>
-                  <a href="#" class="rn-btn">
-                    <span>VIEW PROJECT</span>
-                    <i data-feather="chevron-right"></i>
-                  </a>
-                </div>
               </div>
               <!-- End of .text-content -->
             </div>
@@ -90,3 +102,13 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+p a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+p a:hover {
+  color: var(--color-facebook);
+}
+</style>
