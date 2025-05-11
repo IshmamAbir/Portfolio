@@ -5,7 +5,7 @@
         <div class="col-lg-12">
           <div class="section-title text-center">
             <span class="subtitle">Contact</span>
-            <h2 class="title">Contact With Me</h2>
+            <h2 class="title">{{ $t("contact.contact_header") }}</h2>
           </div>
         </div>
       </div>
@@ -37,17 +37,15 @@
               >
             </div>
             <div class="social-area">
-              <div class="name">FIND ME IN</div>
+              <div class="name">{{ $t("contact.find_me_in") }}</div>
               <div class="social-icone">
-                <a href="mailto:ishmam.cse@gmail.com"
+                <a :href="`mailto:` + contactDetails.email"
                   ><i data-feather="mail"></i
                 ></a>
-                <a
-                  href="https://www.linkedin.com/in/ishmam-abir/"
-                  target="_blank"
+                <a :href="contactDetails.linkedinUrl" target="_blank"
                   ><i data-feather="linkedin"></i
                 ></a>
-                <a href="https://github.com/IshmamAbir" target="_blank"
+                <a :href="contactDetails.githubUrl" target="_blank"
                   ><i data-feather="github"></i
                 ></a>
               </div>
@@ -65,7 +63,9 @@
               >
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="contact-name">Your Name</label>
+                    <label for="contact-name">
+                      {{ $t("contact.your_name") }}
+                    </label>
                     <input
                       class="form-control form-control-lg"
                       name="contact-name"
@@ -77,7 +77,9 @@
 
                 <div class="col-lg-6">
                   <div class="form-group">
-                    <label for="contact-phone">Phone Number</label>
+                    <label for="contact-phone">
+                      {{ $t("contact.phone_number") }}
+                    </label>
                     <input
                       class="form-control"
                       name="contact-phone"
@@ -89,7 +91,7 @@
 
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <label for="contact-email">Email</label>
+                    <label for="contact-email">{{ $t("contact.email") }}</label>
                     <input
                       class="form-control form-control-sm"
                       id="contact-email"
@@ -101,7 +103,7 @@
 
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <label for="subject">subject</label>
+                    <label for="subject">{{ $t("contact.subject") }}</label>
                     <input
                       class="form-control form-control-sm"
                       id="subject"
@@ -113,7 +115,9 @@
 
                 <div class="col-lg-12">
                   <div class="form-group">
-                    <label for="contact-message">Your Message</label>
+                    <label for="contact-message">
+                      {{ $t("contact.your_message") }}
+                    </label>
                     <textarea
                       name="contact-message"
                       id="contact-message"
@@ -130,7 +134,7 @@
                     id="submit"
                     class="rn-btn"
                   >
-                    <span>SEND MESSAGE</span>
+                    <span>{{ $t("contact.send_message").toUpperCase() }}</span>
                     <i data-feather="arrow-right"></i>
                   </button>
                 </div>
@@ -152,6 +156,8 @@ export default {
         fullName: "Ishmam Abir Chowdhury",
         designation: "Software Development Engineer",
         email: "ishmam.cse@gmail.com",
+        linkedinUrl: "https://www.linkedin.com/in/ishmam-abir/",
+        githubUrl: "https://github.com/IshmamAbir",
         contactText_en:
           "Feel free to connect with me via email or through my social media channels to learn more about me.",
         contactText_ja:

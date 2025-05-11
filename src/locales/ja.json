@@ -5,10 +5,11 @@
   "header": {
     "home": "ホーム",
     "education": "学歴",
-    "contacts": "Contacts",
+    "contact": "お問い合わせ",
     "experience": "実務経験",
     "projects": "プロジェクト",
-    "skill": "スキル & 実績"
+    "skill": "スキル & 実績",
+    "find_me_in": "検索先"
   },
   "education": {
     "education_header": "学歴"
@@ -23,7 +24,14 @@
     "experience_header": "実務経験"
   },
   "contact": {
-    "email": "メール"
+    "contact_header": "お問い合わせ",
+    "email": "メール",
+    "subject": "件名",
+    "your_message": "メッセージ",
+    "send_message": "メッセージを送信",
+    "phone_number": "電話番号",
+    "your_name": "お名前",
+    "find_me_in": "検索先"
   },
   "project": {
     "project_header": "プロジェクト一覧",

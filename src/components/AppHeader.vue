@@ -64,88 +64,21 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#features">
-              <!-- <vue-feather type="briefcase" /> -->
-              <i data-feather="briefcase"></i>
-              Features
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#portfolio">
-              <!-- <vue-feather type="layers" /> -->
-              <i data-feather="layers"></i>
-              Portfolio
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#resume">
-              <!-- <vue-feather type="users" /> -->
-              <i data-feather="users"></i>
-              Resume
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#clients">
-              <!-- <vue-feather type="user" /> -->
-              <i data-feather="user"></i>
-              Clients
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#pricing">
-              <!-- <vue-feather type="shopping-cart" /> -->
-              <i data-feather="shopping-cart"></i>
-              Pricing
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#blog">
-              <!-- <vue-feather type="image" /> -->
-              <i data-feather="image"></i>
-              blog
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#contacts">
               <!-- <vue-feather type="message-circle" /> -->
               <i data-feather="message-circle"></i>
-              Contact
+              {{ $t("header.contact") }}
             </a>
           </li>
         </ul>
       </nav>
       <div class="footer">
         <div class="social-share-style-1">
-          <span class="title">find with me</span>
+          <span class="title">{{ $t("header.find_me_in") }}</span>
           <ul class="social-share d-flex liststyle">
-            <li class="github">
-              <a href="#">
-                <i data-feather="github"></i>
-              </a>
-            </li>
-            <li class="mail">
-              <a href="#">
-                <i data-feather="mail"></i>
-              </a>
-            </li>
-            <li class="linkedin">
-              <a href="#">
-                <i data-feather="linkedin"></i>
-              </a>
-            </li>
-            <li class="facebook">
-              <a href="#">
-                <i data-feather="facebook"></i>
-              </a>
-            </li>
-            <li class="youtube">
-              <a href="#">
-                <i data-feather="youtube"></i>
-              </a>
-            </li>
-            <li class="instagram">
-              <a href="#">
-                <i data-feather="instagram"></i>
+            <li v-for="item in socialList" :key="item" :class="item.class">
+              <a :href="item.url" target="_blank">
+                <i :data-feather="item.icon" />
               </a>
             </li>
           </ul>
@@ -159,11 +92,11 @@
   <div class="header-style-2 d-block d-lg-none">
     <div class="row align-items-center">
       <div class="col-6">
-        <div class="logo">
+        <!-- <div class="logo">
           <a href="#home">
             <img src="@/assets/images/logo/logo-dark.png" alt="Logo" />
           </a>
-        </div>
+        </div> -->
       </div>
       <div class="col-6">
         <div class="header-right text-right">
@@ -227,29 +160,9 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#features"
-              >Features</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#portfolio"
-              >Portfolio</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#resume">Resume</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#clients">Clients</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#pricing">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#blog">blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#contacts">Contact</a>
+            <a class="nav-link smoth-animation-two" href="#contacts">
+              {{ $t("header.contact") }}
+            </a>
           </li>
         </ul>
         <!-- social sharea area -->
@@ -337,13 +250,30 @@ export default {
   data() {
     return {
       langValue: navigator.languages[0].split("-")[0],
-      socialIcons: [
-        { class: "", href: "", icon: "" },
-        { class: "", href: "", icon: "" },
-        { class: "", href: "", icon: "" },
-        { class: "", href: "", icon: "" },
-        { class: "", href: "", icon: "" },
-        { class: "", href: "", icon: "" },
+      // search social icons at https://feathericons.com/
+      socialList: [
+        {
+          class: "github",
+          url: "https://github.com/IshmamAbir",
+          icon: "github",
+        },
+        { class: "mail", url: "mailto:ishmam.cse@gmail.com", icon: "mail" },
+        {
+          class: "linkedin",
+          url: "https://www.linkedin.com/in/ishmam-abir/",
+          icon: "linkedin",
+        },
+        {
+          class: "youtube",
+          url: "https://www.youtube.com/@ishmam_abir",
+          icon: "youtube",
+        },
+        { class: "dev.to", url: "https://dev.to/ishmam_abir", icon: "pocket" },
+        {
+          class: "instagram",
+          url: "https://www.instagram.com/ishmam.abir",
+          icon: "instagram",
+        },
       ],
     };
   },

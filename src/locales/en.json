@@ -5,10 +5,11 @@
   "header": {
     "home": "Home",
     "education": "Education",
-    "contacts": "Contacts",
+    "contact": "Contacts",
     "experience": "Experience",
     "projects": "Projects",
-    "skill": "Skills & Achievements"
+    "skill": "Skills & Achievements",
+    "find_me_in": "Find Me In"
   },
   "education": {
     "education_header": "Educational Qualification"
@@ -23,7 +24,14 @@
     "experience_header": "Work Experience"
   },
   "contact": {
-    "email": "E-mail"
+    "contact_header": "Contact With Me",
+    "email": "E-mail",
+    "subject": "Subject",
+    "your_message": "Your Message",
+    "send_message": "Send Message",
+    "phone_number": "Phone Number",
+    "your_name": "Your Name",
+    "find_me_in": "Find Me In"
   },
   "project": {
     "project_header": "My Projects",

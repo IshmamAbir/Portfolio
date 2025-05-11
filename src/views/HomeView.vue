@@ -15,34 +15,8 @@
     <!-- Start Project Area  -->
     <app-projects />
 
-    <!-- Start Service Area -->
-    <app-service-area />
-
-    <!-- Start Portfolio Area -->
-    <app-portfolio />
-
-    <!-- Start Resume Area -->
-    <app-resume />
-
-    <!-- Start Client Area -->
-    <app-client />
-
-    <!-- Pricing Area -->
-    <app-pricing-area />
-
-    <!-- Start News Area -->
-    <app-blog />
-    <!-- ENd Mews Area -->
-
     <!-- Start Contact section -->
     <app-contact />
-
-    <!-- modal area -->
-    <!-- Modal Portfolio Body area Start -->
-    <single-portfolio />
-
-    <!-- Modal Blog Body area Start -->
-    <single-blog />
 
     <!-- Back to  top Start -->
     <div class="backto-top">
@@ -60,15 +34,7 @@ import { defineComponent } from "vue";
 
 // Components
 import AppSlider from "@/components/AppSlider.vue";
-import AppServiceArea from "@/components/AppServiceArea.vue";
-import AppPortfolio from "@/components/AppPortfolio.vue";
-import AppResume from "@/components/AppResume.vue";
 import AppContact from "@/components/AppContact.vue";
-import AppClient from "@/components/AppClient.vue";
-import AppPricingArea from "@/components/AppPricingArea.vue";
-import SinglePortfolio from "@/components/SinglePortfolio.vue";
-import SingleBlog from "@/components/SingleBlog.vue";
-import AppBlog from "@/components/AppBlog.vue";
 import AppEducation from "@/components/AppEducation.vue";
 import AppSkillsCertificationAchievements from "@/components/AppSkillsCertificationAchievements.vue";
 import AppJobExperience from "@/components/AppJobExperience.vue";
@@ -78,15 +44,7 @@ export default defineComponent({
   name: "HomeView",
   components: {
     AppSlider,
-    AppServiceArea,
-    AppPortfolio,
-    AppResume,
     AppContact,
-    AppPricingArea,
-    AppClient,
-    SinglePortfolio,
-    SingleBlog,
-    AppBlog,
     AppEducation,
     AppSkillsCertificationAchievements,
     AppJobExperience,
