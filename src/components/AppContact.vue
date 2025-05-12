@@ -13,10 +13,7 @@
         <div class="col-lg-5">
           <div class="contact-about-area">
             <div class="thumbnail">
-              <img
-                src="@/assets/images/contact/bottom_image.jpg"
-                alt="contact-img"
-              />
+              <img :src="contactDetails.bottomImage" alt="contact-img" />
             </div>
             <div class="title-area">
               <h4 class="title">{{ contactDetails.fullName.toUpperCase() }}</h4>
@@ -154,6 +151,7 @@ export default {
     return {
       contactDetails: {
         fullName: "Ishmam Abir Chowdhury",
+        bottomImage: "files/contact/bottom_image.jpg",
         designation: "Software Development Engineer",
         email: "ishmam.cse@gmail.com",
         linkedinUrl: "https://www.linkedin.com/in/ishmam-abir/",

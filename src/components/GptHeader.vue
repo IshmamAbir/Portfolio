@@ -3,7 +3,7 @@
     <v-app-bar app color="transparent" dense>
       <v-toolbar-title>
         <a href="#home">
-          <v-img src="@/assets/images/ishmam.jpeg" alt="personal-logo" />
+          <v-img :src="centerImage" alt="personal-logo" />
         </a>
       </v-toolbar-title>
 
@@ -81,6 +81,7 @@ export default {
   data() {
     return {
       drawer: false,
+      centerImage: "files/ishmam.jpeg",
       menuItems: [
         { title: "Home", icon: "mdi-home", link: "#home", active: true },
         {

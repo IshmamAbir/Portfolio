@@ -52,7 +52,7 @@
                     :src="
                       item.imgUrl && item.imgUrl !== ''
                         ? item.imgUrl
-                        : 'src/assets/images/projects/github-logo.png'
+                        : 'files/projects/github-logo.png'
                     "
                     alt="Project Images"
                     style="max-height: 100%; width: auto"
@@ -112,7 +112,7 @@ export default {
           id: 6,
           name: "Go Service Level Transaction",
           url: "https://github.com/IshmamAbir/Go-Service_Level_Transaction",
-          imgUrl: "src/assets/images/projects/github+golang.png",
+          imgUrl: "files/projects/github+golang.png",
           projectType: "OPEN_SOURCE",
           myRole_en: "",
           myRole_ja: "",
@@ -126,7 +126,7 @@ export default {
           id: 5,
           name: "Clean Architecture Go",
           url: "https://github.com/IshmamAbir/Clean-Architecture-Go-Postgres",
-          imgUrl: "src/assets/images/projects/github+golang.png",
+          imgUrl: "files/projects/github+golang.png",
           projectType: "OPEN_SOURCE",
           myRole_en: "",
           myRole_ja: "",
@@ -149,7 +149,7 @@ export default {
           id: 4,
           name: "Matrix Platform Limited",
           url: "https://matrixapparels.com/",
-          imgUrl: "src/assets/images/projects/matrix_apparels.png",
+          imgUrl: "files/projects/matrix_apparels.png",
           projectType: "freelance_work",
           myRole_en:
             "Planning, Requirement Analysis, Designing, Frontend Design, Deployment, Maintenance.",
@@ -172,7 +172,7 @@ export default {
           id: 3,
           name: "Décor Supplier UK",
           url: "https://decorsupplier.co.uk/",
-          imgUrl: "src/assets/images/projects/decor_supplier.jpeg",
+          imgUrl: "files/projects/decor_supplier.jpeg",
           projectType: "freelance_work",
           myRole_en:
             "Planning, Meeting with the client, Requirement Analysis, Designing, Frontend Design & Modification.",
@@ -194,7 +194,7 @@ export default {
           id: 7,
           name: "Weather Web App",
           url: "https://weather-webapp-kodensya.netlify.app/#/",
-          imgUrl: "src/assets/images/projects/weather-webapp.jpeg",
+          imgUrl: "files/projects/weather-webapp.jpeg",
           projectType: "personal",
           myRole_en:
             "Requirement Analysis, Template Designing, Frontend Development,API Integration, Testing, Deployment.",
@@ -240,7 +240,7 @@ export default {
           id: 1,
           name: "COVID-19 Tracker",
           url: "https://covid19-tracker-31b45.web.app",
-          imgUrl: "src/assets/images/projects/covid_tracker.png",
+          imgUrl: "files/projects/covid_tracker.png",
           projectType: "personal",
           myRole_en:
             "Planning, Requirement Analysis, Designing, Frontend Design, Deployment, Maintenance.",

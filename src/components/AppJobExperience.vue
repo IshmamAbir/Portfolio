@@ -400,7 +400,7 @@ export default {
               </li>
             </ul>
             `,
-          imgUrl: "src/assets/images/company/Brain-Station-23.jpg",
+          imgUrl: "files/company/Brain-Station-23.jpg",
         },
         {
           id: 3,
@@ -490,7 +490,7 @@ export default {
               </li>
             </ul>
             `,
-          imgUrl: "src/assets/images/company/Brain-Station-23.jpg",
+          imgUrl: "files/company/Brain-Station-23.jpg",
         },
         {
           id: 4,

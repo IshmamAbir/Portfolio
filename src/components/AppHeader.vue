@@ -6,7 +6,7 @@
     >
       <div class="logo-area">
         <a href="#home">
-          <img src="@/assets/images/ishmam_pic.jpg" alt="personal-logo" />
+          <img :src="sidebarImage" alt="personal-logo" />
         </a>
       </div>
       <nav id="sideNavs" class="mainmenu-nav navbar-example2">
@@ -249,6 +249,7 @@ export default {
   },
   data() {
     return {
+      sidebarImage: "files/ishmam_sidebar.jpg",
       langValue: navigator.languages[0].split("-")[0],
       // search social icons at https://feathericons.com/
       socialList: [

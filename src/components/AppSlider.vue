@@ -2,7 +2,7 @@
   <section
     id="home"
     class="slider-style-5 rn-section-gap pb--110 align-items-center with-particles bg_image"
-    style="background-image: url('src/assets/images/bg-cover.jpg')"
+    :style="'background-image: url(' + backgroundImage + ')'"
     data-black-overlay="7"
   >
     <div id="particles-js"></div>
@@ -14,7 +14,7 @@
               <img
                 id="border"
                 class="gradient-border"
-                src="@/assets/images/ishmam.jpeg"
+                :src="centerImage"
                 alt=""
               />
             </div>
@@ -71,6 +71,8 @@ export default {
   },
   data() {
     return {
+      backgroundImage: "files/bg-cover.jpg",
+      centerImage: "files/ishmam.jpeg",
       fullName: "ISHMAM ABIR CHOWDHURY",
       typingText: {
         strings: [
