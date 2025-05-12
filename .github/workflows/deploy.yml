@@ -50,7 +50,7 @@ jobs:
           git config --global user.name "${{ github.actor }}"
           git init
           cd dist
-          git add .
+          git add -f -A
           git commit -m 'deploy'
           git push -f https://${{ github.actor }}:${{ secrets.GH_TOKEN }}@github.com/${{ github.repository }}.git master:gh-pages
         shell: bash
