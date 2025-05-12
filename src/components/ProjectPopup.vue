@@ -28,7 +28,7 @@
                     :src="
                       projectData.imgUrl && projectData.imgUrl !== ''
                         ? projectData.imgUrl
-                        : 'src/assets/images/projects/github-logo.png'
+                        : 'files/projects/github-logo.png'
                     "
                     alt="slide"
                   />
