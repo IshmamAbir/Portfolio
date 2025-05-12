@@ -7,23 +7,37 @@ on:
       - ft-deploy
 
 jobs:
-  deploy-project:
+  build_vue:
     runs-on: ubuntu-latest
-
+    name: Build Vue
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v2
+      - id: Build-Vue
+        uses: xRealNeon/VuePagesAction@1.0.1
         with:
-          node-version: "latest"
+          username: "IshmamAbir"
+          reponame: "Portfolio"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          gitemail: "ishmam130@gmail.com"
+          gitname: "Ishmam Abir"
+# jobs:
+#   deploy-project:
+#     runs-on: ubuntu-latest
 
-      - name: Install dependencies
-        run: npm install
+#     steps:
+#       - name: Checkout code
+#         uses: actions/checkout@v2
 
-      - name: Build the project
-        run: npm run build
+#       - name: Set up Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: "latest"
 
-      - name: Deploy to GitHub Pages
-        run: npm run deploy
+#       - name: Install dependencies
+#         run: npm install
+
+#       - name: Build the project
+#         run: npm run build
+
+#       - name: Deploy to GitHub Pages
+#         run: npm run deploy
