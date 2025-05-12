@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - ft-deploy
 
 jobs:
   build_vue:
