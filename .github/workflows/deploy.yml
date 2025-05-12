@@ -3,7 +3,7 @@ name: Deploy Vue.js Project to GitHub Pages
 on:
   push:
     branches:
-      - update-deploy-action
+      - main
 
 jobs:
   deploy-project:
