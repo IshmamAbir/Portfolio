@@ -3,22 +3,7 @@ name: Deploy Vue.js Project to GitHub Pages
 on:
   push:
     branches:
-      - update-deploy-action
-
-# jobs:
-#   build_vue:
-#     runs-on: ubuntu-latest
-#     name: Build Vue
-#     steps:
-#       - uses: actions/checkout@v2
-#       - id: Build-Vue
-#         uses: xRealNeon/VuePagesAction@1.0.1
-#         with:
-#           username: "IshmamAbir"
-#           reponame: "Portfolio"
-#           token: ${{ secrets.GH_TOKEN }}
-#           gitemail: "ishmam130@gmail.com"
-#           gitname: "Ishmam Abir"
+      - main
 
 jobs:
   deploy-project:
