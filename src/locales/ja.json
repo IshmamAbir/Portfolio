@@ -9,7 +9,8 @@
     "experience": "実務経験",
     "projects": "プロジェクト",
     "skill": "スキル & 実績",
-    "find_me_in": "検索先"
+    "find_me_in": "検索先",
+    "blog": "記事"
   },
   "education": {
     "education_header": "学歴"
@@ -43,5 +44,9 @@
     "personal": "個人",
     "academic": "学術",
     "freelance_work": "フリーランス"
+  },
+  "blog": {
+    "blog_header": "ブログ記事一覧",
+    "min_read": "分で読む"
   }
 }
