@@ -16,6 +16,7 @@
               ><v-icon class="pr-2">mdi-translate</v-icon>
               {{ langValue === "en" ? "English" : "日本語" }}
               <Toggle
+                size="default"
                 class="z-index-1 ml-3 toggle-on-color toggle-off-color"
                 on-label="EN"
                 off-label="JA"
@@ -51,7 +52,7 @@
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#skills">
               <!-- <vue-feather type="layers" /> -->
-              <i data-feather="layers"></i>
+              <i data-feather="award"></i>
               {{ $t("header.skill") }}
             </a>
           </li>
