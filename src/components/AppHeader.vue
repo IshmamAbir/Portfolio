@@ -62,6 +62,13 @@
               {{ $t("header.projects") }}
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link smoth-animation-two" href="#blog">
+              <!-- <vue-feather type="layers" /> -->
+              <i data-feather="edit"></i>
+              {{ $t("header.blog") }}
+            </a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#contacts">
@@ -156,6 +163,11 @@
           <li class="nav-item">
             <a class="nav-link smoth-animation-two" href="#project">
               {{ $t("header.projects") }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link smoth-animation-two" href="#blog">
+              {{ $t("header.blog") }}
             </a>
           </li>
 

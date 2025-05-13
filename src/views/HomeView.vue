@@ -15,6 +15,9 @@
     <!-- Start Project Area  -->
     <app-projects />
 
+    <!-- Start Blog Area  -->
+    <app-blog />
+
     <!-- Start Contact section -->
     <app-contact />
 
@@ -39,6 +42,7 @@ import AppEducation from "@/components/AppEducation.vue";
 import AppSkillsCertificationAchievements from "@/components/AppSkillsCertificationAchievements.vue";
 import AppJobExperience from "@/components/AppJobExperience.vue";
 import AppProjects from "@/components/AppProjects.vue";
+import AppBlog from "@/components/AppBlog.vue";
 
 export default defineComponent({
   name: "HomeView",
@@ -49,6 +53,7 @@ export default defineComponent({
     AppSkillsCertificationAchievements,
     AppJobExperience,
     AppProjects,
+    AppBlog,
   },
   data() {
     return {

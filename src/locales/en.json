@@ -9,7 +9,8 @@
     "experience": "Experience",
     "projects": "Projects",
     "skill": "Skills & Achievements",
-    "find_me_in": "Find Me In"
+    "find_me_in": "Find Me In",
+    "blog": "Articles"
   },
   "education": {
     "education_header": "Educational Qualification"
@@ -43,5 +44,9 @@
     "personal": "Personal Project",
     "academic": "Academic Project",
     "freelance_work": "Freelance Work"
+  },
+  "blog": {
+    "blog_header": "Blog Articles",
+    "min_read": "min read"
   }
 }
