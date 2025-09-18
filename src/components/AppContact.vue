@@ -16,7 +16,9 @@
               <img :src="contactDetails.bottomImage" alt="contact-img" />
             </div>
             <div class="title-area">
-              <h4 class="title">{{ contactDetails.fullName.toUpperCase() }}</h4>
+              <h4 class="title" v-if="contactDetails.fullName">
+                {{ contactDetails.fullName.toUpperCase() }}
+              </h4>
               <span>Software Development Engineer</span>
             </div>
             <div class="description">
@@ -145,14 +147,16 @@
 </template>
 
 <script>
+import { PortfolioService } from "../services/portfolio.service";
+
 export default {
   name: "AppContact",
   data() {
     return {
       contactDetails: {
-        fullName: "Ishmam Abir Chowdhury",
-        bottomImage: "files/contact/bottom_image.jpg",
-        designation: "Software Development Engineer",
+        fullName: null,
+        bottomImage: null,
+        designation: null,
         email: "ishmam.cse@gmail.com",
         linkedinUrl: "https://www.linkedin.com/in/ishmam-abir/",
         githubUrl: "https://github.com/IshmamAbir",
@@ -162,6 +166,15 @@ export default {
           "メールや各種ソーシャルメディアを通じて、お気軽にご連絡ください。私について詳しく知っていただけます。",
       },
     };
+  },
+
+  async created() {
+    const userData = await PortfolioService.getUserInfo();
+
+    this.contactDetails.fullName = userData.getLocalizedProperty("fullName");
+    this.bottomImage = userData.bottomImage;
+    this.designation = userData.getLocalizedProperty("designation");
+    this.email = userData.email;
   },
 };
 </script>

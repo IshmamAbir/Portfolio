@@ -14,9 +14,7 @@
             </div> -->
             <p class="description mt--30">
               © {{ new Date().getFullYear() }}. All rights reserved by
-              <a target="_blank" href="https://www.linkedin.com/in/ishmam-abir/"
-                >Ishmam Abir Chowdhury.</a
-              >
+              <a target="_blank" :href="primaryContactUrl"> {{ fullname }}. </a>
             </p>
           </div>
         </div>
@@ -26,7 +24,24 @@
 </template>
 
 <script>
+import { PortfolioService } from "../services/portfolio.service";
+
 export default {
   name: "AppFooter",
+  data() {
+    return {
+      fullname: null,
+      primaryContactUrl: null,
+    };
+  },
+
+  async created() {
+    const userData = await PortfolioService.getUserInfo();
+    this.fullname = userData.getLocalizedProperty("fullName");
+
+    const socials = await PortfolioService.getSocialMediaItems();
+    let primaryContact = socials.find((item) => item.primaryContact);
+    this.primaryContactUrl = primaryContact.url;
+  },
 };
 </script>

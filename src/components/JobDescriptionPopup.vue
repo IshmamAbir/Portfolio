@@ -26,10 +26,10 @@
 
         <div class="modal-body">
           <img
-            v-if="companyData.imgUrl"
+            v-if="companyData.imageUrl"
             alt="news modal"
             class="img-fluid modal-feat-img"
-            :src="companyData.imgUrl"
+            :src="companyData.imageUrl"
           />
           <div class="news-details">
             <span v-if="companyData.endTime === null" class="date">
@@ -41,7 +41,7 @@
 
             <span class="date">
               <i class="feather feather-map-pin"></i>
-              {{ companyData.companyLocation }}
+              {{ companyData.getLocalizedProperty("companyLocation") }}
             </span>
 
             <h2 class="title">
@@ -51,7 +51,7 @@
               }}</a>
             </h2>
             <!-- {{ companyData[`description_${$i18n.locale}`] }} -->
-            <div v-html="companyData[`description_${$i18n.locale}`]"></div>
+            <div v-html="companyData.getLocalizedProperty('description')"></div>
 
             <!-- <h4>Job Description</h4>
             <p>
@@ -71,6 +71,8 @@
 </template>
 
 <script>
+import { ExperienceClass } from "../model/experience.model";
+
 export default {
   name: "JobDescriptionPopup",
   mounted() {
@@ -79,7 +81,7 @@ export default {
   },
   props: {
     companyData: {
-      type: Object,
+      type: ExperienceClass,
       required: true,
     },
     itemId: {

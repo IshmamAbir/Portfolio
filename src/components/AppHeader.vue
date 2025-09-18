@@ -254,6 +254,7 @@
 <script>
 import Toggle from "@vueform/toggle";
 import "@vueform/toggle/themes/default.css";
+import { PortfolioService } from "../services/portfolio.service";
 
 export default {
   name: "AppHeader",
@@ -262,7 +263,7 @@ export default {
   },
   data() {
     return {
-      sidebarImage: "files/ishmam_sidebar.jpg",
+      sidebarImage: null,
       langValue: navigator.languages[0].split("-")[0],
       // search social icons at https://feathericons.com/
       socialList: [
@@ -295,6 +296,11 @@ export default {
     changeLanguage(lang) {
       this.$i18n.locale = lang;
     },
+  },
+
+  async created() {
+    const userData = await PortfolioService.getUserInfo();
+    this.sidebarImage = userData.sidebarImage;
   },
 };
 </script>

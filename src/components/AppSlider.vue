@@ -63,6 +63,7 @@
 </template>
 <script>
 import { Typed } from "@duskmoon/vue3-typed-js";
+import { userData } from "../data/portfolio.data";
 
 export default {
   name: "AppSlider",
@@ -75,13 +76,14 @@ export default {
       centerImage: "files/ishmam.jpeg",
       fullName: "ISHMAM ABIR CHOWDHURY",
       typingText: {
-        strings: [
-          "Software Engineer",
-          "Web Developer",
-          "Open Source Contributor",
-          "Photographer ",
-          "Videographer",
-        ],
+        strings: userData.banner_designation[this.$i18n.locale],
+        // strings: [
+        //   "Software Engineer",
+        //   "Web Developer",
+        //   "Open Source Contributor",
+        //   "Photographer ",
+        //   "Videographer",
+        // ],
         loop: true,
         typeSpeed: 35,
         smartBackspace: true,
