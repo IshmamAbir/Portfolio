@@ -37,7 +37,7 @@
                 <b class="is-hidden"> Web Developer.</b>
                 <b class="is-hidden"> Photographer & Videographer.</b>
                 <b class="is-hidden"> Fighter.</b> -->
-                <Typed :options="typingText">
+                <Typed :options="typingText" :key="$i18n.locale">
                   <div class="typing text-danger"></div>
                 </Typed>
               </span>
@@ -75,17 +75,12 @@ export default {
   components: {
     Typed,
   },
-  data() {
-    return {
-      typingText: {
+
+  computed: {
+    ...mapState(useUserStore, ["user"]),
+    typingText() {
+      return {
         strings: userData.banner_designation[this.$i18n.locale],
-        // strings: [
-        //   "Software Engineer",
-        //   "Web Developer",
-        //   "Open Source Contributor",
-        //   "Photographer ",
-        //   "Videographer",
-        // ],
         loop: true,
         typeSpeed: 35,
         smartBackspace: true,
@@ -93,12 +88,8 @@ export default {
         showCursor: false,
         backSpeed: 45,
         autoInsertCss: true,
-      },
-    };
-  },
-
-  computed: {
-    ...mapState(useUserStore, ["user"]),
+      };
+    },
   },
 };
 </script>
