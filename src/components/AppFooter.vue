@@ -12,9 +12,15 @@
                 />
               </a>
             </div> -->
-            <p class="description mt--30">
+            <p class="description mt--30" v-if="user">
               © {{ new Date().getFullYear() }}. All rights reserved by
-              <a target="_blank" :href="primaryContactUrl"> {{ fullname }}. </a>
+              <a
+                target="_blank"
+                :href="primaryContactUrl"
+                v-if="user.getLocalizedProperty('fullName')"
+              >
+                {{ user.fullname }}.
+              </a>
             </p>
           </div>
         </div>
@@ -24,21 +30,23 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
 import { PortfolioService } from "../services/portfolio.service";
+import { useUserStore } from "../stores/user.store";
 
 export default {
   name: "AppFooter",
   data() {
     return {
-      fullname: null,
       primaryContactUrl: null,
     };
   },
 
-  async created() {
-    const userData = await PortfolioService.getUserInfo();
-    this.fullname = userData.getLocalizedProperty("fullName");
+  computed: {
+    ...mapState(useUserStore, ["user"]),
+  },
 
+  async created() {
     const socials = await PortfolioService.getSocialMediaItems();
     let primaryContact = socials.find((item) => item.primaryContact);
     this.primaryContactUrl = primaryContact.url;

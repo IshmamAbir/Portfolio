@@ -1,8 +1,9 @@
 <template>
   <section
     id="home"
+    v-if="user"
     class="slider-style-5 rn-section-gap pb--110 align-items-center with-particles bg_image"
-    :style="'background-image: url(' + backgroundImage + ')'"
+    :style="'background-image: url(' + user.backgroundImage + ')'"
     data-black-overlay="7"
   >
     <div id="particles-js"></div>
@@ -14,12 +15,14 @@
               <img
                 id="border"
                 class="gradient-border"
-                :src="centerImage"
+                :src="user.centerImage"
                 alt=""
               />
             </div>
             <!-- TODO:// Name from DB -->
-            <h1 class="text-light">{{ fullName }}</h1>
+            <h1 class="text-light">
+              {{ user.getLocalizedProperty("fullName") }}
+            </h1>
             <!-- type headline start-->
             <span class="cd-headline clip is-full-width">
               <span class="text-light">I am a &ensp;</span>
@@ -64,6 +67,8 @@
 <script>
 import { Typed } from "@duskmoon/vue3-typed-js";
 import { userData } from "../data/portfolio.data";
+import { mapState } from "pinia";
+import { useUserStore } from "../stores/user.store";
 
 export default {
   name: "AppSlider",
@@ -72,9 +77,6 @@ export default {
   },
   data() {
     return {
-      backgroundImage: "files/bg-cover.jpg",
-      centerImage: "files/ishmam.jpeg",
-      fullName: "ISHMAM ABIR CHOWDHURY",
       typingText: {
         strings: userData.banner_designation[this.$i18n.locale],
         // strings: [
@@ -93,6 +95,10 @@ export default {
         autoInsertCss: true,
       },
     };
+  },
+
+  computed: {
+    ...mapState(useUserStore, ["user"]),
   },
 };
 </script>

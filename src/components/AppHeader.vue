@@ -6,7 +6,11 @@
     >
       <div class="logo-area">
         <a href="#home">
-          <img :src="sidebarImage" alt="personal-logo" />
+          <img
+            v-if="user && user.sidebarImage"
+            :src="user.sidebarImage"
+            alt="personal-logo"
+          />
         </a>
       </div>
       <nav id="sideNavs" class="mainmenu-nav navbar-example2">
@@ -84,7 +88,11 @@
         <div class="social-share-style-1">
           <span class="title">{{ $t("header.find_me_in") }}</span>
           <ul class="social-share d-flex liststyle">
-            <li v-for="item in socialList" :key="item" :class="item.class">
+            <li
+              v-for="item in socialList"
+              :key="item"
+              :class="item.class.toLowerCase()"
+            >
               <a :href="item.url" target="_blank">
                 <i :data-feather="item.icon" />
               </a>
@@ -255,6 +263,8 @@
 import Toggle from "@vueform/toggle";
 import "@vueform/toggle/themes/default.css";
 import { PortfolioService } from "../services/portfolio.service";
+import { mapState } from "pinia";
+import { useUserStore } from "../stores/user.store";
 
 export default {
   name: "AppHeader",
@@ -263,7 +273,6 @@ export default {
   },
   data() {
     return {
-      sidebarImage: null,
       langValue: navigator.languages[0].split("-")[0],
       // search social icons at https://feathericons.com/
       socialList: [
@@ -292,16 +301,21 @@ export default {
       ],
     };
   },
+
+  computed: {
+    ...mapState(useUserStore, ["user"]),
+  },
+
   methods: {
     changeLanguage(lang) {
       this.$i18n.locale = lang;
     },
   },
 
-  async created() {
-    const userData = await PortfolioService.getUserInfo();
-    this.sidebarImage = userData.sidebarImage;
-  },
+  // async created() {
+  //   const socials = await PortfolioService.getSocialMediaItems();
+  //   this.socialList = socials;
+  // },
 };
 </script>
 

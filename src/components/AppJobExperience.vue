@@ -93,7 +93,7 @@ export default {
   data() {
     return {
       itemId:'',
-      companyData: {},
+      companyData: null,
       timeline: [],
     };
   },

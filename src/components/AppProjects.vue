@@ -107,12 +107,13 @@ export default {
   data() {
     return {
       projectId: "",
-      projectData: {},
+      projectData: null,
       projectList: [],
     };
   },
   methods: {
     getProjectType(code) {
+      if (!code) return "";
       var projectType = ProjectTypeList.find(
         (x) => x.code === code.toUpperCase()
       );

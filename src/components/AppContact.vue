@@ -13,11 +13,11 @@
         <div class="col-lg-5">
           <div class="contact-about-area">
             <div class="thumbnail">
-              <img :src="contactDetails.bottomImage" alt="contact-img" />
+              <img :src="user.bottomImage" alt="contact-img" />
             </div>
             <div class="title-area">
-              <h4 class="title" v-if="contactDetails.fullName">
-                {{ contactDetails.fullName.toUpperCase() }}
+              <h4 class="title" v-if="user.getLocalizedProperty('fullName')">
+                {{ user.getLocalizedProperty("fullName") }}
               </h4>
               <span>Software Development Engineer</span>
             </div>
@@ -30,15 +30,13 @@
               > -->
               <span class="mail"
                 >{{ $t("contact.email") }}:
-                <a :href="`mailto:` + contactDetails.email">{{
-                  contactDetails.email
-                }}</a></span
+                <a :href="`mailto:` + user.email">{{ user.email }}</a></span
               >
             </div>
             <div class="social-area">
               <div class="name">{{ $t("contact.find_me_in") }}</div>
               <div class="social-icone">
-                <a :href="`mailto:` + contactDetails.email"
+                <a :href="`mailto:` + user.email"
                   ><i data-feather="mail"></i
                 ></a>
                 <a :href="contactDetails.linkedinUrl" target="_blank"
@@ -147,17 +145,15 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
 import { PortfolioService } from "../services/portfolio.service";
+import { useUserStore } from "../stores/user.store";
 
 export default {
   name: "AppContact",
   data() {
     return {
       contactDetails: {
-        fullName: null,
-        bottomImage: null,
-        designation: null,
-        email: "ishmam.cse@gmail.com",
         linkedinUrl: "https://www.linkedin.com/in/ishmam-abir/",
         githubUrl: "https://github.com/IshmamAbir",
         contactText_en:
@@ -168,13 +164,8 @@ export default {
     };
   },
 
-  async created() {
-    const userData = await PortfolioService.getUserInfo();
-
-    this.contactDetails.fullName = userData.getLocalizedProperty("fullName");
-    this.bottomImage = userData.bottomImage;
-    this.designation = userData.getLocalizedProperty("designation");
-    this.email = userData.email;
+  computed: {
+    ...mapState(useUserStore, ["user"]),
   },
 };
 </script>
