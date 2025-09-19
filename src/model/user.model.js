@@ -41,10 +41,11 @@ export class UserInfoClass extends BaseModel {
     this.sidebarImage = data.sidebar_image;
     this.bottomImage = data.bottom_image;
     this.fullName = {
-      en:
+      en: (
         data.first_name_en +
         (data.middle_name_en ? " " + data.middle_name_en + " " : " ") +
-        data.last_name_en,
+        data.last_name_en
+      ).toUpperCase(),
       ja:
         data.last_name_ja +
         "　" +
