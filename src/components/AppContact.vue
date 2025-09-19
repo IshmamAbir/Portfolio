@@ -19,7 +19,7 @@
               <h4 class="title" v-if="user.getLocalizedProperty('fullName')">
                 {{ user.getLocalizedProperty("fullName") }}
               </h4>
-              <span>Software Development Engineer</span>
+              <span> {{ user.getLocalizedProperty("designation") }}</span>
             </div>
             <div class="description">
               <p>

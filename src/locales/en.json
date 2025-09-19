@@ -48,5 +48,8 @@
   "blog": {
     "blog_header": "Blog Articles",
     "min_read": "min read"
+  },
+  "slider": {
+    "i_am": "I am a"
   }
 }

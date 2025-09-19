@@ -21,8 +21,8 @@ export const educations = [
     id: 1,
     degree: "BSc in CSE",
     institute: "International Islamic University Chittagong",
-    startTime: "Mar 2016",
-    endTime: "Mar 2021",
+    start_time: "Mar 2016",
+    end_time: "Mar 2021",
     description_en:
       "I completed my 4-year Bachelor's degree in Computer Science and Engineering at the International Islamic University Chittagong. During my time there, I actively participated in programming contests and hackathons. I also collaborated on various team projects and gained valuable experience in team leadership. Throughout my studies, I developed several web applications, which allowed me to gather practical, hands-on experience in web development.",
     description_ja:
@@ -32,8 +32,8 @@ export const educations = [
     id: 2,
     degree: "Higher Secondary Certificate (HSC)",
     institute: "Notre Dame College, Dhaka",
-    startTime: null,
-    endTime: "2015",
+    start_time: null,
+    end_time: "2015",
     description_en:
       "I completed my Higher Secondary Certificate in Science from Notre Dame College, the top-ranked college in Bangladesh. During my time there, I experienced significant academic growth and had the opportunity to build connections with many talented individuals from across the country. These connections have since expanded globally, with many now leading industries around the world. Additionally, I actively participated in various co-curricular activities, including photography, sports, Olympiads, and more.",
     description_ja:
@@ -43,8 +43,8 @@ export const educations = [
     id: 3,
     degree: "Secondary School Certificate (SSC)",
     institute: "St. Placid's High School, Chittagong",
-    startTime: null,
-    endTime: "2013",
+    start_time: null,
+    end_time: "2013",
     description_en:
       "I obtained my Secondary School Certificate in Science from St. Placid's High School, a renowned institution in Chittagong. In addition to my academic achievements, I actively participated in various sports competitions, including soccer, volleyball, table tennis, and basketball. I was also involved in several co-curricular activities, such as Scouts, the Red Cross, Science Olympiads, and many others.",
     description_ja:
@@ -59,11 +59,11 @@ export const certifications = [
     title: "Complete Vue Developer Bootcamp",
     institute_name: "ZTM Academy (Udemy)",
     url: "https://www.udemy.com/certificate/UC-fb340153-d620-4bff-9f15-516e15b98583/",
-    startTime: "Mar 2023",
-    endTime: "Jul 2023",
-    jobDescription_en:
+    start_time: "Mar 2023",
+    end_time: "Jul 2023",
+    description_en:
       "This certification course from Udemy helped me to learn the basics of VueJs 3, a progressive javascript framework.",
-    jobDescription_ja:
+    description_ja:
       "Udemyのこの認定コースは、プログレッシブJavaScriptフレームワークであるVueJs 3の基礎を学ぶのに役立ちました。",
   },
   {
@@ -71,11 +71,11 @@ export const certifications = [
     title: "BJET Advanced Course",
     institute_name: "University of Miyazaki, Japan",
     url: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
-    startTime: "Oct 2022",
-    endTime: "Dec 2022",
-    jobDescription_en:
+    start_time: "Oct 2022",
+    end_time: "Dec 2022",
+    description_en:
       "The BJET Advanced Course, conducted by the University of Miyazaki, is a continuation of the fully funded BJET Basic Course held in Japan. This program provides participants with hands-on experience through internships at Japanese companies, while simultaneously offering in-depth training in the Japanese language and work culture at University of Miyazaki.",
-    jobDescription_ja:
+    description_ja:
       "宮崎大学が提供するBJETアドバンスコースは、日本で実施される全額支援のBJETベーシックコースを基礎として構成されています。このプログラムでは、日本企業でのインターンシップを通じて実践的な経験を積むと同時に、宮崎大学で日本語と日本のビジネス文化に関する包括的なトレーニングを受けることができます。",
   },
   {
@@ -83,11 +83,11 @@ export const certifications = [
     title: "BJET Basic Course",
     institute_name: "BJET Center (Online Class)",
     url: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
-    startTime: "Apr 2022",
-    endTime: "Sept 2022",
-    jobDescription_en:
+    start_time: "Apr 2022",
+    end_time: "Sept 2022",
+    description_en:
       "BJET (Bangladesh-Japan ICT Engineers’ Training Program) is a skills development initiative designed to prepare Bangladeshi ICT professionals for careers in Japan’s tech industry. The program offers training in Japanese language, business culture, and IT skills.",
-    jobDescription_ja:
+    description_ja:
       "BJET（バングラデシュ・日本ICTエンジニア研修プログラム）は、バングラデシュのICT専門家が日本のテクノロジー業界で活躍できるよう育成することを目的としたスキル開発プログラムです。このプログラムでは、日本語、ビジネス文化、ITスキルの研修を提供しています。",
   },
   {
@@ -95,11 +95,11 @@ export const certifications = [
     title: "Java From Basic to Professional",
     institute_name: "PONDIT",
     url: "https://pondit.com/",
-    startTime: "May 2020",
-    endTime: "Dec 2020",
-    jobDescription_en:
+    start_time: "May 2020",
+    end_time: "Dec 2020",
+    description_en:
       "Pondit is a Bangladesh-based online training platform dedicated to equipping learners with in-demand ICT and professional skills. Various courses are led by experienced mentors from leading software companies in Bangladesh, ensuring practical, industry-relevant training. Beyond courses, Pondit offers internships, industrial attachments, and workshops, fostering career readiness and bridging the gap between education and employment.",
-    jobDescription_ja:
+    description_ja:
       "Ponditは、バングラデシュを拠点とするオンライントレーニングプラットフォームで、学習者に需要の高いICTスキルと専門スキルを身につけさせることに特化しています。バングラデシュの大手ソフトウェア企業出身の経験豊富なメンターが指導する様々なコースを通じて、実践的で業界に即したトレーニングを提供しています。コース以外にも、Ponditはインターンシップ、実務研修、ワークショップなどを提供し、キャリア準備を促進し、教育と就職のギャップを埋める支援を行っています。",
   },
   {
@@ -107,11 +107,11 @@ export const certifications = [
     title: "Ultimate Java Development & Certification Course",
     institute_name: "EDUONIX ",
     url: "https://www.eduonix.com/certificate/1d146674ae",
-    startTime: "May 2020",
-    endTime: "Jul 2020",
-    jobDescription_en:
+    start_time: "May 2020",
+    end_time: "Jul 2020",
+    description_en:
       "Eduonix Learning Solutions is an e-learning platform, offering a wide range of online courses in technology, design, business, and personal development.",
-    jobDescription_ja:
+    description_ja:
       "Eduonix Learning Solutions は、テクノロジー、デザイン、ビジネス、自己啓発の幅広いオンライン コースを提供する e ラーニング プラットフォームです。",
   },
   // ... other certifications
@@ -149,25 +149,25 @@ export const achievements = [
 export const socialItems = [
   {
     title: "GitHub",
-    icon: "mdi-github",
+    icon: "github",
     url: "https://github.com/IshmamAbir",
   },
-  { title: "Mail", icon: "mdi-email", url: "mailto:ishmam.cse@gmail.com" },
+  { title: "Mail", icon: "mail", url: "mailto:ishmam.cse@gmail.com" },
   {
     title: "LinkedIn",
-    icon: "mdi-linkedin",
+    icon: "linkedin",
     url: "https://www.linkedin.com/in/ishmam-abir/",
     primaryContact: true,
   },
   {
     title: "Youtube",
-    icon: "mdi-youtube",
+    icon: "youtube",
     url: "https://www.youtube.com/@ishmam_abir",
   },
-  { title: "Dev.to", icon: "mdi-pocket", url: "https://dev.to/ishmam_abir" },
+  { title: "Dev.to", icon: "pocket", url: "https://dev.to/ishmam_abir" },
   {
     title: "Instagram",
-    icon: "mdi-instagram",
+    icon: "instagram",
     url: "https://www.instagram.com/ishmam.abir",
   },
 ];
@@ -180,6 +180,7 @@ export const userData = {
   middle_name_ja: "アビル",
   last_name_ja: "チョウドリ",
   designation_en: "Software Development Engineer",
+  email: "ishmam.cse@gmail.com",
   designation_ja: "ソフトウェア開発エンジニア",
   background_image: "files/bg-cover.jpg",
   center_image: "files/ishmam.jpeg",
@@ -210,9 +211,9 @@ export const projects = [
     name: "Go Service Level Transaction",
     url: "https://github.com/IshmamAbir/Go-Service_Level_Transaction",
     img_url: "files/projects/github+golang.png",
-    projectType: "OPEN_SOURCE",
-    myRole_en: "",
-    myRole_ja: "",
+    project_type: "OPEN_SOURCE",
+    my_role_en: "",
+    my_role_ja: "",
     description_en:
       "This project presents a comprehensive approach to managing transactions in the business logic layer of a Go application, ensuring data consistency and integrity during complex operations involving multiple database tables.",
     description_ja:
@@ -224,9 +225,9 @@ export const projects = [
     name: "Clean Architecture Go",
     url: "https://github.com/IshmamAbir/Clean-Architecture-Go-Postgres",
     img_url: "files/projects/github+golang.png",
-    projectType: "OPEN_SOURCE",
-    myRole_en: "",
-    myRole_ja: "",
+    project_type: "OPEN_SOURCE",
+    my_role_en: "",
+    my_role_ja: "",
     description_en:
       "This project showcases a backend architecture built with Golang without relying on any external frameworks. It implements Clean Architecture principles to ensure maintainability and scalability. Key features include API routing, API documentation powered by go-swagger, ORM integration with Gorm, and PostgreSQL for data storage. This setup can serve as an ideal template for backend development in Golang, providing a robust, framework-free solution for scalable web applications.",
     description_ja:
@@ -247,10 +248,10 @@ export const projects = [
     name: "Matrix Platform Limited",
     url: "https://matrixapparels.com/",
     img_url: "files/projects/matrix_apparels.png",
-    projectType: "freelance_work",
-    myRole_en:
+    project_type: "freelance_work",
+    my_role_en:
       "Planning, Requirement Analysis, Designing, Frontend Design, Deployment, Maintenance.",
-    myRole_ja: "計画、要件分析、設計、フロントエンドデザイン、展開、保守。",
+    my_role_ja: "計画、要件分析、設計、フロントエンドデザイン、展開、保守。",
     description_en:
       "Matrix Apparels Limited is an export-oriented knit & woven garments factory located in Dhaka. Their portfolio website was constructed using the design they provided. I am responsible for the entire project, from start to deployment.",
     description_ja:
@@ -269,10 +270,10 @@ export const projects = [
     name: "Décor Supplier UK",
     url: "https://decorsupplier.co.uk/",
     img_url: "files/projects/decor_supplier.jpeg",
-    projectType: "freelance_work",
-    myRole_en:
+    project_type: "freelance_work",
+    my_role_en:
       "Planning, Meeting with the client, Requirement Analysis, Designing, Frontend Design & Modification.",
-    myRole_ja:
+    my_role_ja:
       "計画、クライアントとのミーティング、要件分析、設計、フロントエンドデザインおよび修正。",
     description_en:
       "Décor Supplier UK is an online e-commerce store in the United Kingdom that sells home decorator items. It was created with DotNet, Angular, and Firebase.  My responsibility was to create the user interface and build the frontend according to the client's requirements.",
@@ -285,10 +286,10 @@ export const projects = [
     name: "Weather Web App",
     url: "https://weather-webapp-kodensya.netlify.app/#/",
     img_url: "files/projects/weather-webapp.jpeg",
-    projectType: "personal",
-    myRole_en:
+    project_type: "personal",
+    my_role_en:
       "Requirement Analysis, Template Designing, Frontend Development,API Integration, Testing, Deployment.",
-    myRole_ja:
+    my_role_ja:
       "要件分析、テンプレートデザイン、フロントエンド開発、API統合、テスト、展開。",
     description_en:
       "This project was the Technical Test for Kodensya.During the interview process, I was asked to build a weather web app using VueJs 3, OpenWeather API to get weather data and show it on the UI. I was responsible for the entire project, from start to deployment.",
@@ -301,10 +302,10 @@ export const projects = [
     name: "Spring Security Authentication App",
     url: "https://github.com/IshmamAbir/Authentication-App-Spring-Security",
     img_url: null,
-    projectType: "personal",
-    myRole_en:
+    project_type: "personal",
+    my_role_en:
       "Planning, Requirement Analysis, Designing, Backend Development, Frontend Designing, Testing",
-    myRole_ja:
+    my_role_ja:
       "計画、要件分析、設計、バックエンド開発、フロントエンドデザイン、テスト",
     description_en:
       "This is the implementation of role-based authentication and authorization (RBAC) project built with Spring security.  Users can view and modify their personal information by registering and logging in.  The administrator can access all user data by logging in.  I perform the entire implementation by myself.  This project implements CRUD functionality, relational mapping, and spring security authentication.",
@@ -326,10 +327,10 @@ export const projects = [
     name: "COVID-19 Tracker",
     url: "https://covid19-tracker-31b45.web.app",
     img_url: "files/projects/covid_tracker.png",
-    projectType: "personal",
-    myRole_en:
+    project_type: "personal",
+    my_role_en:
       "Planning, Requirement Analysis, Designing, Frontend Design, Deployment, Maintenance.",
-    myRole_ja: "計画、要件分析、設計、フロントエンドデザイン、展開、保守",
+    my_role_ja: "計画、要件分析、設計、フロントエンドデザイン、展開、保守",
     description_en:
       "A basic single page application (SPA) that allows users to pick any country and see the country's overall covid report.",
     description_ja: "",
@@ -347,9 +348,9 @@ export const projects = [
   //   name: "",
   //   url: "",
   //   img_url: null,
-  //   projectType: "",
-  //   myRole_en: "",
-  //   myRole_ja: "",
+  //   project_type: "",
+  //   my_role_en: "",
+  //   my_role_ja: "",
   //   description_en: "",
   //   description_ja: "",
   //   technology_used: [""],

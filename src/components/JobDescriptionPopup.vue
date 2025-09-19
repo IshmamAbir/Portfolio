@@ -6,7 +6,11 @@
     role="dialog"
     aria-hidden="true"
   >
-    <div class="modal-dialog modal-dialog-centered modal-news" role="document">
+    <div
+      v-if="companyData"
+      class="modal-dialog modal-dialog-centered modal-news"
+      role="document"
+    >
       <div class="modal-content">
         <div class="modal-header">
           <button
@@ -26,20 +30,18 @@
 
         <div class="modal-body">
           <img
-            v-if="companyData.imageUrl"
+            v-if="companyData.imageUrl !== null && companyData.imageUrl !== ''"
             alt="news modal"
             class="img-fluid modal-feat-img"
             :src="companyData.imageUrl"
           />
           <div class="news-details">
-            <span v-if="companyData.endTime === null" class="date">
-              {{ companyData.startTime }} - {{ $t("common.continuing") }}</span
-            >
-            <span v-else class="date">
-              {{ companyData.startTime }} - {{ companyData.endTime }}</span
-            >
+            <span class="date"> {{ companyData.dateRange }}</span>
 
-            <span class="date">
+            <span
+              class="date"
+              v-if="companyData.getLocalizedProperty('companyLocation')"
+            >
               <i class="feather feather-map-pin"></i>
               {{ companyData.getLocalizedProperty("companyLocation") }}
             </span>

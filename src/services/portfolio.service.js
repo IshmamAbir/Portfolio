@@ -13,7 +13,7 @@ import {
 import { AchievementClass } from "../model/Achievement.model";
 import { CertificationClass } from "../model/Certification.model";
 import { EducationClass } from "../model/Education.model";
-import { ExperienceClass } from "../model/Experience.model";
+import { ExperienceClass } from "../model/experience.model";
 import { ProjectClass } from "../model/project.model";
 import { UserInfoClass } from "../model/user.model";
 

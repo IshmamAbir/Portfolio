@@ -12,29 +12,18 @@ export class EducationClass extends DatedModel {
    * @property {string} endTime - The end time of the education.
    * @property {Object} description - The description of the education in both English and Japanese.
    */
-  constructor(
-    data = {
-      id,
-      degree,
-      institute,
-      location,
-      startTime,
-      endTime,
-      description_en,
-      description_ja,
-    }
-  ) {
+  constructor(data) {
     super(data);
 
-    this.id = id;
-    this.degree = degree;
-    this.institute = institute;
-    this.location = location;
-    this.startTime = startTime;
-    this.endTime = endTime;
+    this.id = data.id;
+    this.degree = data.degree;
+    this.institute = data.institute;
+    this.location = data.location;
+    this.startTime = data.start_time;
+    this.endTime = data.end_time;
     this.description = {
-      en: description_en,
-      ja: description_ja,
+      en: data.description_en,
+      ja: data.description_ja,
     };
   }
 

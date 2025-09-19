@@ -48,5 +48,8 @@
   "blog": {
     "blog_header": "ブログ記事一覧",
     "min_read": "分で読む"
+  },
+  "slider": {
+    "i_am": "私は"
   }
 }

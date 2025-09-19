@@ -1,3 +1,4 @@
+import i18n from "../includes/i18n";
 import { BaseModel } from "./BaseModel";
 
 export class DatedModel extends BaseModel {
@@ -11,6 +12,7 @@ export class DatedModel extends BaseModel {
    */
   constructor(data) {
     super(data);
+
     this.startTime = data.start_time;
     this.endTime = data.end_time || data.achieve_time;
   }
@@ -26,7 +28,7 @@ export class DatedModel extends BaseModel {
     if (this.startTime && this.endTime) {
       return `${this.startTime} - ${this.endTime}`;
     } else if (this.startTime && !this.endTime) {
-      return `${this.startTime} - ${this.$t("common.continuing")}`;
+      return `${this.startTime} - ${i18n.global.t("common.continuing")}`;
     }
     return this.endTime || "N/A";
   }

@@ -88,11 +88,7 @@
         <div class="social-share-style-1">
           <span class="title">{{ $t("header.find_me_in") }}</span>
           <ul class="social-share d-flex liststyle">
-            <li
-              v-for="item in socialList"
-              :key="item"
-              :class="item.class.toLowerCase()"
-            >
+            <li v-for="item in socialList" :key="item" :class="item.title">
               <a :href="item.url" target="_blank">
                 <i :data-feather="item.icon" />
               </a>
@@ -312,10 +308,10 @@ export default {
     },
   },
 
-  // async created() {
-  //   const socials = await PortfolioService.getSocialMediaItems();
-  //   this.socialList = socials;
-  // },
+  async created() {
+    const socials = await PortfolioService.getSocialMediaItems();
+    this.socialList = socials;
+  },
 };
 </script>
 

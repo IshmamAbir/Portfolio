@@ -16,6 +16,8 @@ export class ExperienceClass extends DatedModel {
    * @property {Object} companyLocation - The location of the company in both English and Japanese.
    */
   constructor(data) {
+    super(data);
+
     this.id = data.id;
     this.position = data.position;
     this.companyName = data.company_name;

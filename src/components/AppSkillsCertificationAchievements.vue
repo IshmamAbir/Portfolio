@@ -169,10 +169,7 @@
                                   </span>
                                 </a>
                               </div>
-                              <div
-                                class="date-of-time"
-                                v-if="item.startTime && item.endTime"
-                              >
+                              <div class="date-of-time">
                                 <span>
                                   {{ item.dateRange }}
                                 </span>

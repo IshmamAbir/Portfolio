@@ -6,7 +6,7 @@
     role="dialog"
     aria-hidden="true"
   >
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div v-if="projectData" class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <button
@@ -55,12 +55,12 @@
                 </h3>
                 <p
                   class="mb--30"
-                  v-html="projectData.getLocalozedProperty('description')"
+                  v-html="projectData.getLocalizedProperty('description')"
                 ></p>
-                <h6  v-if="projectData.getLocalozedProperty('myRole') && projectData.getLocalozedProperty('myRole') !== ''">My Role & Responsibilities</h6>
+                <h6  v-if="projectData.getLocalizedProperty('myRole') && projectData.getLocalizedProperty('myRole') !== ''">My Role & Responsibilities</h6>
                 <p
-                  class="mb--30" v-if="projectData.getLocalozedProperty('myRole') && projectData.getLocalozedProperty('myRole') !== ''"
-                  v-html="projectData.getLocalozedProperty('myRole')"
+                  class="mb--30" v-if="projectData.getLocalizedProperty('myRole') && projectData.getLocalizedProperty('myRole') !== ''"
+                  v-html="projectData.getLocalizedProperty('myRole')"
                 ></p>
                 <h6>Technologies Used</h6>
                 <p class="mb--30">

@@ -19,7 +19,7 @@
                 :href="primaryContactUrl"
                 v-if="user.getLocalizedProperty('fullName')"
               >
-                {{ user.fullname }}.
+                {{ user.getLocalizedProperty("fullName") }}.
               </a>
             </p>
           </div>

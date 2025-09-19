@@ -36,7 +36,7 @@ export class UserInfoClass extends BaseModel {
       ja: data.last_name_ja,
     };
     this.email = data.email;
-    this.backgrounImage = data.background_image;
+    this.backgroundImage = data.background_image;
     this.centerImage = data.center_image;
     this.sidebarImage = data.sidebar_image;
     this.bottomImage = data.bottom_image;

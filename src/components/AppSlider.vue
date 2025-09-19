@@ -25,7 +25,7 @@
             </h1>
             <!-- type headline start-->
             <span class="cd-headline clip is-full-width">
-              <span class="text-light">I am a &ensp;</span>
+              <span class="text-light">{{ $t("slider.i_am") }} &ensp;</span>
               <!-- ROTATING TEXT -->
               <!-- <span class="cd-words-wrapper"> -->
               <span>
