@@ -1,14 +1,20 @@
 // Service is currently getting dummy data from `portfolio.data.js`
 
 import {
+  achievements,
+  certifications,
   educations,
   JobExperiences,
+  projects,
   socialItems,
   technicalSkills,
   userData,
 } from "../data/portfolio.data";
-import { EducationClass } from "../model/education.model";
-import { ExperienceClass } from "../model/experience.model";
+import { AchievementClass } from "../model/Achievement.model";
+import { CertificationClass } from "../model/Certification.model";
+import { EducationClass } from "../model/Education.model";
+import { ExperienceClass } from "../model/Experience.model";
+import { ProjectClass } from "../model/project.model";
 import { UserInfoClass } from "../model/user.model";
 
 // replace with your data fetch code to get data from database
@@ -26,11 +32,24 @@ export const PortfolioService = {
     return technicalSkills;
   },
 
+  async getCertifications() {
+    return certifications.map(
+      (certification) => new CertificationClass(certification)
+    );
+  },
+  async getAchievements() {
+    return achievements.map((achievement) => new AchievementClass(achievement));
+  },
+
   async getEducationList() {
     return educations.map((education) => new EducationClass(education));
   },
 
   async getJobExperiences() {
     return JobExperiences.map((job) => new ExperienceClass(job));
+  },
+
+  async getProjects() {
+    return projects.map((project) => new ProjectClass(project));
   },
 };

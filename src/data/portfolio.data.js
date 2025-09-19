@@ -56,10 +56,9 @@ export const educations = [
 export const certifications = [
   {
     id: 1,
-    jobTitle: "Complete Vue Developer Bootcamp",
-    companyName: "ZTM Academy (Udemy)",
-    companyUrl:
-      "https://www.udemy.com/certificate/UC-fb340153-d620-4bff-9f15-516e15b98583/",
+    title: "Complete Vue Developer Bootcamp",
+    institute_name: "ZTM Academy (Udemy)",
+    url: "https://www.udemy.com/certificate/UC-fb340153-d620-4bff-9f15-516e15b98583/",
     startTime: "Mar 2023",
     endTime: "Jul 2023",
     jobDescription_en:
@@ -69,9 +68,9 @@ export const certifications = [
   },
   {
     id: 2,
-    jobTitle: "BJET Advanced Course",
-    companyName: "University of Miyazaki, Japan",
-    companyUrl: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
+    title: "BJET Advanced Course",
+    institute_name: "University of Miyazaki, Japan",
+    url: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
     startTime: "Oct 2022",
     endTime: "Dec 2022",
     jobDescription_en:
@@ -81,9 +80,9 @@ export const certifications = [
   },
   {
     id: 3,
-    jobTitle: "BJET Basic Course",
-    companyName: "BJET Center (Online Class)",
-    companyUrl: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
+    title: "BJET Basic Course",
+    institute_name: "BJET Center (Online Class)",
+    url: "https://www.jica.go.jp/bangladesh/bangland/b-jet.html",
     startTime: "Apr 2022",
     endTime: "Sept 2022",
     jobDescription_en:
@@ -93,9 +92,9 @@ export const certifications = [
   },
   {
     id: 4,
-    jobTitle: "Java From Basic to Professional",
-    companyName: "PONDIT",
-    companyUrl: "https://pondit.com/",
+    title: "Java From Basic to Professional",
+    institute_name: "PONDIT",
+    url: "https://pondit.com/",
     startTime: "May 2020",
     endTime: "Dec 2020",
     jobDescription_en:
@@ -105,9 +104,9 @@ export const certifications = [
   },
   {
     id: 5,
-    jobTitle: "Ultimate Java Development & Certification Course",
-    companyName: "EDUONIX ",
-    companyUrl: "https://www.eduonix.com/certificate/1d146674ae",
+    title: "Ultimate Java Development & Certification Course",
+    institute_name: "EDUONIX ",
+    url: "https://www.eduonix.com/certificate/1d146674ae",
     startTime: "May 2020",
     endTime: "Jul 2020",
     jobDescription_en:
@@ -125,7 +124,7 @@ export const achievements = [
     title: "Banglalink Code for a cause 2.0 Hackathon",
     location: "Banglalink Headquarter, Dhaka, Bangladesh",
     url: "https://www.linkedin.com/posts/ishmam-abir_sdgabrhackathon-codeabrforabraabrcauseabr2-activity-6642770546260054016-zpB3/",
-    achieveTime: "January 2020",
+    achieve_time: "January 2020",
     description_en:
       "It was a national-level tech hackathon competition among students from across the country, and I secured fourth place.",
     description_ja:
@@ -136,7 +135,7 @@ export const achievements = [
     title: "IIUC Tech fest 2020",
     location: "International Islamic University, Chittagong,, Bangladesh",
     url: "https://www.linkedin.com/posts/ishmam-abir_techfest-contest-activity-6632335551154479104-ML17/",
-    achieveTime: "March 2020",
+    achieve_time: "March 2020",
     description_en:
       "At the IIUC Tech Fest 2020, I achieved notable success by securing the championship in the App Development Contest and earning the runner-up position in the Idea Generation Competition. These accomplishments reflect my strong technical skills and creative problem-solving abilities.",
     description_ja:
@@ -218,7 +217,7 @@ export const projects = [
       "This project presents a comprehensive approach to managing transactions in the business logic layer of a Go application, ensuring data consistency and integrity during complex operations involving multiple database tables.",
     description_ja:
       "このプロジェクトでは、Go アプリケーションのビジネス ロジック層でトランザクションを管理し、複数のデータベース テーブルが関係する複雑な操作中にデータの一貫性と整合性を確保するための包括的なアプローチを紹介します。",
-    technologyUsed: ["Golang", "Postgres", "Gorm", "Gorilla/Mux"],
+    technology_used: ["Golang", "Postgres", "Gorm", "Gorilla/Mux"],
   },
   {
     id: 5,
@@ -232,7 +231,7 @@ export const projects = [
       "This project showcases a backend architecture built with Golang without relying on any external frameworks. It implements Clean Architecture principles to ensure maintainability and scalability. Key features include API routing, API documentation powered by go-swagger, ORM integration with Gorm, and PostgreSQL for data storage. This setup can serve as an ideal template for backend development in Golang, providing a robust, framework-free solution for scalable web applications.",
     description_ja:
       "このプロジェクトは、外部フレームワークを使用せずに構築されたGolangのバックエンドアーキテクチャを示しています。クリーンアーキテクチャの原則を適用し、メンテナンス性とスケーラビリティを確保しています。主な特徴として、APIルーティング、go-swaggerによるAPIドキュメンテーション、Gormを用いたORM統合、およびPostgreSQLによるデータストレージを実装しています。このセットアップは、Golangを使用したバックエンド開発に最適なテンプレートとなり、スケーラブルなウェブアプリケーションの構築に貢献します。",
-    technologyUsed: [
+    technology_used: [
       "Golang",
       "Postgres",
       "Go-Swagger",
@@ -256,7 +255,7 @@ export const projects = [
       "Matrix Apparels Limited is an export-oriented knit & woven garments factory located in Dhaka. Their portfolio website was constructed using the design they provided. I am responsible for the entire project, from start to deployment.",
     description_ja:
       "Matrix Apparels Limitedはダッカに位置する輸出志向のニットおよび織物衣料品工場です。彼らのポートフォリオウェブサイトは、提供されたデザインを使用して構築されました。私はこのプロジェクトの開始から展開まで、すべての責任を負っています。",
-    technologyUsed: [
+    technology_used: [
       "HTML",
       "CSS",
       "JavaScript",
@@ -279,7 +278,7 @@ export const projects = [
       "Décor Supplier UK is an online e-commerce store in the United Kingdom that sells home decorator items. It was created with DotNet, Angular, and Firebase.  My responsibility was to create the user interface and build the frontend according to the client's requirements.",
     description_ja:
       "Décor Supplier UKは、イギリスに拠点を置くオンラインのホームデコレーターアイテムを販売するeコマースストアです。このサイトはDotNet、Angular、Firebaseを使用して作成されました。私の責任は、クライアントの要件に従ってユーザーインターフェースを作成し、フロントエンドを構築することでした。",
-    technologyUsed: ["Angular", "Firebase", "DotNet", "Firebase", "Bootstrap"],
+    technology_used: ["Angular", "Firebase", "DotNet", "Firebase", "Bootstrap"],
   },
   {
     id: 7,
@@ -295,7 +294,7 @@ export const projects = [
       "This project was the Technical Test for Kodensya.During the interview process, I was asked to build a weather web app using VueJs 3, OpenWeather API to get weather data and show it on the UI. I was responsible for the entire project, from start to deployment.",
     description_ja:
       "このプロジェクトは、Kodensyaの技術テストでした。面接の過程で、VueJs 3を使って天気のウェブアプリを作成し、OpenWeather APIを使って天気データを取得し、UIに表示するように指示されました。私はプロジェクトの開始から展開まで、全ての工程を担当しました。",
-    technologyUsed: ["VueJs 3", "OpenWeather API", "Netlify", "Bootstrap"],
+    technology_used: ["VueJs 3", "OpenWeather API", "Netlify", "Bootstrap"],
   },
   {
     id: 2,
@@ -311,7 +310,7 @@ export const projects = [
       "This is the implementation of role-based authentication and authorization (RBAC) project built with Spring security.  Users can view and modify their personal information by registering and logging in.  The administrator can access all user data by logging in.  I perform the entire implementation by myself.  This project implements CRUD functionality, relational mapping, and spring security authentication.",
     description_ja:
       "これは、Spring Securityを使用して構築されたロールベースの認証と認可（RBAC）プロジェクトの実装です。ユーザーは登録してログインすることで、個人情報の表示と変更ができます。管理者はログインすることで、すべてのユーザーデータにアクセスできます。このプロジェクトの実装はすべて自分で行いました。このプロジェクトはCRUD機能、リレーショナルマッピング、Spring Security認証を実装しています。",
-    technologyUsed: [
+    technology_used: [
       "Java",
       " Spring Boot",
       "Spring Security",
@@ -334,7 +333,7 @@ export const projects = [
     description_en:
       "A basic single page application (SPA) that allows users to pick any country and see the country's overall covid report.",
     description_ja: "",
-    technologyUsed: [
+    technology_used: [
       "Angular 9",
       "Firebase",
       "HTML",
@@ -353,7 +352,7 @@ export const projects = [
   //   myRole_ja: "",
   //   description_en: "",
   //   description_ja: "",
-  //   technologyUsed: [""],
+  //   technology_used: [""],
   // },
 ];
 

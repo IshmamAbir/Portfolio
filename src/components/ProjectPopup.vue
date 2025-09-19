@@ -55,12 +55,12 @@
                 </h3>
                 <p
                   class="mb--30"
-                  v-html="projectData[`description_${$i18n.locale}`]"
+                  v-html="projectData.getLocalozedProperty('description')"
                 ></p>
-                <h6  v-if="projectData[`myRole_${$i18n.locale}`] && projectData[`myRole_${$i18n.locale}`] !== ''">My Role & Responsibilities</h6>
+                <h6  v-if="projectData.getLocalozedProperty('myRole') && projectData.getLocalozedProperty('myRole') !== ''">My Role & Responsibilities</h6>
                 <p
-                  class="mb--30" v-if="projectData[`myRole_${$i18n.locale}`] && projectData[`myRole_${$i18n.locale}`] !== ''"
-                  v-html="projectData[`myRole_${$i18n.locale}`]"
+                  class="mb--30" v-if="projectData.getLocalozedProperty('myRole') && projectData.getLocalozedProperty('myRole') !== ''"
+                  v-html="projectData.getLocalozedProperty('myRole')"
                 ></p>
                 <h6>Technologies Used</h6>
                 <p class="mb--30">
@@ -88,11 +88,13 @@
 </template>
 
 <script>
+import { ProjectClass } from '../model/project.model';
+
 export default {
   name: "ProjectPopup",
   props: {
     projectData: {
-      type: Object,
+      type: ProjectClass,
       required: true,
     },
     projectId: {
