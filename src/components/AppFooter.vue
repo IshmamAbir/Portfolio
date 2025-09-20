@@ -1,5 +1,5 @@
 <template>
-  <div class="rn-footer-area rn-section-gap section-separator">
+  <div class="rn-footer-area rn-section-gap section-separator page-wrapper-two">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -12,7 +12,7 @@
                 />
               </a>
             </div> -->
-            <p class="description mt--30" v-if="user">
+            <p class="description mt--30 text-center" v-if="user">
               © {{ new Date().getFullYear() }}. All rights reserved by
               <a
                 target="_blank"

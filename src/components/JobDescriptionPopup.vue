@@ -21,7 +21,7 @@
           >
             <span aria-hidden="true">
               <!-- <vue-feather type="x" /> -->
-              <i class="icon" data-feather="x"></i>
+              <span class="icon" data-feather="x">X</span>
             </span>
           </button>
         </div>

@@ -15,7 +15,7 @@
             data-dismiss="modal"
             aria-label="Close"
           >
-            <span aria-hidden="true"><i data-feather="x"></i></span>
+            <span aria-hidden="true">X</span>
           </button>
         </div>
         <div class="modal-body">
