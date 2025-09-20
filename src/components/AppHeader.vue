@@ -13,25 +13,46 @@
           />
         </a>
       </div>
+
+      <div
+        style="
+          all: unset;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          margin: 19px 0;
+          font-size: 16px;
+          font-family: var(--font-primary);
+          color: var(--color-primary);
+          cursor: default;
+        "
+      >
+        <!-- Child 1: The text (will stay on the left) -->
+        <span
+          style="display: flex; align-items: center"
+          :class="langValue === 'en' ? 'text-danger' : 'color-blue'"
+        >
+          <v-icon class="pr-2">mdi-translate</v-icon>
+          {{ langValue === "en" ? "English" : "日本語" }}
+        </span>
+        <v-spacer />
+        <!-- Child 2: The Toggle (will stay on the right) -->
+        <Toggle
+          size="default"
+          class="z-index-1 toggle-on-color toggle-off-color"
+          on-label="JA"
+          off-label="EN"
+          false-value="ja"
+          true-value="en"
+          v-model="langValue"
+          @change="changeLanguage"
+        />
+      </div>
+
       <nav id="sideNavs" class="mainmenu-nav navbar-example2">
-        <ul class="primary-menu nav nav-pills">
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two active"
-              ><v-icon class="pr-2">mdi-translate</v-icon>
-              {{ langValue === "en" ? "English" : "日本語" }}
-              <Toggle
-                size="default"
-                class="z-index-1 ml-3 toggle-on-color toggle-off-color"
-                on-label="EN"
-                off-label="JA"
-                false-value="ja"
-                true-value="en"
-                v-model="langValue"
-                @change="changeLanguage"
-              />
-            </a>
-          </li>
-          <v-divider color="red" />
+        <v-divider color="red" />
+        <ul class="primary-menu nav nav-pills" style="padding: 0 0 0 0">
           <li class="nav-item">
             <a class="nav-link smoth-animation-two active" href="#home">
               <!-- <vue-feather type="home" /> -->
@@ -113,7 +134,11 @@
       <div class="col-6">
         <div class="header-right text-right">
           <div class="hamberger-menu">
-            <i id="menuBtn" class="feather-menu humberger-menu"></i>
+            <i
+              id="menuBtn"
+              class="feather-menu humberger-menu"
+              @click="isMobileMenuOpen = true"
+            ></i>
           </div>
         </div>
       </div>
@@ -122,7 +147,11 @@
   <!-- Header Mobile Bar  -->
 
   <!-- Start Popup Mobile Menu  -->
-  <div class="popup-mobile-menu">
+  <div
+    class="popup-mobile-menu"
+    :class="{ 'menu-open': isMobileMenuOpen }"
+    @click.self="isMobileMenuOpen = false"
+  >
     <div class="inner">
       <div class="menu-top">
         <div class="menu-header">
@@ -133,7 +162,10 @@
             />
           </a>
           <div class="close-button">
-            <button class="close-menu-activation close">
+            <button
+              class="close-menu-activation close"
+              @click="isMobileMenuOpen = false"
+            >
               <i data-feather="x"></i>
             </button>
           </div>
@@ -143,41 +175,88 @@
           and also feel free to ask questions ! Adios!
         </p>
       </div>
+      <i
+        class="nav-link smoth-animation-two active d-flex justify-content-between align-items-center"
+      >
+        <span :class="langValue === 'en' ? 'text-danger' : 'color-blue'">
+          <v-icon class="pr-2">mdi-translate</v-icon>
+          {{ langValue === "en" ? "English" : "日本語" }}
+        </span>
+        <Toggle
+          size="default"
+          class="z-index-1 toggle-on-color"
+          on-label="JA"
+          off-label="EN"
+          false-value="ja"
+          true-value="en"
+          v-model="langValue"
+          @change="changeLanguage"
+        />
+      </i>
+      <v-divider />
       <div class="content">
         <ul class="primary-menu nav nav-pills">
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two active" href="#home">{{
-              $t("header.home")
-            }}</a>
+            <a
+              class="nav-link smoth-animation-two active"
+              @click="isMobileMenuOpen = false"
+              href="#home"
+            >
+              {{ $t("header.home") }}
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#educations">{{
-              $t("header.education")
-            }}</a>
+            <a
+              class="nav-link smoth-animation-two"
+              @click="isMobileMenuOpen = false"
+              href="#educations"
+            >
+              {{ $t("header.education") }}
+            </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#experience">
+            <a
+              class="nav-link smoth-animation-two"
+              @click="isMobileMenuOpen = false"
+              href="#experience"
+            >
               {{ $t("header.experience") }}
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#skills">
+            <a
+              class="nav-link smoth-animation-two"
+              @click="isMobileMenuOpen = false"
+              href="#skills"
+            >
               {{ $t("header.skill") }}
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#project">
+            <a
+              class="nav-link smoth-animation-two"
+              @click="isMobileMenuOpen = false"
+              href="#project"
+            >
               {{ $t("header.projects") }}
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#blog">
+            <a
+              class="nav-link smoth-animation-two"
+              @click="isMobileMenuOpen = false"
+              href="#blog"
+            >
               {{ $t("header.blog") }}
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#contacts">
+            <a
+              class="nav-link smoth-animation-two"
+              @click="isMobileMenuOpen = false"
+              href="#contacts"
+            >
               {{ $t("header.contact") }}
             </a>
           </li>
@@ -269,32 +348,10 @@ export default {
   },
   data() {
     return {
+      isMobileMenuOpen: false,
       langValue: navigator.languages[0].split("-")[0],
       // search social icons at https://feathericons.com/
-      socialList: [
-        {
-          class: "github",
-          url: "https://github.com/IshmamAbir",
-          icon: "github",
-        },
-        { class: "mail", url: "mailto:ishmam.cse@gmail.com", icon: "mail" },
-        {
-          class: "linkedin",
-          url: "https://www.linkedin.com/in/ishmam-abir/",
-          icon: "linkedin",
-        },
-        {
-          class: "youtube",
-          url: "https://www.youtube.com/@ishmam_abir",
-          icon: "youtube",
-        },
-        { class: "dev.to", url: "https://dev.to/ishmam_abir", icon: "pocket" },
-        {
-          class: "instagram",
-          url: "https://www.instagram.com/ishmam.abir",
-          icon: "instagram",
-        },
-      ],
+      socialList: [],
     };
   },
 
@@ -308,9 +365,25 @@ export default {
     },
   },
 
+  watch: {
+    isMobileMenuOpen(newValue) {
+      if (newValue) {
+        document.documentElement.style.overflow = "hidden";
+      } else {
+        document.documentElement.style.overflow = "";
+      }
+    },
+  },
+
   async created() {
-    const socials = await PortfolioService.getSocialMediaItems();
-    this.socialList = socials;
+    try {
+      const socials = await PortfolioService.getSocialMediaItems();
+      if (socials) {
+        this.socialList = socials;
+      }
+    } catch (error) {
+      console.error("Failed to fetch social media items:", error);
+    }
   },
 };
 </script>
@@ -327,5 +400,8 @@ export default {
   --toggle-bg-off: #093d86e6;
   --toggle-border-off: #093d86e6;
   --toggle-text-off: #ffffff;
+}
+.color-blue {
+  color: #093d86e6;
 }
 </style>
