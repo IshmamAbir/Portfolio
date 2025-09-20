@@ -39,10 +39,10 @@
                 <a :href="`mailto:` + user.email"
                   ><i data-feather="mail"></i
                 ></a>
-                <a :href="contactDetails.linkedinUrl" target="_blank"
+                <a :href="linkedinUrl" target="_blank"
                   ><i data-feather="linkedin"></i
                 ></a>
-                <a :href="contactDetails.githubUrl" target="_blank"
+                <a :href="githubUrl" target="_blank"
                   ><i data-feather="github"></i
                 ></a>
               </div>
@@ -153,6 +153,8 @@ export default {
   name: "AppContact",
   data() {
     return {
+      githubUrl: null,
+      linkedinUrl: null,
       contactDetails: {
         linkedinUrl: "https://www.linkedin.com/in/ishmam-abir/",
         githubUrl: "https://github.com/IshmamAbir",
@@ -166,6 +168,16 @@ export default {
 
   computed: {
     ...mapState(useUserStore, ["user"]),
+  },
+
+  async created() {
+    const socialList = await PortfolioService.getSocialMediaItems();
+    this.githubUrl = socialList.find(
+      (item) => item.title.toLowerCase() === "github"
+    ).url;
+    this.linkedinUrl = socialList.find(
+      (item) => item.title.toLowerCase() === "linkedin"
+    ).url;
   },
 };
 </script>
