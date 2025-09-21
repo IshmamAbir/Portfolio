@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { PortfolioService } from "../services/portfolio.service";
+import { PortfolioService } from "@/services/portfolio.service";
 
 export default {
   name: "AppEducationArea",

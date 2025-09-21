@@ -17,7 +17,7 @@
 import AppFooter from "@/components/AppFooter.vue";
 import AppHeader from "@/components/AppHeader.vue";
 import { mapActions } from "pinia";
-import { useUserStore } from "./stores/user.store";
+import { useUserStore } from "@/stores/user.store";
 
 export default {
   name: "App",

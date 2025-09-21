@@ -44,7 +44,7 @@
                   size="small"
                   elevation="2"
                   class="mr-2 mb-4"
-                  v-for="item in projectData.technologyUsed"
+                  v-for="item in projectData.technologyUsed" :key="item"
                 >
                   {{ item }}
                 </v-chip>
@@ -65,7 +65,7 @@
                 <h6>Technologies Used</h6>
                 <p class="mb--30">
                   <ul>
-                    <li v-for="item in projectData.technologyUsed">
+                    <li v-for="item in projectData.technologyUsed" :key="item">
                       {{ item }}
                     </li>
                   </ul>
@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import { ProjectClass } from '../model/project.model';
+import { ProjectClass } from '@/model/project.model';
 
 export default {
   name: "ProjectPopup",

@@ -1,5 +1,3 @@
-import AppEducation from "../components/AppEducation.vue";
-
 // copied from AppSkillsCertificationAchievements.vue
 export const technicalSkills = [
   { name: "Java", percentage: 90 },

@@ -146,8 +146,8 @@
 
 <script>
 import { mapState } from "pinia";
-import { PortfolioService } from "../services/portfolio.service";
-import { useUserStore } from "../stores/user.store";
+import { PortfolioService } from "@/services/portfolio.service";
+import { useUserStore } from "@/stores/user.store";
 
 export default {
   name: "AppContact",

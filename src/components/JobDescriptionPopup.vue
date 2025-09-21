@@ -73,7 +73,7 @@
 </template>
 
 <script>
-import { ExperienceClass } from "../model/experience.model";
+import { ExperienceClass } from "@/model/experience.model";
 
 export default {
   name: "JobDescriptionPopup",

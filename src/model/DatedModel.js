@@ -1,5 +1,5 @@
-import i18n from "../includes/i18n";
-import { BaseModel } from "./BaseModel";
+import i18n from "@/includes/i18n";
+import { BaseModel } from "@/model/BaseModel";
 
 export class DatedModel extends BaseModel {
   /**

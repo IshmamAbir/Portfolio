@@ -1,4 +1,4 @@
-import { DatedModel } from "./DatedModel";
+import { DatedModel } from "@/model/DatedModel";
 
 export class ExperienceClass extends DatedModel {
   /**

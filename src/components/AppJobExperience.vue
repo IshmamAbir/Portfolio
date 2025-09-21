@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import { PortfolioService } from "../services/portfolio.service";
+import { PortfolioService } from "@/services/portfolio.service";
 import JobDescriptionPopup from "./JobDescriptionPopup.vue";
 
 export default {

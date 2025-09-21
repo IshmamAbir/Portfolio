@@ -1,5 +1,4 @@
-import i18n from "@/includes/i18n";
-import { BaseModel } from "./BaseModel";
+import { BaseModel } from "@/model/BaseModel";
 
 export class UserInfoClass extends BaseModel {
   /**

@@ -96,8 +96,8 @@
 
 <script>
 import ProjectPopup from "./ProjectPopup.vue";
-import { ProjectTypeList } from "../enums/project-type";
-import { PortfolioService } from "../services/portfolio.service";
+import { ProjectTypeList } from "@/enums/project-type";
+import { PortfolioService } from "@/services/portfolio.service";
 
 export default {
   name: "AppProjects",

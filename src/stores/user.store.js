@@ -1,6 +1,5 @@
 import { defineStore } from "pinia";
-import { UserInfoClass } from "../model/user.model";
-import { PortfolioService } from "../services/portfolio.service";
+import { PortfolioService } from "@/services/portfolio.service";
 
 export const useUserStore = defineStore("user", {
   state: () => ({

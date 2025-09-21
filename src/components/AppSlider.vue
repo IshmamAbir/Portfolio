@@ -66,9 +66,9 @@
 </template>
 <script>
 import { Typed } from "@duskmoon/vue3-typed-js";
-import { userData } from "../data/portfolio.data";
+import { userData } from "@/data/portfolio.data";
 import { mapState } from "pinia";
-import { useUserStore } from "../stores/user.store";
+import { useUserStore } from "@/stores/user.store";
 
 export default {
   name: "AppSlider",

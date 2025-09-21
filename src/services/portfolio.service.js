@@ -9,13 +9,13 @@ import {
   socialItems,
   technicalSkills,
   userData,
-} from "../data/portfolio.data";
-import { AchievementClass } from "../model/Achievement.model";
-import { CertificationClass } from "../model/Certification.model";
-import { EducationClass } from "../model/Education.model";
-import { ExperienceClass } from "../model/experience.model";
-import { ProjectClass } from "../model/project.model";
-import { UserInfoClass } from "../model/user.model";
+} from "@/data/portfolio.data";
+import { AchievementClass } from "@/model/Achievement.model";
+import { CertificationClass } from "@/model/Certification.model";
+import { EducationClass } from "@/model/Education.model";
+import { ExperienceClass } from "@/model/Experience.model";
+import { ProjectClass } from "@/model/project.model";
+import { UserInfoClass } from "@/model/user.model";
 
 // replace with your data fetch code to get data from database
 export const PortfolioService = {
