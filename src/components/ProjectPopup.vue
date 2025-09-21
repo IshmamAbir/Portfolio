@@ -88,7 +88,7 @@
 </template>
 
 <script>
-import { ProjectClass } from '@/model/project.model';
+import { ProjectClass } from '@/model/Project.model';
 
 export default {
   name: "ProjectPopup",
