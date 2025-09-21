@@ -1,13 +1,13 @@
 <template>
   <!-- start Header area -->
-  <div class="d-none d-lg-block header-style-2">
+  <div v-if="user" class="d-none d-lg-block header-style-2">
     <header
       class="rn-header-area d-flex align-items-start flex-column left-header-style"
     >
       <div class="logo-area">
         <a href="#home">
           <img
-            v-if="user && user.sidebarImage"
+            v-if="user.sidebarImage"
             :src="user.sidebarImage"
             alt="personal-logo"
           />
@@ -156,9 +156,11 @@
       <div class="menu-top">
         <div class="menu-header">
           <a class="logo" href="#home">
+            <!-- // TODO: add logo here  -->
             <img
+              v-if="user && user.sidebarImage !== null && user.sidebarImage"
               src="@/assets/images/logo/logos-circle.png"
-              alt="Personal Portfolio"
+              alt="personal-logo"
             />
           </a>
           <div class="close-button">
@@ -171,8 +173,7 @@
           </div>
         </div>
         <p class="discription">
-          You are free to know about me. Check everything that you need to know
-          and also feel free to ask questions ! Adios!
+          {{ $t("header.mobile_top_text") }}
         </p>
       </div>
       <i
@@ -263,7 +264,7 @@
         </ul>
         <!-- social sharea area -->
         <div class="social-share-style-1 mt--40">
-          <span class="title">find with me</span>
+          <span class="title">{{ $t("header.find_me_in") }}</span>
           <ul class="social-share d-flex liststyle">
             <li class="facebook">
               <a href="#"
