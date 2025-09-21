@@ -97,6 +97,7 @@
 <script>
 import ProjectPopup from "./ProjectPopup.vue";
 import { ProjectTypeList } from "../enums/project-type";
+import { PortfolioService } from "../services/portfolio.service";
 
 export default {
   name: "AppProjects",
@@ -105,175 +106,14 @@ export default {
   },
   data() {
     return {
-      projectId: null,
-      projectData: {},
-      projectList: [
-        {
-          id: 6,
-          name: "Go Service Level Transaction",
-          url: "https://github.com/IshmamAbir/Go-Service_Level_Transaction",
-          imgUrl: "files/projects/github+golang.png",
-          projectType: "OPEN_SOURCE",
-          myRole_en: "",
-          myRole_ja: "",
-          description_en:
-            "This project presents a comprehensive approach to managing transactions in the business logic layer of a Go application, ensuring data consistency and integrity during complex operations involving multiple database tables.",
-          description_ja:
-            "このプロジェクトでは、Go アプリケーションのビジネス ロジック層でトランザクションを管理し、複数のデータベース テーブルが関係する複雑な操作中にデータの一貫性と整合性を確保するための包括的なアプローチを紹介します。",
-          technologyUsed: ["Golang", "Postgres", "Gorm", "Gorilla/Mux"],
-        },
-        {
-          id: 5,
-          name: "Clean Architecture Go",
-          url: "https://github.com/IshmamAbir/Clean-Architecture-Go-Postgres",
-          imgUrl: "files/projects/github+golang.png",
-          projectType: "OPEN_SOURCE",
-          myRole_en: "",
-          myRole_ja: "",
-          description_en:
-            "This project showcases a backend architecture built with Golang without relying on any external frameworks. It implements Clean Architecture principles to ensure maintainability and scalability. Key features include API routing, API documentation powered by go-swagger, ORM integration with Gorm, and PostgreSQL for data storage. This setup can serve as an ideal template for backend development in Golang, providing a robust, framework-free solution for scalable web applications.",
-          description_ja:
-            "このプロジェクトは、外部フレームワークを使用せずに構築されたGolangのバックエンドアーキテクチャを示しています。クリーンアーキテクチャの原則を適用し、メンテナンス性とスケーラビリティを確保しています。主な特徴として、APIルーティング、go-swaggerによるAPIドキュメンテーション、Gormを用いたORM統合、およびPostgreSQLによるデータストレージを実装しています。このセットアップは、Golangを使用したバックエンド開発に最適なテンプレートとなり、スケーラブルなウェブアプリケーションの構築に貢献します。",
-          technologyUsed: [
-            "Golang",
-            "Postgres",
-            "Go-Swagger",
-            "Gorm",
-            "Gorilla/Mux",
-            "Docker",
-            "Vue.js",
-            "Vuetify",
-          ],
-        },
-        {
-          id: 4,
-          name: "Matrix Platform Limited",
-          url: "https://matrixapparels.com/",
-          imgUrl: "files/projects/matrix_apparels.png",
-          projectType: "freelance_work",
-          myRole_en:
-            "Planning, Requirement Analysis, Designing, Frontend Design, Deployment, Maintenance.",
-          myRole_ja:
-            "計画、要件分析、設計、フロントエンドデザイン、展開、保守。",
-          description_en:
-            "Matrix Apparels Limited is an export-oriented knit & woven garments factory located in Dhaka. Their portfolio website was constructed using the design they provided. I am responsible for the entire project, from start to deployment.",
-          description_ja:
-            "Matrix Apparels Limitedはダッカに位置する輸出志向のニットおよび織物衣料品工場です。彼らのポートフォリオウェブサイトは、提供されたデザインを使用して構築されました。私はこのプロジェクトの開始から展開まで、すべての責任を負っています。",
-          technologyUsed: [
-            "HTML",
-            "CSS",
-            "JavaScript",
-            "Bootstrap",
-            "Web Hosting",
-            "Github Pages",
-          ],
-        },
-        {
-          id: 3,
-          name: "Décor Supplier UK",
-          url: "https://decorsupplier.co.uk/",
-          imgUrl: "files/projects/decor_supplier.jpeg",
-          projectType: "freelance_work",
-          myRole_en:
-            "Planning, Meeting with the client, Requirement Analysis, Designing, Frontend Design & Modification.",
-          myRole_ja:
-            "計画、クライアントとのミーティング、要件分析、設計、フロントエンドデザインおよび修正。",
-          description_en:
-            "Décor Supplier UK is an online e-commerce store in the United Kingdom that sells home decorator items. It was created with DotNet, Angular, and Firebase.  My responsibility was to create the user interface and build the frontend according to the client's requirements.",
-          description_ja:
-            "Décor Supplier UKは、イギリスに拠点を置くオンラインのホームデコレーターアイテムを販売するeコマースストアです。このサイトはDotNet、Angular、Firebaseを使用して作成されました。私の責任は、クライアントの要件に従ってユーザーインターフェースを作成し、フロントエンドを構築することでした。",
-          technologyUsed: [
-            "Angular",
-            "Firebase",
-            "DotNet",
-            "Firebase",
-            "Bootstrap",
-          ],
-        },
-        {
-          id: 7,
-          name: "Weather Web App",
-          url: "https://weather-webapp-kodensya.netlify.app/#/",
-          imgUrl: "files/projects/weather-webapp.jpeg",
-          projectType: "personal",
-          myRole_en:
-            "Requirement Analysis, Template Designing, Frontend Development,API Integration, Testing, Deployment.",
-          myRole_ja:
-            "要件分析、テンプレートデザイン、フロントエンド開発、API統合、テスト、展開。",
-          description_en:
-            "This project was the Technical Test for Kodensya.During the interview process, I was asked to build a weather web app using VueJs 3, OpenWeather API to get weather data and show it on the UI. I was responsible for the entire project, from start to deployment.",
-          description_ja:
-            "このプロジェクトは、Kodensyaの技術テストでした。面接の過程で、VueJs 3を使って天気のウェブアプリを作成し、OpenWeather APIを使って天気データを取得し、UIに表示するように指示されました。私はプロジェクトの開始から展開まで、全ての工程を担当しました。",
-          technologyUsed: [
-            "VueJs 3",
-            "OpenWeather API",
-            "Netlify",
-            "Bootstrap",
-          ],
-        },
-        {
-          id: 2,
-          name: "Spring Security Authentication App",
-          url: "https://github.com/IshmamAbir/Authentication-App-Spring-Security",
-          imgUrl: null,
-          projectType: "personal",
-          myRole_en:
-            "Planning, Requirement Analysis, Designing, Backend Development, Frontend Designing, Testing",
-          myRole_ja:
-            "計画、要件分析、設計、バックエンド開発、フロントエンドデザイン、テスト",
-          description_en:
-            "This is the implementation of role-based authentication and authorization (RBAC) project built with Spring security.  Users can view and modify their personal information by registering and logging in.  The administrator can access all user data by logging in.  I perform the entire implementation by myself.  This project implements CRUD functionality, relational mapping, and spring security authentication.",
-          description_ja:
-            "これは、Spring Securityを使用して構築されたロールベースの認証と認可（RBAC）プロジェクトの実装です。ユーザーは登録してログインすることで、個人情報の表示と変更ができます。管理者はログインすることで、すべてのユーザーデータにアクセスできます。このプロジェクトの実装はすべて自分で行いました。このプロジェクトはCRUD機能、リレーショナルマッピング、Spring Security認証を実装しています。",
-          technologyUsed: [
-            "Java",
-            " Spring Boot",
-            "Spring Security",
-            "Thymeleaf",
-            "MySQL Database",
-            "HTML",
-            "CSS",
-            "Bootstrap",
-          ],
-        },
-        {
-          id: 1,
-          name: "COVID-19 Tracker",
-          url: "https://covid19-tracker-31b45.web.app",
-          imgUrl: "files/projects/covid_tracker.png",
-          projectType: "personal",
-          myRole_en:
-            "Planning, Requirement Analysis, Designing, Frontend Design, Deployment, Maintenance.",
-          myRole_ja: "計画、要件分析、設計、フロントエンドデザイン、展開、保守",
-          description_en:
-            "A basic single page application (SPA) that allows users to pick any country and see the country's overall covid report.",
-          description_ja: "",
-          technologyUsed: [
-            "Angular 9",
-            "Firebase",
-            "HTML",
-            "CSS",
-            "Bootstrap",
-            "Web API",
-          ],
-        },
-        // {
-        //   id: 2,
-        //   name: "",
-        //   url: "",
-        //   imgUrl: null,
-        //   projectType: "",
-        //   myRole_en: "",
-        //   myRole_ja: "",
-        //   description_en: "",
-        //   description_ja: "",
-        //   technologyUsed: [""],
-        // },
-      ],
+      projectId: "",
+      projectData: null,
+      projectList: [],
     };
   },
   methods: {
     getProjectType(code) {
+      if (!code) return "";
       var projectType = ProjectTypeList.find(
         (x) => x.code === code.toUpperCase()
       );
@@ -282,6 +122,11 @@ export default {
         this.$t(`project_type.${projectType?.name?.toLowerCase()}`) || code
       );
     },
+  },
+
+  async created() {
+    const projects = await PortfolioService.getProjects();
+    this.projectList = projects;
   },
 };
 </script>

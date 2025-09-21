@@ -1,9 +1,9 @@
 <template>
-  <div class="d-none d-lg-block header-style-2">
+  <div v-if="user" class="d-none d-lg-block header-style-2">
     <v-app-bar app color="transparent" dense>
       <v-toolbar-title>
         <a href="#home">
-          <v-img :src="centerImage" alt="personal-logo" />
+          <v-img :src="user.centerImage" alt="personal-logo" />
         </a>
       </v-toolbar-title>
 
@@ -27,7 +27,7 @@
           icon
           v-for="(item, index) in socialItems"
           :key="index"
-          :href="item.link"
+          :href="item.url"
         >
           <v-icon>{{ item.icon }}</v-icon>
         </v-btn>
@@ -62,7 +62,7 @@
         <v-list-item
           v-for="(item, index) in socialItems"
           :key="index"
-          :href="item.link"
+          :href="item.url"
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
@@ -77,11 +77,14 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { useUserStore } from "../stores/user.store";
+import { PortfolioService } from "../services/portfolio.service";
+
 export default {
   data() {
     return {
       drawer: false,
-      centerImage: "files/ishmam.jpeg",
       menuItems: [
         { title: "Home", icon: "mdi-home", link: "#home", active: true },
         {
@@ -112,15 +115,17 @@ export default {
           active: false,
         },
       ],
-      socialItems: [
-        { title: "GitHub", icon: "mdi-github", link: "#" },
-        { title: "Mail", icon: "mdi-email", link: "#" },
-        { title: "LinkedIn", icon: "mdi-linkedin", link: "#" },
-        { title: "LinkedIn", icon: "mdi-linkedin", link: "#" },
-        { title: "LinkedIn", icon: "mdi-linkedin", link: "#" },
-        { title: "LinkedIn", icon: "mdi-linkedin", link: "#" },
-      ],
+      socialItems: [],
     };
+  },
+
+  computed: {
+    ...mapState(useUserStore, ["user"]),
+  },
+
+  created() {
+    const socials = PortfolioService.getSocialMediaItems();
+    this.socialItems = socials;
   },
 };
 </script>

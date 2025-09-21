@@ -6,7 +6,11 @@
     role="dialog"
     aria-hidden="true"
   >
-    <div class="modal-dialog modal-dialog-centered modal-news" role="document">
+    <div
+      v-if="companyData"
+      class="modal-dialog modal-dialog-centered modal-news"
+      role="document"
+    >
       <div class="modal-content">
         <div class="modal-header">
           <button
@@ -17,7 +21,7 @@
           >
             <span aria-hidden="true">
               <!-- <vue-feather type="x" /> -->
-              <i class="icon" data-feather="x"></i>
+              <span class="icon" data-feather="x">X</span>
             </span>
           </button>
         </div>
@@ -26,22 +30,20 @@
 
         <div class="modal-body">
           <img
-            v-if="companyData.imgUrl"
+            v-if="companyData.imageUrl !== null && companyData.imageUrl !== ''"
             alt="news modal"
             class="img-fluid modal-feat-img"
-            :src="companyData.imgUrl"
+            :src="companyData.imageUrl"
           />
           <div class="news-details">
-            <span v-if="companyData.endTime === null" class="date">
-              {{ companyData.startTime }} - {{ $t("common.continuing") }}</span
-            >
-            <span v-else class="date">
-              {{ companyData.startTime }} - {{ companyData.endTime }}</span
-            >
+            <span class="date"> {{ companyData.dateRange }}</span>
 
-            <span class="date">
+            <span
+              class="date"
+              v-if="companyData.getLocalizedProperty('companyLocation')"
+            >
               <i class="feather feather-map-pin"></i>
-              {{ companyData.companyLocation }}
+              {{ companyData.getLocalizedProperty("companyLocation") }}
             </span>
 
             <h2 class="title">
@@ -51,7 +53,7 @@
               }}</a>
             </h2>
             <!-- {{ companyData[`description_${$i18n.locale}`] }} -->
-            <div v-html="companyData[`description_${$i18n.locale}`]"></div>
+            <div v-html="companyData.getLocalizedProperty('description')"></div>
 
             <!-- <h4>Job Description</h4>
             <p>
@@ -71,6 +73,8 @@
 </template>
 
 <script>
+import { ExperienceClass } from "../model/experience.model";
+
 export default {
   name: "JobDescriptionPopup",
   mounted() {
@@ -79,7 +83,7 @@ export default {
   },
   props: {
     companyData: {
-      type: Object,
+      type: ExperienceClass,
       required: true,
     },
     itemId: {

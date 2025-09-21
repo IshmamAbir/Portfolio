@@ -1,5 +1,5 @@
 <template>
-  <div class="rn-footer-area rn-section-gap section-separator">
+  <div class="rn-footer-area rn-section-gap section-separator page-wrapper-two">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
@@ -12,11 +12,15 @@
                 />
               </a>
             </div> -->
-            <p class="description mt--30">
+            <p class="description mt--30 text-center" v-if="user">
               © {{ new Date().getFullYear() }}. All rights reserved by
-              <a target="_blank" href="https://www.linkedin.com/in/ishmam-abir/"
-                >Ishmam Abir Chowdhury.</a
+              <a
+                target="_blank"
+                :href="primaryContactUrl"
+                v-if="user.getLocalizedProperty('fullName')"
               >
+                {{ user.getLocalizedProperty("fullName") }}.
+              </a>
             </p>
           </div>
         </div>
@@ -26,7 +30,26 @@
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { PortfolioService } from "../services/portfolio.service";
+import { useUserStore } from "../stores/user.store";
+
 export default {
   name: "AppFooter",
+  data() {
+    return {
+      primaryContactUrl: null,
+    };
+  },
+
+  computed: {
+    ...mapState(useUserStore, ["user"]),
+  },
+
+  async created() {
+    const socials = await PortfolioService.getSocialMediaItems();
+    let primaryContact = socials.find((item) => item.primaryContact);
+    this.primaryContactUrl = primaryContact.url;
+  },
 };
 </script>

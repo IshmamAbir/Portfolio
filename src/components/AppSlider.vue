@@ -1,8 +1,9 @@
 <template>
   <section
     id="home"
+    v-if="user"
     class="slider-style-5 rn-section-gap pb--110 align-items-center with-particles bg_image"
-    :style="'background-image: url(' + backgroundImage + ')'"
+    :style="'background-image: url(' + user.backgroundImage + ')'"
     data-black-overlay="7"
   >
     <div id="particles-js"></div>
@@ -14,15 +15,17 @@
               <img
                 id="border"
                 class="gradient-border"
-                :src="centerImage"
+                :src="user.centerImage"
                 alt=""
               />
             </div>
             <!-- TODO:// Name from DB -->
-            <h1 class="text-light">{{ fullName }}</h1>
+            <h1 class="text-light">
+              {{ user.getLocalizedProperty("fullName") }}
+            </h1>
             <!-- type headline start-->
             <span class="cd-headline clip is-full-width">
-              <span class="text-light">I am a &ensp;</span>
+              <span class="text-light">{{ $t("slider.i_am") }} &ensp;</span>
               <!-- ROTATING TEXT -->
               <!-- <span class="cd-words-wrapper"> -->
               <span>
@@ -34,7 +37,7 @@
                 <b class="is-hidden"> Web Developer.</b>
                 <b class="is-hidden"> Photographer & Videographer.</b>
                 <b class="is-hidden"> Fighter.</b> -->
-                <Typed :options="typingText">
+                <Typed :options="typingText" :key="$i18n.locale">
                   <div class="typing text-danger"></div>
                 </Typed>
               </span>
@@ -63,25 +66,21 @@
 </template>
 <script>
 import { Typed } from "@duskmoon/vue3-typed-js";
+import { userData } from "../data/portfolio.data";
+import { mapState } from "pinia";
+import { useUserStore } from "../stores/user.store";
 
 export default {
   name: "AppSlider",
   components: {
     Typed,
   },
-  data() {
-    return {
-      backgroundImage: "files/bg-cover.jpg",
-      centerImage: "files/ishmam.jpeg",
-      fullName: "ISHMAM ABIR CHOWDHURY",
-      typingText: {
-        strings: [
-          "Software Engineer",
-          "Web Developer",
-          "Open Source Contributor",
-          "Photographer ",
-          "Videographer",
-        ],
+
+  computed: {
+    ...mapState(useUserStore, ["user"]),
+    typingText() {
+      return {
+        strings: userData.banner_designation[this.$i18n.locale],
         loop: true,
         typeSpeed: 35,
         smartBackspace: true,
@@ -89,8 +88,8 @@ export default {
         showCursor: false,
         backSpeed: 45,
         autoInsertCss: true,
-      },
-    };
+      };
+    },
   },
 };
 </script>
