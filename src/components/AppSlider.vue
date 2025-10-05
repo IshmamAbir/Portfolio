@@ -45,12 +45,7 @@
             <!-- type headline end -->
             <div class="col-lg-10 offset-lg-1 mt--60">
               <p class="has-drop-cap" style="text-align: justify">
-                Basically I am A Bangladeshi Origin Full-time Web Developer and
-                A Software Engineer By Profession Who Is Living In Japan and
-                Also A Photographer & Video Editor By Choice. I am At A Time A
-                Hard Working And Super Lazy. I Can Sleep For 17 Hours Straight &
-                Also Can Code From 10:00 PM to 9:00 AM Continuously. My
-                Potential For You Depends On How You Want To Get It.
+                {{ user.getLocalizedProperty("bannerIntroduction") }}
               </p>
             </div>
             <div class="button-area">
