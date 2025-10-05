@@ -200,6 +200,14 @@ export const userData = {
       "ビデオグラファー",
     ],
   },
+  banner_introduction_en: `Basically I am A Bangladeshi Origin Full-time Web Developer and
+        A Software Engineer By Profession Who Is Living In Japan and
+        Also A Photographer & Video Editor By Choice. I am At A Time A
+        Hard Working And Super Lazy. I Can Sleep For 17 Hours Straight &
+        Also Can Code From 10:00 PM to 9:00 AM Continuously. My
+        Potential For You Depends On How You Want To Get It.`,
+  banner_introduction_ja: `ソフトウェア開発エンジニアとして、Webアプリケーションの設計、開発、テスト、保守に一貫して携わってまいりました。特に、バックエンド開発においては、Java（Spring Boot）やGolangを用いたAPI開発、クリーンアーキテクチャの導入に強みを持っています。フロントエンド開発においても、Vue.js（Vue 3、Vuetify 3）を用いたUI/UX改善の経験が豊富です。
+        これまでの経験で培った技術力と問題解決能力を活かし、貴社の事業発展に貢献できると確信しております。`,
 };
 
 // copied from AppProjects.vue
