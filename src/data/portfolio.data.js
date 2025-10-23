@@ -391,7 +391,7 @@ export const JobExperiences = [
               I have implemented clean architecture using golang on this project without using any framework. Also, applied multi-module architecture so that old softwares can easily merged as a module to the current system as well as new modules can be introduced easily without modifying the whole systems in the backend. 
               Also, I designed the frontend using Vuetify 3, a vueJs component framework and updated it to be user friendly.
               <br>
-              This web aplicaaation is currently in live and our company and several other customers are using it, and we are also developing new features and modules that will scale this project.  
+              This web application is currently in live and our company and several other customers are using it, and we are also developing new features and modules that will scale this project.  
             </p>
               <h4>Technology Used</h4>
               <P>
@@ -428,6 +428,9 @@ export const JobExperiences = [
                   </li>
                   <li>
                     Implemented <a href="https://github.com/IshmamAbir/Go-Service_Level_Transaction" target="_blank">service level transaction</a> for data consistency in database.
+                  </li>
+                  <li>
+                    Implemented <a href="https://xuri.me/excelize/" target="_blank">Go-Excelize</a> library for creating excel file in the backend.
                   </li>
                 </ul>
                 <h6>Frontend Responsibilities</h6>
@@ -517,6 +520,9 @@ export const JobExperiences = [
                 <li>
                   データベースの整合性を保つために<a href="https://github.com/IshmamAbir/Go-Service_Level_Transaction" target="_blank">サービスレベルトランザクション</a>を実装。
                 </li>
+                <li>
+                  バックエンドで Excel ファイルを作成するための <a href="https://xuri.me/excelize/" target="_blank">Go-Excelize</a> ライブラリを実装しました。
+                </li>
               </ul>
               <h6>フロントエンドの担当範囲</h6>
               <ul>
@@ -577,6 +583,8 @@ export const JobExperiences = [
             </p>
             <h4>Job Responsibilities</h4>
             <p>
+              I was responsible for developing the backend of a loyalty point management systems (like: Rakuten points or paypay points) where user gain points based on the amount spent through the main apps & admins manages the point acquisition. Point reward setting, point management, point redeem & point campaign managements can be done through the system.
+              <br>
               Main responsibilities include:
               <ul>
                 <li>
@@ -626,6 +634,8 @@ export const JobExperiences = [
             </p>
             <h4>職務内容</h4>
             <p>
+              楽天ポイントやPayPayポイントなどのロイヤルティポイント管理システムのバックエンド開発を担当しました。このシステムでは、ユーザーが主要アプリでの支出額に応じてポイントを獲得し、管理者がポイント獲得を管理します。ポイント報酬の設定、ポイント管理、ポイント交換、ポイントキャンペーンの管理はすべてこのシステムを通じて行うことができます。
+              <br>
               主な職務内容は以下の通りです：
               <ul>
                 <li>
@@ -688,6 +698,8 @@ export const JobExperiences = [
             </p>
             <h4>Job Responsibilities</h4>
             <p>
+              I was responsible for developing the backend of a loyalty point management systems (like: Rakuten points or paypay points) where user gain points based on the amount spent through the main apps & admins manages the point acquisition. Point reward setting, point management, point redeem & point campaign managements can be done through the system.
+              <br>
               Main responsibilities include:
               <ul>
                 <li>
@@ -726,6 +738,8 @@ export const JobExperiences = [
             </p>
             <h4>職務内容</h4>
             <p>
+              楽天ポイントやPayPayポイントなどのロイヤルティポイント管理システムのバックエンド開発を担当しました。このシステムでは、ユーザーが主要アプリでの支出額に応じてポイントを獲得し、管理者がポイント獲得を管理します。ポイント報酬の設定、ポイント管理、ポイント交換、ポイントキャンペーンの管理はすべてこのシステムを通じて行うことができます。
+              <br>
               主な担当業務は以下の通りです：
               <ul>
                 <li>
