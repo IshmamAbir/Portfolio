@@ -184,6 +184,7 @@ export const userData = {
   center_image: "files/ishmam.jpeg",
   sidebar_image: "files/ishmam_sidebar.jpg",
   bottom_image: "files/contact/bottom_image.jpg",
+  cv: "files/cv/ishmam_cv.pdf",
   banner_designation: {
     en: [
       "Software Engineer",

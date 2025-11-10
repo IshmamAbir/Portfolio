@@ -49,14 +49,20 @@
               </p>
             </div>
             <div class="button-area">
-              <a class="rn-btn cv-download" href="#contacts"
-                ><span>Download CV</span></a
-              >
+              <a class="rn-btn cv-download" @click="showPdf = true"
+                ><span>{{ $t("common.cv_show") }}</span>
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <PdfViewer
+      v-model="showPdf"
+      pdf-name="dfd"
+      :pdf-path="user.cv"
+      title="CV"
+    ></PdfViewer>
   </section>
 </template>
 <script>
@@ -64,11 +70,19 @@ import { Typed } from "@duskmoon/vue3-typed-js";
 import { userData } from "@/data/portfolio.data";
 import { mapState } from "pinia";
 import { useUserStore } from "@/stores/user.store";
+import PdfViewer from "./PdfViewer.vue";
 
 export default {
   name: "AppSlider",
   components: {
     Typed,
+    PdfViewer,
+  },
+
+  data() {
+    return {
+      showPdf: false,
+    };
   },
 
   computed: {
