@@ -1,6 +1,11 @@
 {
   "common": {
-    "continuing": "Continuing"
+    "continuing": "Continuing",
+    "open_fullscreen": "Open Fullscreen",
+    "close_fullscreen": "Close Fullscreen",
+    "close": "Close",
+    "cv_show": "Show CV",
+    "print": "Print"
   },
   "header": {
     "home": "Home",

@@ -1,6 +1,11 @@
 {
   "common": {
-    "continuing": "継続中"
+    "continuing": "継続中",
+    "open_fullscreen": "全画面表示",
+    "close_fullscreen": "全画面非表示",
+    "close": "閉じる",
+    "cv_show": "履歴書を表示",
+    "print": "印刷する"
   },
   "header": {
     "home": "ホーム",
