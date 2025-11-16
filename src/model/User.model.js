@@ -17,6 +17,7 @@ export class UserInfoClass extends BaseModel {
    * @property {Object} designation - The user's designation in both English and Japanese
    * @property {Object} bannerDesignation - The user's banner designation in both English and Japanese
    * @property {Object} bannerIntroduction - The user's banner introduction in both English and Japanese
+   * @property {string} cv - User's cv location path
    * @property {Object} raw - The raw data object used for constructing the UserInfoClass object
    */
   constructor(data) {
@@ -40,6 +41,7 @@ export class UserInfoClass extends BaseModel {
     this.centerImage = data.center_image;
     this.sidebarImage = data.sidebar_image;
     this.bottomImage = data.bottom_image;
+    this.cv = data.cv;
     this.fullName = {
       en: (
         data.first_name_en +
