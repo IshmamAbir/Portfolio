@@ -201,13 +201,9 @@ export const userData = {
       "ビデオグラファー",
     ],
   },
-  banner_introduction_en: `Basically I am A Bangladeshi Origin Full-time Web Developer and
-        A Software Engineer By Profession Who Is Living In Japan and
-        Also A Photographer & Video Editor By Choice. I am At A Time A
-        Hard Working And Super Lazy. I Can Sleep For 17 Hours Straight &
-        Also Can Code From 10:00 PM to 9:00 AM Continuously. My
-        Potential For You Depends On How You Want To Get It.`,
-  banner_introduction_ja: `ソフトウェア開発エンジニアとして、Webアプリケーションの設計、開発、テスト、保守に一貫して携わってまいりました。特に、バックエンド開発においては、Java（Spring Boot）やGolangを用いたAPI開発、クリーンアーキテクチャの導入に強みを持っています。フロントエンド開発においても、Vue.js（Vue 3、Vuetify 3）を用いたUI/UX改善の経験が豊富です。
+  banner_introduction_en: `Backend-focused Software Engineer with 5 years of experience specializing in Golang, Clean Architecture, and legacy system modernization. Currently driving Digital Transformation (DX) in Japan's manufacturing sector by unifying complex legacy architectures into scalable, high-performance Go ecosystems. Proven track record of accelerating development workflows through agentic AI, improving productivity by automating repetitive tasks by 30%, and optimizing systems for enterprise users.`,
+  banner_introduction_ja: `ソフトウェア開発エンジニアとして約5年の経験を持ち、特にGolangを用いたクリーンアーキテクチャやレガシーシステムのモダナイゼーションに強みを持っています。現職の株式会社興電舎では、日本の製造業におけるDX（デジタルトランスフォーメーション）を推進するWebアプリケーションの、要件定義から運用保守までの一貫したフルサイクル開発を担当しております。複雑なレガシーシステムをスケーラブルなGolang基盤へと刷新し、エンタープライズユーザー向けにシステムの最適化を行いました。
+        エージェントAIを導入して定型コーディング業務の約30%を自動化するなど、最新技術を用いたDX推進とチームの生産性向上に貢献してきました。さらに、プライベートと業務の両方において生成AIや自律型エージェントワークフローを積極的に活用し、自身の開発タスクにおいても約25%の生産性向上を実現するなど、継続的な自己研鑽と業務効率化に努めています。
         これまでの経験で培った技術力と問題解決能力を活かし、貴社の事業発展に貢献できると確信しております。`,
 };
 
@@ -249,6 +245,20 @@ export const projects = [
       "Vue.js",
       "Vuetify",
     ],
+  },
+  {
+    id: 8,
+    name: "gRPC Banking System",
+    url: "https://github.com/IshmamAbir/go-advance",
+    img_url: "files/projects/github+golang.png",
+    project_type: "OPEN_SOURCE",
+    my_role_en: "",
+    my_role_ja: "",
+    description_en:
+      "Engineered a banking system backend using gRPC and Protocol Buffers for type-safe API contracts, utilizing sqlc for high-performance DB operations. Integrated gRPC-Gateway for simultaneous RESTful API support and implemented robust PASETO token-based authentication. Designed an asynchronous task processing pipeline using Redis and Asynq for background jobs, ensuring graceful shutdown via errgroup.",
+    description_ja:
+      "GolangとgRPCを使用して構築された銀行システムのバックエンド。Protocol BuffersでAPI定義を行い、DB操作には高性能なsqlcを採用。gRPC-Gatewayを統合してRESTful APIにも同時対応し、PASETOによる堅牢なトークン認証を実装。RedisとAsynqを用いた非同期タスク処理（バックグラウンドワーカー）を構築し、errgroupを利用したグレースフルシャットダウンを実現。",
+    technology_used: ["Golang", "gRPC", "Protocol Buffers", "PostgreSQL", "Redis", "Asynq", "sqlc", "Docker"],
   },
   {
     id: 4,
@@ -392,7 +402,7 @@ export const JobExperiences = [
               I have implemented clean architecture using golang on this project without using any framework. Also, applied multi-module architecture so that old softwares can easily merged as a module to the current system as well as new modules can be introduced easily without modifying the whole systems in the backend. 
               Also, I designed the frontend using Vuetify 3, a vueJs component framework and updated it to be user friendly.
               <br>
-              This web application is currently in live and our company and several other customers are using it, and we are also developing new features and modules that will scale this project.  
+              This web application is currently live. We designed and implemented a 50+ table normalized database system for modules including Ledger Management, Status Monitoring, Inventory, and QR Access Control. The system is widely used internally by all employees and externally by ~13 client companies, and we are developing new features to further scale this project.  
             </p>
               <h4>Technology Used</h4>
               <P>
@@ -483,7 +493,7 @@ export const JobExperiences = [
               このプロジェクトでは、フレームワークを使用せずにGolangを使ってクリーンアーキテクチャを実装しました。また、マルチモジュールアーキテクチャを適用し、既存の旧ソフトウェアをモジュールとして統合しやすくし、新しいモジュールも既存のシステム全体を修正せずに導入できる構成にしました。
               フロントエンドはVuetify 3（Vue.jsのコンポーネントフレームワーク）を使用して設計し、ユーザーフレンドリーなUIへと更新しました。
               <br>
-              このWebアプリケーションは現在稼働中で、当社および複数の顧客が使用しており、さらにスケーラビリティを高めるための新機能やモジュールの開発も進めています。
+              このWebアプリケーションは現在稼働中で、台帳管理、状態監視、在庫管理、QRコードによる権限管理を含む50以上の正規化されたテーブル群の設計・実装を行いました。社内の全従業員に広く利用されるとともに、約13の顧客企業へも提供しており、さらにスケーラビリティを高めるための新機能やモジュールの開発も進めています。
             </p>
             <h4>使用技術</h4>
             <P>
@@ -584,7 +594,7 @@ export const JobExperiences = [
             </p>
             <h4>Job Responsibilities</h4>
             <p>
-              I was responsible for developing the backend of a loyalty point management systems (like: Rakuten points or paypay points) where user gain points based on the amount spent through the main apps & admins manages the point acquisition. Point reward setting, point management, point redeem & point campaign managements can be done through the system.
+              I was responsible for developing the backend of a loyalty point management system (similar to Rakuten/PayPay points) where users gain points based on the amount spent through the main apps & admins manages the point acquisition. Point reward setting, point management, point redeem & point campaign managements can be done through the system.
               <br>
               Main responsibilities include:
               <ul>
@@ -699,7 +709,7 @@ export const JobExperiences = [
             </p>
             <h4>Job Responsibilities</h4>
             <p>
-              I was responsible for developing the backend of a loyalty point management systems (like: Rakuten points or paypay points) where user gain points based on the amount spent through the main apps & admins manages the point acquisition. Point reward setting, point management, point redeem & point campaign managements can be done through the system.
+              I was responsible for developing the backend of a loyalty point management system (similar to Rakuten/PayPay points) where users gain points based on the amount spent through the main apps & admins manages the point acquisition. Point reward setting, point management, point redeem & point campaign managements can be done through the system.
               <br>
               Main responsibilities include:
               <ul>
