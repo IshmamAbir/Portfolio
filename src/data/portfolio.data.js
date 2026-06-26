@@ -201,9 +201,9 @@ export const userData = {
       "ビデオグラファー",
     ],
   },
-  banner_introduction_en: `Backend-focused Software Engineer with 5 years of experience specializing in Golang, Clean Architecture, and legacy system modernization. Currently driving Digital Transformation (DX) in Japan's manufacturing sector by unifying complex legacy architectures into scalable, high-performance Go ecosystems. Proven track record of accelerating development workflows through agentic AI, improving productivity by automating repetitive tasks by 30%, and optimizing systems for enterprise users.`,
+  banner_introduction_en: `Backend-focused Software Engineer with 5 years of experience specializing in Golang, Clean Architecture, and legacy system modernization. Currently driving Digital Transformation (DX) in Japan's manufacturing sector by unifying complex legacy architectures into scalable, high-performance Go ecosystems. Proven track record of accelerating development workflows through agentic AI, improving productivity by automating repetitive tasks by ~30%, and optimizing systems for enterprise users.`,
   banner_introduction_ja: `ソフトウェア開発エンジニアとして約5年の経験を持ち、特にGolangを用いたクリーンアーキテクチャやレガシーシステムのモダナイゼーションに強みを持っています。現職の株式会社興電舎では、日本の製造業におけるDX（デジタルトランスフォーメーション）を推進するWebアプリケーションの、要件定義から運用保守までの一貫したフルサイクル開発を担当しております。複雑なレガシーシステムをスケーラブルなGolang基盤へと刷新し、エンタープライズユーザー向けにシステムの最適化を行いました。
-        エージェントAIを導入して定型コーディング業務の約30%を自動化するなど、最新技術を用いたDX推進とチームの生産性向上に貢献してきました。さらに、プライベートと業務の両方において生成AIや自律型エージェントワークフローを積極的に活用し、自身の開発タスクにおいても約25%の生産性向上を実現するなど、継続的な自己研鑽と業務効率化に努めています。
+        エージェントAIを導入して定型コーディング業務の~30%を自動化するなど、最新技術を用いたDX推進とチームの生産性向上に貢献してきました。さらに、プライベートと業務の両方において生成AIや自律型エージェントワークフローを積極的に活用し、自身の開発タスクにおいても~25%の生産性向上を実現するなど、継続的な自己研鑽と業務効率化に努めています。
         これまでの経験で培った技術力と問題解決能力を活かし、貴社の事業発展に貢献できると確信しております。`,
 };
 
