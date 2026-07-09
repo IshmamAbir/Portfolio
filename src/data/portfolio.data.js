@@ -627,6 +627,9 @@ export const JobExperiences = [
                 Jasper Report
               </li>
               <li>
+                Liquibase
+              </li>
+              <li>
                 Git
               </li>
               <li>
@@ -676,6 +679,9 @@ export const JobExperiences = [
               </li>
               <li>
                 Jasper Report
+              </li>
+              <li>
+                Liquibase
               </li>
               <li>
                 Git
@@ -736,6 +742,9 @@ export const JobExperiences = [
                 Jasper Report
               </li>
               <li>
+                Liquibase
+              </li>
+              <li>
                 MySQL
               </li>
               <li>
@@ -774,6 +783,9 @@ export const JobExperiences = [
               </li>
               <li>
                 Jasper Report
+              </li>
+              <li>
+                Liquibase
               </li>
               <li>
                 MySQL
