@@ -402,7 +402,7 @@ export const JobExperiences = [
               I have implemented clean architecture using golang on this project without using any framework. Also, applied multi-module architecture so that old softwares can easily merged as a module to the current system as well as new modules can be introduced easily without modifying the whole systems in the backend. 
               Also, I designed the frontend using Vuetify 3, a vueJs component framework and updated it to be user friendly.
               <br>
-              This web application is currently live. We designed and implemented a 50+ table normalized database system for modules including Ledger Management, Status Monitoring, Inventory, and QR Access Control. The system is widely used internally by all employees and externally by ~13 client companies, and we are developing new features to further scale this project.  
+              This web application is currently live. We designed and implemented a 80+ table normalized database system for modules including Ledger Management, Status Monitoring, Inventory, and QR Access Control. The system is widely used internally by all employees and externally by ~13 client companies, and we are developing new features to further scale this project.  
             </p>
               <h4>Technology Used</h4>
               <P>
@@ -493,7 +493,7 @@ export const JobExperiences = [
               このプロジェクトでは、フレームワークを使用せずにGolangを使ってクリーンアーキテクチャを実装しました。また、マルチモジュールアーキテクチャを適用し、既存の旧ソフトウェアをモジュールとして統合しやすくし、新しいモジュールも既存のシステム全体を修正せずに導入できる構成にしました。
               フロントエンドはVuetify 3（Vue.jsのコンポーネントフレームワーク）を使用して設計し、ユーザーフレンドリーなUIへと更新しました。
               <br>
-              このWebアプリケーションは現在稼働中で、台帳管理、状態監視、在庫管理、QRコードによる権限管理を含む50以上の正規化されたテーブル群の設計・実装を行いました。社内の全従業員に広く利用されるとともに、約13の顧客企業へも提供しており、さらにスケーラビリティを高めるための新機能やモジュールの開発も進めています。
+              このWebアプリケーションは現在稼働中で、台帳管理、状態監視、在庫管理、QRコードによる権限管理を含む80以上の正規化されたテーブル群の設計・実装を行いました。社内の全従業員に広く利用されるとともに、約13の顧客企業へも提供しており、さらにスケーラビリティを高めるための新機能やモジュールの開発も進めています。
             </p>
             <h4>使用技術</h4>
             <P>
