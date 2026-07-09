@@ -6,7 +6,7 @@ This document outlines the testing infrastructure, strategies, and instructions 
 
 - **[Vitest](https://vitest.dev/)**: Blazing fast unit test framework powered by Vite.
 - **[Vue Test Utils](https://test-utils.vuejs.org/)**: Official testing utility for Vue.js.
-- **[Cypress](https://www.cypress.io/)**: Next-generation front end testing tool built for the modern web (End-to-End).
+- **[Playwright](https://playwright.dev/)**: Microsoft's fast and reliable framework for End-to-End testing.
 
 ---
 
@@ -30,7 +30,7 @@ Unit tests focus on isolated parts of the application: models, stores, services,
   ```
   *(This will generate a `coverage/` folder. Open `coverage/index.html` in your browser to view the detailed report).*
 
-### End-to-End (E2E) Tests (Cypress)
+### End-to-End (E2E) Tests (Playwright)
 
 E2E tests simulate a real user interacting with your application in a real browser.
 
@@ -38,9 +38,9 @@ E2E tests simulate a real user interacting with your application in a real brows
   ```bash
   npm run test:e2e
   ```
-- **Open the Cypress UI (Interactive Mode):**
+- **Open the Playwright UI (Interactive Mode):**
   ```bash
-  npm run test:e2e:open
+  npm run test:e2e:ui
   ```
 
 ### Run Everything
@@ -63,14 +63,12 @@ E2E tests simulate a real user interacting with your application in a real brows
 │       ├── stores/            # Tests for Pinia stores
 │       ├── helpers.js         # Centralized test helpers (Mounting utilities)
 │       └── setup.js           # Global Vitest configuration (Vuetify, i18n stubs)
-└── cypress/                   # Cypress E2E Tests
-    ├── e2e/                   # Spec files for different user flows
-    │   ├── home.cy.js         # Main page loading and rendering
-    │   ├── navigation.cy.js   # Router and scrolling navigation
-    │   ├── responsive.cy.js   # Mobile, Tablet, and Desktop views
-    │   └── sections.cy.js     # Specific sections (Experience, Projects, etc.)
-    ├── support/               # Cypress custom commands and overrides
-    └── fixtures/              # Mock data for E2E tests
+└── tests/
+    └── e2e/                   # Playwright E2E Tests
+        ├── home.spec.js       # Main page loading and rendering
+        ├── navigation.spec.js # Router and scrolling navigation
+        ├── responsive.spec.js # Mobile, Tablet, and Desktop views
+        └── sections.spec.js   # Specific sections (Experience, Projects, etc.)
 ```
 
 ---
@@ -113,22 +111,25 @@ describe('AppFooter.vue', () => {
 
 ### 3. Writing End-to-End Tests
 
-Place your Cypress tests in `cypress/e2e/`. Use the `.cy.js` extension.
+Place your Playwright tests in `tests/e2e/`. Use the `.spec.js` extension.
 
 ```javascript
-describe('Contact Section', () => {
-  beforeEach(() => {
+const { test, expect } = require('@playwright/test');
+
+test.describe('Contact Section', () => {
+  test.beforeEach(async ({ page }) => {
     // Visit the home page before each test
-    cy.visit('/');
+    await page.goto('/');
   });
 
-  it('should display the contact form', () => {
+  test('should display the contact form', async ({ page }) => {
     // Scroll to the contact section
-    cy.get('#contact').scrollIntoView();
+    const contactSection = page.locator('#contacts');
+    await contactSection.scrollIntoViewIfNeeded();
     
     // Assert that specific elements are visible
-    cy.get('form').should('be.visible');
-    cy.get('input[type="email"]').should('exist');
+    await expect(page.locator('form')).toBeVisible();
+    await expect(page.locator('input[type="email"]')).toBeVisible();
   });
 });
 ```
@@ -141,5 +142,5 @@ describe('Contact Section', () => {
   If you see `TypeError: Unknown file extension ".css"`, ensure that your `vite.config.js` has `css: true` and `server.deps.inline: ['vuetify']` within the `test` configuration block. This has already been configured for you.
 - **i18n warnings in Component Tests:**
   Use `vi.mock('@/includes/i18n', ...)` as seen in existing model tests to isolate translation logic without loading the full Vue plugin.
-- **Cypress not finding elements:**
-  Ensure that your components use unique `id` attributes (like `id="about"`) so that Cypress can easily target them with `cy.get('#about')`.
+- **Playwright not finding elements:**
+  Ensure that your components use unique `id` attributes (like `id="skills"`) so that Playwright can easily target them with `page.locator('#skills')`.
