@@ -1,105 +1,80 @@
 <template>
-  <section
-    id="home"
-    v-if="user"
-    class="slider-style-5 rn-section-gap pb--110 align-items-center with-particles bg_image"
-    :style="'background-image: url(' + user.backgroundImage + ')'"
-    data-black-overlay="7"
-  >
-    <div id="particles-js"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="banner-inner">
-            <div class="thumbnail gradient-border gradient-animation">
-              <img
-                id="border"
-                class="gradient-border"
-                :src="user.centerImage"
-                alt=""
-              />
-            </div>
-            <!-- TODO:// Name from DB -->
-            <h1 class="text-light">
-              {{ user.getLocalizedProperty("fullName") }}
-            </h1>
-            <!-- type headline start-->
-            <span class="cd-headline clip is-full-width">
-              <span class="text-light">{{ $t("slider.i_am") }} &ensp;</span>
-              <!-- ROTATING TEXT -->
-              <!-- <span class="cd-words-wrapper"> -->
-              <span>
-                <!-- <div v-for="(value, key) in rotatingText" :key="key">
-                  <b :class="value"> {{ key }}.</b>
-                  1
-                </div> -->
-                <!-- <b class="is-visible"> Software Engineer.</b>
-                <b class="is-hidden"> Web Developer.</b>
-                <b class="is-hidden"> Photographer & Videographer.</b>
-                <b class="is-hidden"> Fighter.</b> -->
-                <Typed :options="typingText" :key="$i18n.locale">
-                  <div class="typing text-danger"></div>
-                </Typed>
-              </span>
-            </span>
-            <!-- type headline end -->
-            <div class="col-lg-10 offset-lg-1 mt--60">
-              <p class="has-drop-cap" style="text-align: justify">
-                {{ user.getLocalizedProperty("bannerIntroduction") }}
-              </p>
-            </div>
-            <div class="button-area">
-              <a class="rn-btn cv-download" @click="showPdf = true"
-                ><span>{{ $t("common.cv_show") }}</span>
-              </a>
-            </div>
-          </div>
+  <section id="home" class="hero" v-if="user" aria-labelledby="hero-heading">
+    <div class="site-container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{{ $t("ui.based_in") }}</p>
+        <p class="hero-name">{{ user.getLocalizedProperty("fullName") }}</p>
+        <h1 id="hero-heading">{{ user.getLocalizedProperty("heroHeadline") }}</h1>
+        <p class="hero-summary">{{ user.getLocalizedProperty("heroSummary") }}</p>
+        <div class="hero-actions">
+          <v-btn color="primary" size="large" href="#project">{{ $t("ui.view_work") }}</v-btn>
+          <v-btn variant="outlined" size="large" @click="$emit('open-cv', $event.currentTarget)">{{ $t("ui.view_cv") }}</v-btn>
+        </div>
+        <div class="hero-links">
+          <a v-for="item in professionalSocials" :key="item.title" :href="item.url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a>
         </div>
       </div>
+      <div class="profile-panel blueprint-grid" aria-hidden="true">
+        <div class="profile-tab"><span class="code-file-mark">{ }</span>profile.go</div>
+        <pre class="profile-code"><code><span class="code-keyword">package</span> portfolio
+
+<span class="code-keyword">var</span> profile = <span class="code-keyword">map</span>[string]any{
+  <span class="code-key">"name"</span>:  "{{ user.getLocalizedProperty("fullName") }}",
+  <span class="code-key">"based"</span>: "{{ $t("blueprint.japan") }}",
+  <span class="code-key">"stack"</span>: []string{
+    "Go", "Java", "Vue",
+  },
+}</code></pre>
+        <div class="profile-caption"><span class="caption-rule"></span>{{ $t("blueprint.profile_caption") }}</div>
+      </div>
     </div>
-    <PdfViewer
-      v-model="showPdf"
-      :pdf-path="user.cv"
-      title="CV"
-    ></PdfViewer>
   </section>
 </template>
 <script>
-import { Typed } from "@duskmoon/vue3-typed-js";
-import { userData } from "@/data/portfolio.data";
 import { mapState } from "pinia";
 import { useUserStore } from "@/stores/user.store";
-import PdfViewer from "./PdfViewer.vue";
-
+import { PortfolioService } from "@/services/portfolio.service";
 export default {
   name: "AppSlider",
-  components: {
-    Typed,
-    PdfViewer,
-  },
-
-  data() {
-    return {
-      showPdf: false,
-    };
-  },
-
+  emits: ["open-cv"],
+  data: () => ({ socials: [] }),
   computed: {
     ...mapState(useUserStore, ["user"]),
-    typingText() {
-      return {
-        strings: userData.banner_designation[this.$i18n.locale],
-        loop: true,
-        typeSpeed: 35,
-        smartBackspace: true,
-        shuffle: true,
-        showCursor: false,
-        backSpeed: 45,
-        autoInsertCss: true,
-      };
-    },
+    professionalSocials() { return this.socials.filter(item => ["GitHub", "LinkedIn"].includes(item.title)); },
   },
+  async created() { this.socials = await PortfolioService.getSocialMediaItems(); },
 };
 </script>
-
-<style scoped></style>
+<style scoped>
+.hero { padding-block: 96px 104px; border-bottom: 1px solid rgb(var(--v-theme-outline)); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); align-items: center; gap: 64px; }
+.hero-copy, .profile-panel { min-width: 0; }
+.hero-name { color: rgb(var(--v-theme-secondary)); margin-bottom: 20px; font-size: 1.125rem; }
+h1 { font-size: clamp(2.5rem, 4.7vw, 3.75rem); letter-spacing: -.055em; line-height: 1.08; margin-bottom: 28px; text-wrap: balance; }
+.hero-summary { max-width: 560px; font-size: 1.0625rem; color: rgb(var(--v-theme-secondary)); line-height: 1.85; margin-bottom: 32px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero-links { display: flex; gap: 24px; margin-top: 28px; }
+.hero-links a { color: rgb(var(--v-theme-on-surface)); font-family: var(--font-mono); font-size: .875rem; text-decoration: none; }
+.hero-links a:hover { color: rgb(var(--v-theme-primary)); text-decoration: underline; }
+.profile-panel { border: 1px solid rgb(var(--v-theme-outline)); border-radius: 8px; overflow: hidden; position: relative; }
+.profile-tab { display: flex; align-items: center; gap: 12px; padding: 16px 24px; border-bottom: 1px solid rgb(var(--v-theme-outline)); background: rgb(var(--v-theme-surface)); font-family: var(--font-mono); font-size: .875rem; }
+.code-file-mark { color: rgb(var(--v-theme-primary)); }
+.profile-code { padding: 32px 24px; margin: 0; font-family: var(--font-mono); font-size: .875rem; line-height: 2; white-space: pre-wrap; overflow-wrap: anywhere; }
+.profile-code code { font: inherit; }
+.code-keyword { color: rgb(var(--v-theme-primary)); font-weight: 500; }
+.code-key { color: rgb(var(--v-theme-secondary)); }
+.profile-caption { display: flex; gap: 12px; align-items: center; padding: 16px 24px; font-family: var(--font-mono); font-size: .875rem; color: rgb(var(--v-theme-secondary)); border-top: 1px solid rgb(var(--v-theme-outline)); background: rgb(var(--v-theme-surface)); }
+.caption-rule { display: block; width: 24px; height: 3px; flex: 0 0 24px; background: rgb(var(--v-theme-accent)); }
+@media (max-width: 959px) {
+  .hero { padding-block: 64px 72px; }
+  .hero-grid { gap: 32px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  h1 { font-size: 2.75rem; }
+  .profile-code { padding: 24px 20px; }
+}
+@media (max-width: 699px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 40px; }
+  h1 { font-size: clamp(2.25rem, 7vw, 3rem); max-width: 600px; }
+  .hero-summary, .hero-name { font-size: 1rem; }
+  .profile-tab, .profile-caption { padding-inline: 20px; }
+}
+</style>

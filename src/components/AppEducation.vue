@@ -1,79 +1,106 @@
 <template>
-  <div class="rn-resume-area rn-section-gap section-separator" id="educations">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div
-            class="section-title text-center"
-            data-aos="fade-up"
-            data-aos-duration="500"
-            data-aos-delay="100"
-            data-aos-once="true"
-          >
-            <!-- <span class="subtitle">Features</span> -->
-            <h2 class="title">{{ $t("education.education_header") }}</h2>
-          </div>
-        </div>
+  <section class="section education-section" aria-labelledby="educations">
+    <div class="site-container">
+      <div class="section-header education-header">
+        <p class="file-label"><span aria-hidden="true">education.yml</span><span>{{ $t("about_content.education_eyebrow") }}</span></p>
+        <h2 id="educations" class="section-heading">{{ $t("about_content.education_title") }}</h2>
       </div>
-      <div class="row row--45">
-        <div class="personal-experience-inner mt--40">
-          <div class="col-lg-12">
-            <!-- Start Skill List Area  -->
-            <div class="col-lg-9 col-md-12 col-12">
-              <div class="content">
-                <!-- <span class="subtitle">2007 - 2010</span> -->
-                <!-- <h4 class="maintitle">Education Quality</h4> -->
-                <div class="experience-list">
-                  <!-- Start Single List  -->
-                  <div
-                    class="resume-single-list"
-                    v-for="item in timeline"
-                    :key="item.id"
-                  >
-                    <div class="inner">
-                      <div class="heading">
-                        <div class="title">
-                          <h4>{{ item.degree }}</h4>
-                          <span>{{ item.institute }}</span>
-                        </div>
-                        <div class="date-of-time">
-                          <span>
-                            {{ item.dateRange }}
-                          </span>
-                        </div>
-                      </div>
-                      <p class="description justify-text">
-                        <!-- {{ item.description }} -->
-                        {{ item.getLocalizedProperty("description") }}
-                      </p>
-                    </div>
-                  </div>
-                  <!-- End Single List  -->
-                </div>
-              </div>
-            </div>
-            <!-- End Skill List Area  -->
-          </div>
-        </div>
-      </div>
+      <v-expansion-panels variant="accordion" multiple class="education-list">
+        <v-expansion-panel v-for="item in timeline" :key="item.id" elevation="0">
+          <v-expansion-panel-title>
+            <span class="education-summary">
+              <span>
+                <strong class="education-degree">{{ item.degree }}</strong>
+                <span class="education-institute">{{ item.institute }}</span>
+              </span>
+              <span class="education-date">{{ item.dateRange }}</span>
+            </span>
+          </v-expansion-panel-title>
+          <v-expansion-panel-text>
+            <p class="education-description">{{ item.getLocalizedProperty("description") }}</p>
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
 import { PortfolioService } from "@/services/portfolio.service";
 
 export default {
-  name: "AppEducationArea",
+  name: "AppEducation",
   data() {
-    return {
-      timeline: [],
-    };
+    return { timeline: [] };
   },
-
   async created() {
-    const educations = await PortfolioService.getEducationList();
-    this.timeline = educations;
+    this.timeline = await PortfolioService.getEducationList();
   },
 };
 </script>
+
+<style scoped>
+.file-label { display: flex; flex-wrap: wrap; gap: .75rem; }
+.file-label > span + span { color: rgb(var(--v-theme-secondary)); }
+.education-header {
+  margin-bottom: 2rem;
+  flex-direction: column;
+  align-items: start;
+  gap: 0;
+}
+.education-header .section-heading {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+.education-list {
+  border-top: 1px solid rgba(var(--v-theme-on-surface), .12);
+}
+.education-list :deep(.v-expansion-panel) {
+  background: transparent;
+  color: rgb(var(--v-theme-on-surface));
+  border-bottom: 1px solid rgba(var(--v-theme-on-surface), .12);
+}
+.education-list :deep(.v-expansion-panel-title) {
+  padding: 1.5rem 0;
+}
+.education-list :deep(.v-expansion-panel-text__wrapper) {
+  padding: 0 0 1.5rem;
+}
+.education-summary {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  padding-right: 1.5rem;
+}
+.education-degree {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+.education-institute {
+  display: block;
+  margin-top: .4rem;
+  font-size: .875rem;
+  color: rgba(var(--v-theme-on-surface), .65);
+  line-height: 1.7;
+}
+.education-date {
+  font-family: var(--font-mono);
+  font-size: .875rem;
+  flex-shrink: 0;
+  color: rgba(var(--v-theme-on-surface), .65);
+}
+.education-description {
+  max-width: 76ch;
+  line-height: 1.9;
+  color: rgba(var(--v-theme-on-surface), .75);
+}
+@media (max-width: 600px) {
+  .education-summary {
+    flex-direction: column;
+    gap: .65rem;
+  }
+}
+</style>

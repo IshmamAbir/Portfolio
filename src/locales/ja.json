@@ -1,4 +1,14 @@
 {
+  "blueprint": {
+    "japan": "日本",
+    "profile_caption": "バックエンドとウェブアプリ",
+    "problem": "解決したいこと",
+    "approach": "作り方",
+    "contribution": "担当したこと",
+    "architecture": "システムの図",
+    "source_note": "コードをもとにした簡単な図",
+    "design_note": "開発のメモ"
+  },
   "common": {
     "continuing": "継続中",
     "open_fullscreen": "全画面表示",
@@ -58,5 +68,80 @@
   },
   "slider": {
     "i_am": "私は"
+  },
+  "ui": {
+    "work": "プロジェクト",
+    "experience": "実務経験",
+    "about": "私について",
+    "blog": "ブログ",
+    "contact": "お問い合わせ",
+    "view_work": "プロジェクトを見る",
+    "view_cv": "履歴書を見る",
+    "open_pdf": "PDFを開く",
+    "cv": "履歴書",
+    "close": "閉じる",
+    "light_mode": "明るいテーマにする",
+    "dark_mode": "暗いテーマにする",
+    "switch_language": "言語を変える",
+    "open_menu": "メニューを開く",
+    "close_menu": "メニューを閉じる",
+    "skip_content": "本文へ移動",
+    "based_in": "ソフトウェアエンジニア · 日本",
+    "contact_title": "安心して使えるものを、一緒に。",
+    "contact_intro": "エンジニアの仕事やプロジェクトについて、メールやLinkedInでお気軽にご連絡ください。",
+    "email_me": "メールを送る",
+    "footer_note": "開発と記事、そして日々の発見。",
+    "portrait_alt": "イシュマム・アビル・チョウドリの写真",
+    "back_to_top": "ページの先頭へ",
+    "pdf_error": "プレビューが表示されない場合は、PDFを直接開いてください。",
+    "page_title": "イシュマム・アビル・チョウドリ — ソフトウェアエンジニア",
+    "page_description": "日本でGo、Java、Vueを使って開発しているソフトウェアエンジニアです。バックエンドのプロジェクトや仕事の経験、技術の記事を紹介します。"
+  },
+  "about_content": {
+    "eyebrow": "私について",
+    "title": "複雑な問題を、使いやすい形に。",
+    "intro": "バックエンドの開発や古いシステムの改善をしています。画面の開発にも取り組み、仕事で役立つツールを作ります。",
+    "personal_note": "開発以外では、写真や動画を作ることが好きです。身近なものをよく見て、新しい形で伝えることを楽しんでいます。",
+    "capabilities": "使っている技術",
+    "backend": "バックエンド",
+    "data": "データ",
+    "frontend": "フロントエンド",
+    "delivery": "開発・運用",
+    "full_profile": "これまでの経験を詳しく読む",
+    "certifications": "資格・研修 · {count}",
+    "achievements": "実績 · {count}",
+    "education_eyebrow": "学歴",
+    "education_title": "学んできたこと。"
+  },
+  "work": {
+    "eyebrow": "主なプロジェクト",
+    "title": "使いやすく、保守しやすいシステム",
+    "intro": "設計、データの整合性、バックエンド開発に取り組んだオープンソースのプロジェクトです。",
+    "details": "プロジェクトの詳細",
+    "show_all": "すべてのプロジェクト",
+    "show_less": "主なプロジェクトだけ表示",
+    "more_title": "その他のプロジェクト",
+    "description": "プロジェクトについて",
+    "role": "担当したこと",
+    "technologies": "使用技術",
+    "repository": "GitHubのコード",
+    "visit": "プロジェクトを見る"
+  },
+  "career": {
+    "eyebrow": "実務経験",
+    "title": "アイデアを、使えるソフトウェアに",
+    "intro": "日本とバングラデシュで、バックエンドの設計から画面の開発まで、業務システムを作ってきました。",
+    "details": "仕事の詳細",
+    "company_website": "会社のウェブサイト"
+  },
+  "writing": {
+    "eyebrow": "開発の記録",
+    "title": "記事とアイデア",
+    "intro": "バックエンド開発や設計について、学んだことを記事にしています。",
+    "all_articles": "DEVですべての記事を読む",
+    "loading": "最新の記事を読み込んでいます…",
+    "empty": "新しい記事はここに表示されます。DEVでも記事を読むことができます。",
+    "error": "記事を読み込めませんでした。もう一度試すか、DEVでお読みください。",
+    "retry": "もう一度試す"
   }
 }

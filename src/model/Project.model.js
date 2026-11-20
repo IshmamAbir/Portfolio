@@ -18,6 +18,18 @@ export class ProjectClass extends BaseModel {
 
     this.id = data.id;
     this.name = data.name;
+    this.featured = data.featured === true;
+    this.featuredOrder = data.featured_order || 0;
+    this.summary = {
+      en: data.summary_en,
+      ja: data.summary_ja,
+    };
+    this.problem = { en: data.problem_en, ja: data.problem_ja };
+    this.approach = { en: data.approach_en, ja: data.approach_ja };
+    this.contribution = { en: data.contribution_en, ja: data.contribution_ja };
+    this.architecture = { en: data.architecture_en, ja: data.architecture_ja };
+    this.backgroundFlow = { en: data.background_flow_en, ja: data.background_flow_ja };
+    this.architectureSource = data.architecture_source;
     this.url = data.url;
     this.imgUrl = data.img_url;
     this.projectType = data.project_type;

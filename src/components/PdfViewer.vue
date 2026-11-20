@@ -1,162 +1,55 @@
 <template>
-  <v-dialog
-    scrollable
-    :max-width="!fullscreen ? width : null"
-    v-model="showPdf"
-    :fullscreen="fullscreen"
-    eager
-    transition="dialog-top-transition"
-    :height="!fullscreen ? height : null"
-  >
-    <v-card v-if="showPdf" class="floating-textbox" style="border-radius: 8px">
-      <v-card-title class="base-title-panel d-flex" ref="cardTitle">
-        <v-icon class="text-danger">{{ icon }}</v-icon>
-        <div class="pl-3 base-title-length text-danger">{{ title }}</div>
-
-        <span style="margin-left: auto">
-          <!-- fullscreen -->
-          <v-btn
-            class="mr-2"
-            v-if="!mobileView"
-            @click.prevent="fullscreen = !fullscreen"
-            size="x-small"
-            icon
-          >
-            <span>
-              <v-icon size="x-large" color="#093d86">
-                {{ fullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen" }}
-              </v-icon>
-              <v-tooltip
-                :open-delay="tooltipOpenDelay"
-                activator="parent"
-                location="bottom"
-              >
-                {{ $t(fullscreen ? "common.close_fullscreen" : "common.open_fullscreen") }}
-              </v-tooltip>
-            </span>
-          </v-btn>
-
-          <!-- 右端ボタン：Close -->
-          <v-btn @click.prevent="showPdf = false" size="x-small" icon>
-            <v-icon size="x-large" color="red">mdi-close</v-icon>
-            <v-tooltip
-              :open-delay="tooltipOpenDelay"
-              activator="parent"
-              location="bottom"
-            >
-              {{ $t("common.close") }}
-            </v-tooltip>
-          </v-btn>
-        </span>
-      </v-card-title>
-
-      <v-card-text class="pt-5">
-        <vue-pdf-app
-          id="pdfPrintId"
-          ref="pdfElement"
-          :style="
-            fullscreen
-              ? 'height: 90dvh'
-              : mobileView
-              ? 'height: 88dvh'
-              : 'height: 75dvh'
-          "
-          page-scale="page-fit"
-          :pdf="pdfPath"
-          :page-number="1"
-          :config="config"
-        />
+  <v-dialog v-model="open" :activator="activator" :open-on-click="false" :aria-label="$t('ui.cv')" :fullscreen="$vuetify.display.xs" max-width="1120" scrollable @after-leave="restoreFocus">
+    <v-card class="pdf-card" :aria-label="$t('ui.cv')">
+      <div class="pdf-toolbar">
+        <h2>{{ $t("ui.cv") }}</h2>
+        <v-btn variant="text" :href="pdfPath" target="_blank" rel="noopener noreferrer">{{ $t("ui.open_pdf") }}</v-btn>
+        <v-btn icon="mdi-close" variant="text" :aria-label="$t('ui.close')" @click="open = false" />
+      </div>
+      <v-card-text class="pdf-body">
+        <p class="pdf-fallback">{{ $t("ui.pdf_error") }} <a :href="pdfPath" target="_blank" rel="noopener noreferrer">{{ $t("ui.open_pdf") }}</a></p>
+        <vue-pdf-app v-if="open" class="pdf-preview" page-scale="page-fit" :pdf="pdfPath" :config="config" />
       </v-card-text>
     </v-card>
   </v-dialog>
 </template>
-
 <script>
 import VuePdfApp from "vue3-pdf-app";
 import "vue3-pdf-app/dist/icons/main.css";
-
-/**PDFリーダー */
 export default {
-  name: "PdfReader",
-  components: {
-    VuePdfApp,
-  },
+  name: "PdfViewer",
+  components: { VuePdfApp },
   props: {
-    /**
-     * ファイルのパス
-     */
-    pdfPath: {
-      // path from src folder
-      required: false,
-      type: String,
-    },
-    /**
-     * タイトルの横のアイコン
-     */
-    icon: {
-      type: String,
-      required: false,
-      default: "mdi-file-document",
-    },
-    /**
-     * タイトル
-     */
-    title: {
-      type: String,
-      required: false,
-    },
-    modelValue: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
+    pdfPath: { type: String, required: true },
+    modelValue: { type: Boolean, default: false },
+    activator: { type: Object, default: null },
   },
   emits: ["update:modelValue"],
-  data() {
-    return {
-      mobileView: false,
-      tooltipOpenDelay: 300,
-      width: "1150px",
-      fullscreen: false,
-      config: {
-        secondaryToolbar: {
-          secondaryOpenFile: false,
-          secondaryPrint: false,
-          secondaryDownload: false,
-          secondaryViewBookmark: false,
-          scrollVertical: false,
-          scrollHorizontal: false,
-          scrollWrapped: false,
-          spreadNone: false,
-          spreadOdd: false,
-          spreadEven: false,
-        },
-        toolbar: {
-          toolbarViewerRight: {
-            openFile: false,
-            print: false,
-            download: false,
-            viewBookmark: false,
-          },
-        },
-      },
-    };
-  },
+  data: () => ({
+    config: {
+      secondaryToolbar: { secondaryOpenFile: false, secondaryPrint: false, secondaryDownload: false, secondaryViewBookmark: false },
+      toolbar: { toolbarViewerRight: { openFile: false, print: false, download: false, viewBookmark: false } },
+    },
+  }),
   computed: {
-    showPdf: {
-      get() {
-        return this.modelValue;
-      },
-      set(value) {
-        this.$emit("update:modelValue", value);
-      },
+    open: {
+      get() { return this.modelValue; },
+      set(value) { this.$emit("update:modelValue", value); },
     },
   },
-  mounted() {
-    this.mobileView =
-      /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      );
-  },
+  methods: { restoreFocus() { this.activator?.focus(); } },
 };
 </script>
+<style scoped>
+.pdf-card { height: min(880px, 92dvh); border-radius: 8px; }
+.pdf-toolbar { display: flex; align-items: center; gap: 8px; padding: 16px 24px; border-bottom: 1px solid rgba(var(--v-theme-on-surface), .12); }
+.pdf-toolbar h2 { flex: 1; font-family: var(--font-mono); font-size: 1rem; }
+.pdf-body { display: flex; flex-direction: column; min-height: 0; padding: 16px !important; }
+.pdf-fallback { color: rgb(var(--v-theme-secondary)); font-size: .875rem; }
+.pdf-preview { flex: 1; min-height: 300px; height: 65dvh; }
+@media (max-width: 599px) {
+  .pdf-card { height: 100dvh; border-radius: 0; }
+  .pdf-toolbar { padding: 12px 16px; flex-wrap: wrap; }
+  .pdf-toolbar h2 { font-size: 1rem; }
+}
+</style>

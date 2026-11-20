@@ -1,4 +1,14 @@
 {
+  "blueprint": {
+    "japan": "Japan",
+    "profile_caption": "Backend systems. Web applications.",
+    "problem": "The problem",
+    "approach": "The approach",
+    "contribution": "My contribution",
+    "architecture": "System sketch",
+    "source_note": "Simplified from the repository",
+    "design_note": "Implementation notes"
+  },
   "common": {
     "continuing": "Continuing",
     "open_fullscreen": "Open Fullscreen",
@@ -58,5 +68,80 @@
   },
   "slider": {
     "i_am": "I am a"
+  },
+  "ui": {
+    "work": "Work",
+    "experience": "Experience",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "view_work": "View work",
+    "view_cv": "View CV",
+    "open_pdf": "Open PDF",
+    "cv": "Curriculum vitae",
+    "close": "Close",
+    "light_mode": "Use light theme",
+    "dark_mode": "Use dark theme",
+    "switch_language": "Change language",
+    "open_menu": "Open navigation",
+    "close_menu": "Close navigation",
+    "skip_content": "Skip to content",
+    "based_in": "Software engineer · Japan",
+    "contact_title": "Let's build something reliable.",
+    "contact_intro": "Have an engineering opportunity or a project in mind? Get in touch by email or connect with me on LinkedIn.",
+    "email_me": "Email me",
+    "footer_note": "Engineering, writing, and a little curiosity.",
+    "portrait_alt": "Portrait of Ishmam Abir Chowdhury",
+    "back_to_top": "Back to top",
+    "pdf_error": "If the preview does not load, open the PDF directly.",
+    "page_title": "Ishmam Abir Chowdhury — Software Engineer",
+    "page_description": "Software engineer in Japan working with Go, Java, and Vue. Explore backend projects, professional experience, and technical writing."
+  },
+  "about_content": {
+    "eyebrow": "About",
+    "title": "A practical approach to complex problems.",
+    "intro": "I build backend systems, modernize legacy software, and work across the stack to turn business needs into useful tools.",
+    "personal_note": "Outside of engineering, I enjoy photography and making videos. Both give me another way to observe, create, and tell stories.",
+    "capabilities": "Tools I work with",
+    "backend": "Backend",
+    "data": "Data",
+    "frontend": "Frontend",
+    "delivery": "Delivery",
+    "full_profile": "More about my background",
+    "certifications": "Certifications & training · {count}",
+    "achievements": "Achievements · {count}",
+    "education_eyebrow": "Education",
+    "education_title": "Where it started."
+  },
+  "work": {
+    "eyebrow": "Selected work",
+    "title": "Backend systems, built with care.",
+    "intro": "A selection of open-source projects exploring reliable architecture, data consistency, and modern backend services.",
+    "details": "View project details",
+    "show_all": "Show all projects",
+    "show_less": "Show fewer projects",
+    "more_title": "More projects",
+    "description": "About this project",
+    "role": "My role",
+    "technologies": "Technologies",
+    "repository": "GitHub repository",
+    "visit": "Visit project"
+  },
+  "career": {
+    "eyebrow": "Experience",
+    "title": "From ideas to working software.",
+    "intro": "Building and maintaining business software across Japan and Bangladesh, from backend architecture to the user interface.",
+    "details": "View role details",
+    "company_website": "Company website"
+  },
+  "writing": {
+    "eyebrow": "Notes from practice",
+    "title": "Writing & ideas",
+    "intro": "Technical notes on backend development, architecture, and things I learn along the way.",
+    "all_articles": "All articles on DEV",
+    "loading": "Loading the latest articles…",
+    "empty": "New articles will appear here. You can also explore my writing on DEV.",
+    "error": "Articles could not be loaded. Please try again or read them on DEV.",
+    "retry": "Try again"
   }
 }

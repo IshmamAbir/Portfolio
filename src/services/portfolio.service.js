@@ -12,6 +12,7 @@ import {
   userData,
 } from "@/data/portfolio.data";
 import { AchievementClass } from "@/model/Achievement.model";
+import { ArticleClass } from "@/model/Article.model";
 import { CertificationClass } from "@/model/Certification.model";
 import { EducationClass } from "@/model/Education.model";
 import { ExperienceClass } from "@/model/Experience.model";
@@ -26,7 +27,13 @@ export const PortfolioService = {
     if (!response.ok) {
       throw new Error(`Failed to fetch articles (${response.status})`);
     }
-    return response.json();
+    const articles = await response.json();
+    if (!Array.isArray(articles)) {
+      throw new Error("Invalid article response");
+    }
+    return articles
+      .map((article) => new ArticleClass(article))
+      .filter((article) => article.title && article.url);
   },
 
   async getUserInfo() {

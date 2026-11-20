@@ -2,174 +2,62 @@
 
 # Portfolio
 
-This is a personal portfolio website built with Vue 3 and Vite, designed to showcase projects, skills, and professional experience.
-
----
-
-## Description
-
-This portfolio is a single-page application built using modern web technologies. It is designed to be a comprehensive showcase of my work, including a list of projects I have worked on, my educational background, job experience, and skills. The portfolio is also internationalized, with support for both English and Japanese.
-
----
+Ishmam Abir Chowdhury's bilingual engineering portfolio, built with Vue 3, Vuetify, and Vite. The Engineering Blueprint design combines paper-and-ink surfaces, code typography, and architecture sketches to highlight backend work and professional experience.
 
 ## Features
 
-### Internationalization
+- A responsive top navigation with a mobile drawer and links to Work, Experience, About, Blog, and Contact.
+- English and Japanese content, with language and light/dark theme preferences saved when browser storage is available. The default theme is light; the initial language follows the browser.
+- A static Go profile panel, three diagram-led Go case studies, an expandable full project list, and accessible project and role dialogs.
+- An engineering changelog, a portrait in About, specification-style skills, a full-profile expansion, education summaries, certifications, and achievements.
+- The latest three DEV articles, including loading, empty, error, and retry states.
+- A responsive CV preview with a direct PDF link, plus email and LinkedIn contact actions.
 
-The portfolio supports multiple languages to cater to a wider audience. The language can be switched between **English** and **Japanese**. This is implemented using the `vue-i18n` library, a popular internationalization plugin for Vue.js. All the text content is stored in separate locale files (`en.json` and `ja.json`), making it easy to add more languages in the future.
+The application uses Vue's Options API, Pinia Option Stores, and Vue I18n. Vuetify provides flat themed controls, dialogs, expansion panels, and icons. Layout and presentation styles live in `src/assets/css/site.css` and scoped component styles. DM Sans and JetBrains Mono are loaded through Google Fonts with system and Japanese fallbacks. Architecture sketches are lightweight responsive HTML/CSS, with no diagram library.
 
-### Bilingual Content
+## Content and configuration
 
-The portfolio's data is structured to support both English and Japanese languages seamlessly. In the `src/data/portfolio.data.js` file, you will find that the data for sections like education, certifications, projects, and user information is provided in both English and Japanese, using `_en` and `_ja` suffixes for the respective properties. For example, a project's description is available as `description_en` for English and `description_ja` for Japanese. This approach allows for easy maintenance and scalability of the multilingual content.
+Portfolio content lives in `src/data/portfolio.data.js`. Services in `src/services/portfolio.service.js` create model instances before returning content to components. Localized model fields use `getLocalizedProperty()`, while interface labels live in `src/locales/en.json` and `src/locales/ja.json`.
 
-### Database Integration
+`src/data/site.data.js` contains the DEV username and optional blog URL. Leave `blogUrl` empty to keep navigation linked to the on-page article section. Set it to the real blog subdomain when that site is ready. This repository does not create or deploy a separate blog.
 
-The portfolio data is currently managed in `src/data/portfolio.data.js`. This modular structure is designed for a seamless transition to a database backend. To switch to a database, you would replace the local data fetching in `portfolio.service.js` with API calls to your database endpoints. The existing data models are structured to be easily adaptable to any database schema.
+Images and the CV are kept in `files/`, which is copied into the production build. `src/includes/assets.js` resolves local asset URLs against the configured deployment base.
 
-## ![Portfolio UI](/files/screenshot.png)
+The contact section uses email and LinkedIn links. It does not require a contact-form backend. Search indexing remains disabled by the existing `noindex` metadata until a separate release decision.
 
-> **⚠ Note ⚠** : Currently it supports both English & Japanese!
+## Main components
 
-## Project Structure
+| Area | Components |
+| --- | --- |
+| Layout and navigation | `App.vue`, `AppHeader.vue`, `AppFooter.vue`, `HomeView.vue` |
+| Introduction and CV | `AppSlider.vue`, `PdfViewer.vue` |
+| Work and experience | `AppProjects.vue`, `ProjectPopup.vue`, `AppJobExperience.vue`, `JobDescriptionPopup.vue` |
+| About and education | `AppSkillsCertificationAchievements.vue`, `AppEducation.vue` |
+| Writing and contact | `AppBlog.vue`, `AppContact.vue` |
 
-```
-├── public/
-│ ├── favicon.ico
-│ └── js/
-├── src/
-│ ├── assets/
-│ │ ├── css/
-│ │ ├── fonts/
-│ │ ├── images/
-│ ├── components/
-│ │ ├── AppBlog.vue
-│ │ ├── AppContact.vue
-│ │ ├── AppEducation.vue
-│ │ ├── AppFooter.vue
-│ │ ├── AppHeader.vue
-│ │ ├── AppJobExperience.vue
-│ │ ├── AppProjects.vue
-│ │ ├── AppSkillsCertificationAchievements.vue
-│ │ ├── AppSlider.vue
-│ │ ├── JobDescriptionPopup.vue
-│ │ └── ProjectPopup.vue
-│ ├── data/
-│ │ └── portfolio.data.js
-│ ├── includes/
-│ │ └── i18n.js
-│ ├── locales/
-│ │ ├── en.json
-│ │ └── ja.json
-│ ├── model/
-│ │ ├── Achievement.model.js
-│ │ ├── BaseModel.js
-│ │ ├── Certification.model.js
-│ │ ├── DatedModel.js
-│ │ ├── Education.model.js
-│ │ ├── Experience.model.js
-│ │ ├── Project.model.js
-│ │ └── User.model.js
-│ ├── plugins/
-│ │ ├── vuetify.js
-│ ├── router/
-│ │ └── index.js
-│ ├── services/
-│ │ └── portfolio.service.js
-│ ├── stores/
-│ │ └── user.store.js
-│ ├── views/
-│ │ └── HomeView.vue
-│ ├── App.vue
-│ └── main.js
-├── .eslintrc.cjs
-├── .gitignore
-├── index.html
-├── package.json
-├── README.md
-└── vite.config.js
+## Local development
+
+Use Node.js 22 and npm. Install the locked dependencies, then start Vite:
+
+```sh
+npm ci
+npm run dev
 ```
 
----
+Open the URL printed by Vite, normally `http://localhost:5173/Portfolio/`. The deployment base is `/Portfolio/`, configured in `vite.config.js`.
 
-## Project Setup
+## Scripts and verification
 
-### Prerequisites
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the development server. |
+| `npm run build` | Build into `dist/` and copy `files/`, including the CV. |
+| `npm run preview` or `npm run serve` | Preview the production build locally. |
+| `npm test` | Run Node tests for article modeling, preferences, mobile navigation focus, and failure handling. |
+| `npm run lint` | Run ESLint and automatically fix supported issues. |
+| `npx eslint . --ext .vue,.js,.jsx,.cjs,.mjs --ignore-path .gitignore` | Check lint without changing files. |
+| `npm run deploy` | Build and publish `dist/` using the existing GitHub Pages configuration. |
 
-Make sure you have [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your machine.
+For visual verification, check desktop and mobile layouts in both themes and languages, including keyboard navigation, expansion panels, dialogs, CV access, and article failure states. Respect reduced-motion preferences and verify that no horizontal scrolling appears on narrow screens.
 
-### Installation
-
-1.  Clone the repository:
-    ```sh
-    git clone [https://github.com/ishmamabir/portfolio.git](https://github.com/ishmamabir/portfolio.git)
-    ```
-2.  Navigate to the project directory:
-    ```sh
-    cd portfolio
-    ```
-3.  Install the dependencies:
-    ```sh
-    npm install
-    ```
-
----
-
-## Available Scripts
-
-In the project directory, you can run the following commands:
-
-### `npm run dev`
-
-Runs the app in the development mode. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-The page will reload if you make edits. You will also see any lint errors in the console.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder and copies `files/`, including images and the CV, into the build.
-
-### `npm run serve` or `npm run preview`
-
-Serves the production build locally. This is a good way to check if the production build is working correctly before deploying.
-
-### `npm test`
-
-Checks article request parameters and HTTP/network error handling using Node's built-in test runner.
-
-### `npm run lint`
-
-Lints and fixes files.
-
-### `npm run deploy`
-
-Deploys the application to GitHub Pages. This script runs `npm run build` first and then deploys the `dist` directory.
-
----
-
-## Key Dependencies
-
-This project uses the following key libraries:
-
-- **Vue.js:** A progressive framework for building user interfaces.
-- **Vite:** A fast build tool that provides a quicker and leaner development experience for modern web projects.
-- **Vue Router:** The official router for Vue.js.
-- **Pinia:** The official state management library for Vue.js.
-- **Vuetify:** A Vue UI Library with beautifully handcrafted Material Components.
-- **vue-i18n:** Internationalization plugin for Vue.js.
-- **ESLint:** A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
-
-For a full list of dependencies, see the `package.json` file.
-
----
-
-## Recommended IDE Setup
-
-- [VSCode](https://code.visualstudio.com/)
-- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
-- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin)
-
----
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+The GitHub Actions workflow in `.github/workflows/deploy.yml` retains the existing build-and-deploy behavior on pushes to `main`. Local redesign work does not publish a deployment automatically.

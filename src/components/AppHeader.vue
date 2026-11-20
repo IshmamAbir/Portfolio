@@ -1,247 +1,116 @@
 <template>
-  <!-- start Header area -->
-  <div v-if="user" class="d-none d-lg-block header-style-2">
-    <header
-      class="rn-header-area d-flex align-items-start flex-column left-header-style"
-    >
-      <div class="logo-area">
-        <a href="#home">
-          <img
-            v-if="user.sidebarImage"
-            :src="user.sidebarImage"
-            alt="personal-logo"
-          />
-        </a>
-      </div>
-
-      <div
-        style="
-          all: unset;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 100%;
-          margin: 19px 0;
-          font-size: 16px;
-          font-family: var(--font-primary);
-          color: var(--color-primary);
-          cursor: default;
-        "
-      >
-        <!-- Child 1: The text (will stay on the left) -->
-        <span
-          style="display: flex; align-items: center"
-          :class="$i18n.locale === 'en' ? 'text-danger' : 'color-blue'"
-        >
-          <v-icon class="pr-2">mdi-translate</v-icon>
-          {{ $i18n.locale === "en" ? "English" : "日本語" }}
-        </span>
-        <v-spacer />
-        <v-switch
-          class="language-switch flex-grow-0"
-          density="compact"
-          hide-details
-          inset
-          color="#ff014f"
-          :label="$i18n.locale === 'en' ? 'EN' : 'JA'"
-          :aria-label="$t('header.language')"
-          false-value="ja"
-          true-value="en"
-          v-model="$i18n.locale"
-        />
-      </div>
-
-      <nav id="sideNavs" class="mainmenu-nav navbar-example2">
-        <v-divider color="red" />
-        <ul class="primary-menu nav nav-pills" style="padding: 0 0 0 0">
-          <li v-for="(item, index) in menuItems" :key="item.id" class="nav-item">
-            <a
-              class="nav-link smoth-animation-two"
-              :class="{ active: index === 0 }"
-              :href="'#' + item.id"
-            >
-              <i :data-feather="item.icon"></i>
-              {{ $t('header.' + item.label) }}
-            </a>
-          </li>
-        </ul>
+  <header class="site-header">
+    <div class="site-container header-inner">
+      <a class="wordmark" href="#home" :aria-label="'Ishmam Abir — ' + $t('header.home')"><span class="brand-mark" aria-hidden="true">{ }</span>Ishmam Abir</a>
+      <nav class="desktop-nav" :aria-label="$t('ui.open_menu')">
+        <a v-for="item in navigation" :key="item.id" :href="item.href">{{ $t('ui.' + item.id) }}</a>
       </nav>
-      <div class="footer">
-        <div class="social-share-style-1">
-          <span class="title">{{ $t("header.find_me_in") }}</span>
-          <ul class="social-share d-flex liststyle">
-            <li v-for="item in socialList" :key="item" :class="item.title">
-              <a :href="item.url" target="_blank">
-                <i :data-feather="item.icon" />
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
-  </div>
-  <!-- start Header area end -->
-
-  <!-- Header Mobile Bar  -->
-  <div class="header-style-2 d-block d-lg-none">
-    <div class="row align-items-center">
-      <div class="col-6"></div>
-      <div class="col-6">
-        <div class="header-right text-right">
-          <div class="hamberger-menu">
-            <i
-              id="menuBtn"
-              class="feather-menu humberger-menu"
-              @click="isMobileMenuOpen = true"
-            ></i>
-          </div>
-        </div>
+      <div class="header-controls">
+        <v-btn class="locale-button" variant="text" :aria-label="$t('ui.switch_language')" @click="toggleLocale">
+          <span :lang="$i18n.locale === 'en' ? 'ja' : 'en'">{{ $i18n.locale === 'en' ? '日本語' : 'EN' }}</span>
+        </v-btn>
+        <v-btn variant="text" :icon="dark ? 'mdi-weather-sunny' : 'mdi-weather-night'" :aria-label="$t(dark ? 'ui.light_mode' : 'ui.dark_mode')" @click="toggleTheme" />
+        <v-btn id="navigation-trigger" class="mobile-menu-button" variant="text" icon="mdi-menu" :aria-label="$t('ui.open_menu')" :aria-expanded="menuOpen" aria-controls="mobile-navigation" @click="menuOpen = true" />
       </div>
     </div>
-  </div>
-  <!-- Header Mobile Bar  -->
-
-  <!-- Start Popup Mobile Menu  -->
-  <div
-    class="popup-mobile-menu"
-    :class="{ 'menu-open': isMobileMenuOpen }"
-    @click.self="isMobileMenuOpen = false"
-  >
-    <div class="inner">
-      <div class="menu-top">
-        <div class="menu-header">
-          <a class="logo" href="#home">
-            <!-- // TODO: add logo here  -->
-            <img
-              v-if="user && user.sidebarImage !== null && user.sidebarImage"
-              src="@/assets/images/logo/logos-circle.png"
-              alt="personal-logo"
-            />
-          </a>
-          <div class="close-button">
-            <button
-              class="close-menu-activation close"
-              @click="isMobileMenuOpen = false"
-            >
-              <i data-feather="x"></i>
-            </button>
-          </div>
+    <v-dialog v-model="menuOpen" class="navigation-dialog" max-width="400" transition="slide-x-reverse-transition" activator="#navigation-trigger" :open-on-click="false" :aria-label="$t('ui.open_menu')">
+      <v-card id="mobile-navigation" class="mobile-navigation">
+        <div class="mobile-navigation-top">
+          <a class="wordmark" href="#home" @click="navigate('#home', $event)"><span class="brand-mark" aria-hidden="true">{ }</span>Ishmam Abir</a>
+          <v-btn variant="text" icon="mdi-close" :aria-label="$t('ui.close_menu')" @click="menuOpen = false" />
         </div>
-        <p class="discription">
-          {{ $t("header.mobile_top_text") }}
-        </p>
-      </div>
-      <i
-        class="nav-link smoth-animation-two active d-flex justify-content-between align-items-center"
-      >
-        <span :class="$i18n.locale === 'en' ? 'text-danger' : 'color-blue'">
-          <v-icon class="pr-2">mdi-translate</v-icon>
-          {{ $i18n.locale === "en" ? "English" : "日本語" }}
-        </span>
-        <v-switch
-          class="language-switch flex-grow-0"
-          density="compact"
-          hide-details
-          inset
-          color="#ff014f"
-          :label="$i18n.locale === 'en' ? 'EN' : 'JA'"
-          :aria-label="$t('header.language')"
-          false-value="ja"
-          true-value="en"
-          v-model="$i18n.locale"
-        />
-      </i>
-      <v-divider />
-      <div class="content">
-        <ul class="primary-menu nav nav-pills">
-          <li v-for="(item, index) in menuItems" :key="item.id" class="nav-item">
-            <a
-              class="nav-link smoth-animation-two"
-              :class="{ active: index === 0 }"
-              @click="isMobileMenuOpen = false"
-              :href="'#' + item.id"
-            >
-              {{ $t('header.' + item.label) }}
-            </a>
-          </li>
-        </ul>
-        <!-- social sharea area -->
-        <div class="social-share-style-1 mt--40">
-          <span class="title">{{ $t("header.find_me_in") }}</span>
-          <ul class="social-share d-flex liststyle">
-            <li class="facebook">
-              <a href="#"><i class="feather-facebook"></i></a>
-            </li>
-            <li class="instagram">
-              <a href="#"><i class="feather-instagram"></i></a>
-            </li>
-            <li class="linkedin">
-              <a href="#"><i class="feather-linkedin"></i></a>
-            </li>
-          </ul>
+        <nav :aria-label="$t('ui.open_menu')" class="mobile-links">
+          <a v-for="item in navigation" :key="item.id" :href="item.href" @click="navigate(item.href, $event)">{{ $t('ui.' + item.id) }}</a>
+        </nav>
+        <div class="mobile-preferences">
+          <v-btn variant="outlined" prepend-icon="mdi-translate" @click="toggleLocale">{{ $i18n.locale === 'en' ? '日本語' : 'English' }}</v-btn>
+          <v-btn variant="outlined" :prepend-icon="dark ? 'mdi-weather-sunny' : 'mdi-weather-night'" @click="toggleTheme">{{ $t(dark ? 'ui.light_mode' : 'ui.dark_mode') }}</v-btn>
         </div>
-        <!-- end -->
-      </div>
-    </div>
-  </div>
-  <!-- End Popup Mobile Menu  -->
+      </v-card>
+    </v-dialog>
+  </header>
 </template>
 <script>
-import { PortfolioService } from "../services/portfolio.service";
-import { mapState } from "pinia";
-import { useUserStore } from "../stores/user.store";
-
+import { savePreference } from "@/includes/preferences";
+import { siteInfo } from "@/data/site.data";
 export default {
   name: "AppHeader",
-  data() {
-    return {
-      isMobileMenuOpen: false,
-      menuItems: [
-        { id: "home", label: "home", icon: "home" },
-        { id: "educations", label: "education", icon: "book-open" },
-        { id: "experience", label: "experience", icon: "briefcase" },
-        { id: "skills", label: "skill", icon: "award" },
-        { id: "project", label: "projects", icon: "code" },
-        { id: "blog", label: "blog", icon: "edit" },
-        { id: "contacts", label: "contact", icon: "message-circle" },
-      ],
-      // search social icons at https://feathericons.com/
-      socialList: [],
-    };
-  },
-
+  data: () => ({ menuOpen: false, pendingAnchor: null }),
   computed: {
-    ...mapState(useUserStore, ["user"]),
-  },
-
-  watch: {
-    isMobileMenuOpen(newValue) {
-      if (newValue) {
-        document.documentElement.style.overflow = "hidden";
-      } else {
-        document.documentElement.style.overflow = "";
-      }
+    dark() { return this.$vuetify.theme.global.current.dark; },
+    navigation() {
+      return [
+        { id: "work", href: "#project" },
+        { id: "experience", href: "#experience" },
+        { id: "about", href: "#about" },
+        { id: "blog", href: siteInfo.blogUrl || "#blog" },
+        { id: "contact", href: "#contacts" },
+      ];
     },
   },
-
-  async created() {
-    try {
-      const socials = await PortfolioService.getSocialMediaItems();
-      if (socials) {
-        this.socialList = socials;
-      }
-    } catch (error) {
-      console.error("Failed to fetch social media items:", error);
-    }
+  watch: {
+    "$vuetify.display.mdAndUp"(expanded) { if (expanded) this.menuOpen = false; },
+  },
+  methods: {
+    async navigate(href, event) {
+      this.pendingAnchor = href.startsWith('#') ? href : null;
+      this.menuOpen = false;
+      if (!this.pendingAnchor) return;
+      event.preventDefault();
+      // Wait for Vuetify to release scrolling and restore its activator first.
+      await this.$nextTick();
+      await this.$nextTick();
+      this.finishNavigation();
+    },
+    finishNavigation() {
+      const href = this.pendingAnchor;
+      this.pendingAnchor = null;
+      if (!href) return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      window.location.hash = href;
+      target.scrollIntoView();
+      const heading = target.querySelector('h1, h2, h3') || target;
+      heading.setAttribute('tabindex', '-1');
+      heading.focus({ preventScroll: true });
+    },
+    toggleLocale() { this.$i18n.locale = this.$i18n.locale === "en" ? "ja" : "en"; },
+    toggleTheme() {
+      const theme = this.dark ? "light" : "dark";
+      this.$vuetify.theme.global.name = theme;
+      savePreference("portfolio-theme", theme);
+    },
   },
 };
 </script>
-
 <style scoped>
-.language-switch :deep(.v-switch__track) {
-  background-color: #093d86;
+.site-header { position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgb(var(--v-theme-outline)); background: rgb(var(--v-theme-background)); }
+.header-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 32px; min-height: 80px; padding-block: 12px; }
+.wordmark { display: inline-flex; align-items: center; gap: 12px; color: rgb(var(--v-theme-on-surface)); font-family: var(--font-mono); font-weight: 500; font-size: 1rem; text-decoration: none; white-space: nowrap; }
+.brand-mark { color: rgb(var(--v-theme-primary)); font-size: 1.25rem; }
+.desktop-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: end; gap: 8px 28px; margin-left: auto; }
+.desktop-nav a { color: rgb(var(--v-theme-secondary)); font-family: var(--font-mono); font-size: .875rem; text-decoration: none; transition: color .15s; }
+.desktop-nav a:hover { color: rgb(var(--v-theme-primary)); }
+.header-controls { display: flex; flex-shrink: 0; align-items: center; gap: 0; margin-left: auto; }
+.locale-button { min-width: 56px; padding-inline: 8px; font-size: .875rem; }
+.mobile-menu-button { display: none; }
+.mobile-navigation { height: 100%; min-height: 100%; padding: 20px; overflow-y: auto; }
+.mobile-navigation > * { flex-shrink: 0; }
+.navigation-dialog :deep(.v-overlay__content) { align-self: stretch; margin: 0 0 0 auto; height: 100dvh; max-height: 100%; max-width: 100%; }
+.navigation-dialog :deep(.v-card) { border-radius: 0; }
+.mobile-navigation-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.mobile-links { display: flex; flex-direction: column; gap: 8px; margin-block: 40px; }
+.mobile-links a { display: block; padding: 12px 8px; color: rgb(var(--v-theme-on-surface)); text-decoration: none; font-size: 1.5rem; }
+.mobile-preferences { display: flex; flex-wrap: wrap; gap: 12px; }
+@media (max-width: 959px) {
+  .header-inner { min-height: 72px; gap: 8px; }
+  .desktop-nav { display: none; }
+  .header-controls { margin-left: auto; }
+  .mobile-menu-button { display: inline-flex; }
 }
-.color-blue {
-  color: #093d86e6;
+@media (max-width: 399px) {
+  .header-inner { gap: 0; }
+  .header-controls :deep(.v-btn--icon) { width: 40px; height: 44px; }
+  .wordmark { font-size: .875rem; gap: 8px; }
 }
 </style>

@@ -180,6 +180,12 @@ export const userData = {
   designation_en: "Software Development Engineer",
   email: "ishmam.cse@gmail.com",
   designation_ja: "ソフトウェア開発エンジニア",
+  hero_headline_en: "I build reliable backend systems.",
+  hero_headline_ja: "安心して使えるバックエンドを作ります。",
+  hero_summary_en:
+    "Software engineer in Japan, working with Go, Java, and Vue to modernize complex business software.",
+  hero_summary_ja:
+    "日本で働くソフトウェアエンジニアです。Go、Java、Vueを使い、業務システムを使いやすく、保守しやすくしています。",
   background_image: "files/bg-cover.jpg",
   center_image: "files/ishmam.jpeg",
   sidebar_image: "files/ishmam_sidebar.jpg",
@@ -212,6 +218,31 @@ export const projects = [
   {
     id: 6,
     name: "Go Service Level Transaction",
+    problem_en: "A purchase updates both stock and user balance. A failed operation must not leave a partial update.",
+    problem_ja: "商品を買うと、在庫とユーザーの残高が変わります。途中で失敗したときは、両方の変更を戻す必要があります。",
+    approach_en: "Pass a Gorm transaction through context inside a unit-of-work callback, so separate repository methods share one transaction.",
+    approach_ja: "Gormのトランザクションをcontextで渡します。別々のデータ操作でも、一つのトランザクションを使える形にしました。",
+    contribution_en: "Implemented a service-level transaction example that separates business coordination from repository updates.",
+    contribution_ja: "業務の流れとデータ操作を分け、サービス層でトランザクションを管理するサンプルを作りました。",
+    architecture_source: "https://github.com/IshmamAbir/Go-Service_Level_Transaction/blob/main/transaction/transaction.go",
+    architecture_en: [
+      { name: "Business operation", detail: "service / use case" },
+      { name: "Unit of work", detail: "WithTx · shared context" },
+      { name: "Repository calls", detail: "stock + balance" },
+      { name: "PostgreSQL", detail: "commit or rollback" },
+    ],
+    architecture_ja: [
+      { name: "業務の処理", detail: "サービス / ユースケース" },
+      { name: "一つの作業単位", detail: "WithTx · 共通のcontext" },
+      { name: "データ操作", detail: "在庫 + 残高" },
+      { name: "PostgreSQL", detail: "変更を保存、または元に戻す" },
+    ],
+    featured: true,
+    featured_order: 2,
+    summary_en:
+      "Coordinating database transactions across the business logic layer to keep multi-table operations consistent.",
+    summary_ja:
+      "ビジネスロジック層でトランザクションを管理し、複数のテーブルを更新するときもデータの整合性を保ちます。",
     url: "https://github.com/IshmamAbir/Go-Service_Level_Transaction",
     img_url: "files/projects/github+golang.png",
     project_type: "OPEN_SOURCE",
@@ -226,6 +257,31 @@ export const projects = [
   {
     id: 5,
     name: "Clean Architecture Go",
+    problem_en: "Keep HTTP handling, business rules, and database operations separate as a CRUD application grows.",
+    problem_ja: "CRUDアプリが大きくなっても変更しやすいように、HTTPの処理、業務のルール、データ操作を分けます。",
+    approach_en: "Inject repository-backed use cases into HTTP handlers, with user and company features organized in their own packages.",
+    approach_ja: "ユーザーと会社の機能を別のパッケージに分け、HTTPの処理からユースケース、データ操作へつなぎました。",
+    contribution_en: "Built a reusable Go CRUD example with a Vue/Vuetify interface and a PostgreSQL data layer.",
+    contribution_ja: "Go、Vue、Vuetify、PostgreSQLを使い、ほかの開発でも参考にできるCRUDアプリを作りました。",
+    architecture_source: "https://github.com/IshmamAbir/Clean-Architecture-Go-Postgres/blob/main/backend.go",
+    architecture_en: [
+      { name: "HTTP handlers", detail: "Gorilla Mux · user / company" },
+      { name: "Use cases", detail: "application rules" },
+      { name: "Repositories", detail: "Gorm · data access" },
+      { name: "PostgreSQL", detail: "users + companies" },
+    ],
+    architecture_ja: [
+      { name: "HTTPの処理", detail: "Gorilla Mux · ユーザー / 会社" },
+      { name: "ユースケース", detail: "アプリのルール" },
+      { name: "リポジトリ", detail: "Gorm · データ操作" },
+      { name: "PostgreSQL", detail: "ユーザー + 会社" },
+    ],
+    featured: true,
+    featured_order: 1,
+    summary_en:
+      "A Go backend organized around clear application boundaries, with PostgreSQL, API documentation, and Docker.",
+    summary_ja:
+      "アプリケーションの役割を分けたGoのバックエンドです。PostgreSQL、APIのドキュメント、Dockerを使っています。",
     url: "https://github.com/IshmamAbir/Clean-Architecture-Go-Postgres",
     img_url: "files/projects/github+golang.png",
     project_type: "OPEN_SOURCE",
@@ -249,6 +305,33 @@ export const projects = [
   {
     id: 8,
     name: "gRPC Banking System",
+    problem_en: "Expose banking operations through HTTP and gRPC while handling background work separately.",
+    problem_ja: "銀行の処理をHTTPとgRPCから使えるようにし、時間がかかる作業を別の処理に分けます。",
+    approach_en: "Run gRPC and Gateway servers over the bank service, use a sqlc store for PostgreSQL, and distribute Asynq jobs through Redis.",
+    approach_ja: "gRPCとGatewayから同じサービスを使います。PostgreSQLの操作にはsqlcを使い、RedisとAsynqで別の作業を実行します。",
+    contribution_en: "Built a Go banking backend combining typed API contracts, database access, and asynchronous email tasks.",
+    contribution_ja: "Goで銀行システムのバックエンドを作り、API、データ操作、メールの送信処理を組み合わせました。",
+    architecture_source: "https://github.com/IshmamAbir/go-advance/blob/main/main.go",
+    architecture_en: [
+      { name: "gRPC / HTTP", detail: "Protocol Buffers · Gateway" },
+      { name: "Bank service", detail: "gapi" },
+      { name: "Data access", detail: "sqlc · pgx" },
+      { name: "PostgreSQL", detail: "banking data" },
+    ],
+    architecture_ja: [
+      { name: "gRPC / HTTP", detail: "Protocol Buffers · Gateway" },
+      { name: "銀行のサービス", detail: "gapi" },
+      { name: "データ操作", detail: "sqlc · pgx" },
+      { name: "PostgreSQL", detail: "銀行のデータ" },
+    ],
+    background_flow_en: "Background jobs: Asynq / Redis / worker",
+    background_flow_ja: "別の作業: Asynq / Redis / worker",
+    featured: true,
+    featured_order: 3,
+    summary_en:
+      "A banking backend with typed gRPC APIs, token-based authentication, and asynchronous background jobs.",
+    summary_ja:
+      "gRPCのAPI、トークン認証、バックグラウンド処理を備えた銀行システムのバックエンドです。",
     url: "https://github.com/IshmamAbir/go-advance",
     img_url: "files/projects/github+golang.png",
     project_type: "OPEN_SOURCE",
@@ -263,6 +346,10 @@ export const projects = [
   {
     id: 4,
     name: "Matrix Platform Limited",
+    summary_en:
+      "A complete company website for a garments manufacturer, from planning through deployment and maintenance.",
+    summary_ja:
+      "衣料品メーカーの会社サイトです。計画から公開、保守まで担当しました。",
     url: "https://matrixapparels.com/",
     img_url: "files/projects/matrix_apparels.png",
     project_type: "freelance_work",
@@ -285,6 +372,10 @@ export const projects = [
   {
     id: 3,
     name: "Décor Supplier UK",
+    summary_en:
+      "Frontend development for a UK home décor store, built around the client's requirements.",
+    summary_ja:
+      "イギリスのインテリア商品の通販サイトです。お客様の要望に合わせて画面を開発しました。",
     url: "https://decorsupplier.co.uk/",
     img_url: "files/projects/decor_supplier.jpeg",
     project_type: "freelance_work",
@@ -301,6 +392,10 @@ export const projects = [
   {
     id: 7,
     name: "Weather Web App",
+    summary_en:
+      "A Vue weather application integrating OpenWeather data, developed and deployed as a technical interview project.",
+    summary_ja:
+      "OpenWeatherのデータを表示するVueの天気アプリです。採用試験の課題として開発し、公開しました。",
     url: "https://weather-webapp-kodensya.netlify.app/#/",
     img_url: "files/projects/weather-webapp.jpeg",
     project_type: "personal",
@@ -317,6 +412,10 @@ export const projects = [
   {
     id: 2,
     name: "Spring Security Authentication App",
+    summary_en:
+      "Role-based authentication and account management using Java, Spring Boot, and Spring Security.",
+    summary_ja:
+      "Java、Spring Boot、Spring Securityで作った、権限ごとの認証とアカウント管理のアプリです。",
     url: "https://github.com/IshmamAbir/Authentication-App-Spring-Security",
     img_url: null,
     project_type: "personal",
@@ -342,6 +441,10 @@ export const projects = [
   {
     id: 1,
     name: "COVID-19 Tracker",
+    summary_en:
+      "An Angular application presenting country-level COVID-19 reports from a public API.",
+    summary_ja:
+      "公開APIを使い、国ごとのCOVID-19の情報を表示するAngularのアプリです。",
     url: "https://covid19-tracker-31b45.web.app",
     img_url: "files/projects/covid_tracker.png",
     project_type: "personal",
@@ -380,11 +483,17 @@ export const JobExperiences = [
     id: 1,
     position: "Software Development Engineer",
     company_name: "Kodensya Co. Ltd (株式会社興電舎)",
+    summary_en:
+      "Developing manufacturing business software in Go and Vue, from database design and legacy modernization to deployment and maintenance.",
+    summary_ja:
+      "GoとVueで製造業の業務システムを開発しています。データベースの設計、古いシステムの改善、公開、保守まで担当しています。",
     company_website: "https://kodensya.co.jp/",
     start_time: "Jan 2023",
     end_time: null,
     company_location_en: "Nobeoka, Miyazaki, Japan",
     company_location_ja: "宮崎県宮崎市",
+    display_location_en: "Japan",
+    display_location_ja: "日本",
     short_description_en:
       "I am currently working as a Software Development Engineer at Kodensya Co Ltd (株式会社興電舎). My main responsibilities include: Designing, coding, testing, and debugging company's core web applications. See details page for the complete technical details.",
     short_description_ja:
@@ -576,6 +685,10 @@ export const JobExperiences = [
   {
     id: 2,
     position: "Associate Software Engineer-L2",
+    summary_en:
+      "Developed Java and Spring Boot APIs for a loyalty platform, covering requirements, database design, reporting, and code review.",
+    summary_ja:
+      "ポイント管理システムのAPIをJavaとSpring Bootで開発しました。要件の確認、データベースの設計、帳票、コードレビューを担当しました。",
     company_name: "Brain Station 23 PLC",
     company_website: "https://brainstation-23.com/",
     start_time: "Jan 2022",
@@ -699,6 +812,10 @@ export const JobExperiences = [
   {
     id: 3,
     position: "Associate Software Engineer-L1",
+    summary_en:
+      "Built and maintained loyalty-platform backend features with Java, Spring Boot, and MySQL.",
+    summary_ja:
+      "Java、Spring Boot、MySQLを使い、ポイント管理システムのバックエンド機能を開発、保守しました。",
     company_name: "Brain Station 23 PLC",
     company_website: "https://brainstation-23.com/",
     start_time: "Sept 2021",
@@ -800,6 +917,10 @@ export const JobExperiences = [
   {
     id: 4,
     position: "Freelance Web Developer (Contract based)",
+    summary_en:
+      "Delivered websites and web applications for clients, working across frontend development and backend integration.",
+    summary_ja:
+      "お客様向けのウェブサイトやアプリを作りました。画面の開発とバックエンドとの連携を担当しました。",
     company_name: "BroTech IT Ltd.",
     company_website: "https://www.linkedin.com/company/brotech-it/",
     start_time: "Apr 2020",

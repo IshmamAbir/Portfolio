@@ -30,7 +30,7 @@ export class UserInfoClass extends BaseModel {
         data.first_name_en +
         (data.middle_name_en ? " " + data.middle_name_en + " " : " ") +
         data.last_name_en
-      ).toUpperCase(),
+      ),
       ja:
         data.last_name_ja +
         "　" +
@@ -44,6 +44,14 @@ export class UserInfoClass extends BaseModel {
     this.bannerIntroduction = {
       en: data.banner_introduction_en,
       ja: data.banner_introduction_ja,
+    };
+    this.heroHeadline = {
+      en: data.hero_headline_en,
+      ja: data.hero_headline_ja,
+    };
+    this.heroSummary = {
+      en: data.hero_summary_en,
+      ja: data.hero_summary_ja,
     };
   }
 

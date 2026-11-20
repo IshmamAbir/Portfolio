@@ -29,13 +29,17 @@ export class ExperienceClass extends DatedModel {
       en: data.short_description_en,
       ja: data.short_description_ja,
     };
+    this.summary = {
+      en: data.summary_en,
+      ja: data.summary_ja,
+    };
     this.description = {
       en: data.description_en,
       ja: data.description_ja,
     };
     this.companyLocation = {
-      en: data.company_location_en,
-      ja: data.company_location_ja,
+      en: data.display_location_en || data.company_location_en,
+      ja: data.display_location_ja || data.company_location_ja,
     };
   }
 

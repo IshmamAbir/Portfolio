@@ -1,13 +1,10 @@
 import { createI18n } from "vue-i18n";
 import en from "@/locales/en.json";
 import ja from "@/locales/ja.json";
+import { initialLocale } from "@/includes/preferences";
 
 export default createI18n({
-  // locale: 'ja',
-  locale: navigator.languages[0].split("-")[0] === "ja" ? "ja" : "en",
-  fallbackLocale: "ja",
-  messages: {
-    en,
-    ja,
-  },
+  locale: initialLocale(),
+  fallbackLocale: "en",
+  messages: { en, ja },
 });

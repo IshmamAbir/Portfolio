@@ -4,6 +4,7 @@ import App from "./App.vue";
 import i18n from "./includes/i18n";
 import vuetify from "./plugins/vuetify";
 import router from "./router";
+import "./assets/css/site.css";
 
 createApp(App)
   .use(router)

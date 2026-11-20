@@ -1,256 +1,153 @@
 <template>
-  <div class="rn-resume-area rn-section-gap section-separator" id="skills">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="section-title text-center">
-            <!-- <span class="subtitle">7+ Years of Experience</span> -->
-            <h2 class="title">{{ $t("skill.skill_header") }}</h2>
-          </div>
+  <section id="about" class="section about-section" aria-labelledby="about-title">
+    <div class="site-container">
+      <div class="section-header">
+        <div>
+          <p class="file-label"><span aria-hidden="true">about.md</span><span>{{ $t("about_content.eyebrow") }}</span></p>
+          <h2 id="about-title" class="section-heading">{{ $t("about_content.title") }}</h2>
         </div>
       </div>
-      <div class="row mt--45">
-        <div class="col-lg-12">
-          <ul class="rn-nav-list nav nav-tabs" id="myTabs" role="tablist">
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                id="professional-tab"
-                data-toggle="tab"
-                href="#professional"
-                role="tab"
-                aria-controls="professional"
-                aria-selected="true"
-              >
-                {{ $t("skill.technical_skills") }}
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="certification-tab"
-                data-toggle="tab"
-                href="#certification"
-                role="tab"
-                aria-controls="certification"
-                aria-selected="false"
-              >
-                {{ $t("skill.certifications") }}
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                id="achievement-tab"
-                data-toggle="tab"
-                href="#achievement"
-                role="tab"
-                aria-controls="achievement"
-                aria-selected="false"
-              >
-                {{ $t("skill.achievements") }}
-              </a>
-            </li>
-          </ul>
-          <!-- start: Skill List  -->
-          <!-- Start Tab Content Wrapper  -->
-          <div class="rn-nav-content tab-content" id="myTabContents">
-            <!-- Start Single Tab  -->
-            <div
-              class="tab-pane show active fade single-tab-area"
-              id="professional"
-              role="tabpanel"
-              aria-labelledby="professional-tab"
-            >
-              <div class="personal-experience-inner mt--40">
-                <div
-                  class="row row--40"
-                  v-for="(item, index) in skillList"
-                  :key="item"
-                >
-                  <!-- Start Single Progressbar  -->
-                  <div
-                    class="col-lg-6 col-md-6 col-12"
-                    :class="{ 'offset-lg-6 offset-md-6 mt_sm--60': index % 2 !== 0 }"
-                  >
-                    <div class="progress-wrapper">
-                      <div class="content">
-                        <!-- <span class="subtitle">Features</span>
-                        <h4 class="maintitle">Design Skill</h4> -->
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">{{ item.name }}</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.5s"
-                              data-wow-delay=".3s"
-                              role="progressbar"
-                              :style="'width: ' + item.percentage + '%'"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">
-                                {{ item.percentage }}%
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Single Progressbar  -->
-
-                </div>
-              </div>
-            </div>
-            <!-- End Single Tab  -->
-            <!-- end: Skill List -->
-
-            <!-- start: Certification List  -->
-            <!-- Start Single Tab  -->
-            <div
-              class="tab-pane fade"
-              id="certification"
-              role="tabpanel"
-              aria-labelledby="certification-tab"
-            >
-              <div class="personal-experience-inner mt--40">
-                <div class="row">
-                  <!-- Start Skill List Area 2nd  -->
-                  <div class="col-lg-10 col-md-12 col-12 mt_md--60 mt_sm--60">
-                    <div class="content">
-                      <!-- <span class="subtitle">2007 - 2010</span>
-                       <h4 class="maintitle">Job Experience {{$t('skill.certifications')}}</h4> -->
-                      <div class="experience-list">
-                        <!-- Start Single List  -->
-                        <div
-                          class="resume-single-list"
-                          v-for="item in certificationList"
-                          :key="item.id"
-                        >
-                          <div class="inner">
-                            <div class="heading">
-                              <div class="title">
-                                <h4>{{ item.title }}</h4>
-                                <a :href="item.url" target="_blank">
-                                  <span>
-                                    {{ item.instituteName }}
-                                    <i class="feather-arrow-up-right" />
-                                  </span>
-                                </a>
-                              </div>
-                              <div class="date-of-time">
-                                <span>
-                                  {{ item.dateRange }}
-                                </span>
-                              </div>
-                            </div>
-                            <p class="description">
-                              {{ item.getLocalizedProperty("description") }}
-                            </p>
-                          </div>
-                        </div>
-                        <!-- End Single List  -->
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Skill List Area  -->
-                </div>
-              </div>
-            </div>
-            <!-- End Single Tab  -->
-            <!-- end: Certification List  -->
-
-            <!-- start: Achievement List  -->
-            <!-- Start Single Tab  -->
-            <div
-              class="tab-pane fade"
-              id="achievement"
-              role="tabpanel"
-              aria-labelledby="achievement-tab"
-            >
-              <div class="personal-experience-inner mt--40">
-                <div class="row">
-                  <!-- Start Skill List Area  -->
-                  <div
-                    class="col-lg-6 col-md-12 col-12"
-                    v-for="item in achievementList"
-                    :key="item.id"
-                  >
-                    <div class="content">
-                      <!-- <span class="subtitle">2007 - 2010</span>
-                      <h4 class="maintitle">Company Experience</h4> -->
-                      <div class="experience-list">
-                        <!-- Start Single List  -->
-                        <div
-                          data-aos="fade-up"
-                          data-aos-duration="500"
-                          data-aos-delay="300"
-                          data-aos-once="true"
-                          class="resume-single-list"
-                        >
-                          <div class="inner">
-                            <div class="heading">
-                              <div class="title">
-                                <a :href="item.url" target="_blank">
-                                  <h4>{{ item.title }}</h4>
-                                </a>
-                                <span>{{ item.location }}</span>
-                              </div>
-                              <div class="date-of-time">
-                                <span>{{ item.dateRange }}</span>
-                              </div>
-                            </div>
-                            <p
-                              class="description"
-                              v-if="item.getLocalizedProperty('description')"
-                            >
-                              {{ item.getLocalizedProperty("description") }}
-                            </p>
-                          </div>
-                        </div>
-                        <!-- End Single List  -->
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Skill List Area  -->
-                </div>
-              </div>
-            </div>
-            <!-- End Single Tab  -->
-            <!-- end: Achievement List  -->
-          </div>
+      <div class="about-introduction">
+        <figure v-if="user" class="profile-portrait blueprint-grid">
+          <img :src="assetUrl(user.centerImage)" :alt="$t('ui.portrait_alt')" width="320" height="400" loading="lazy" />
+          <figcaption>{{ user.getLocalizedProperty("fullName") }}</figcaption>
+        </figure>
+        <div>
+          <p class="section-intro">{{ $t("about_content.intro") }}</p>
+          <p class="personal-note">{{ $t("about_content.personal_note") }}</p>
         </div>
       </div>
+
+      <div class="capabilities" aria-labelledby="skills">
+        <h3 id="skills" class="subsection-heading">{{ $t("about_content.capabilities") }}</h3>
+        <dl class="skill-groups">
+          <div v-for="group in skillGroups" :key="group.key" class="skill-group">
+            <dt>{{ $t("about_content." + group.key) }}</dt>
+            <dd>
+              <ul><li v-for="skill in group.items" :key="skill">{{ skill }}</li></ul>
+            </dd>
+          </div>
+        </dl>
+      </div>
+
+      <v-expansion-panels class="about-details" variant="accordion" multiple>
+        <v-expansion-panel v-if="user" elevation="0">
+          <v-expansion-panel-title>{{ $t("about_content.full_profile") }}</v-expansion-panel-title>
+          <v-expansion-panel-text>
+            <p class="profile-copy">{{ user.getLocalizedProperty("bannerIntroduction") }}</p>
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+
+        <v-expansion-panel elevation="0">
+          <v-expansion-panel-title>
+            {{ $t("about_content.certifications", { count: certificationList.length }) }}
+          </v-expansion-panel-title>
+          <v-expansion-panel-text>
+            <div class="credential-list">
+              <article v-for="item in certificationList" :key="item.id" class="credential">
+                <div class="credential-heading">
+                  <h4><a class="text-link" :href="item.url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a></h4>
+                  <span class="credential-date">{{ item.dateRange }}</span>
+                </div>
+                <p class="credential-institute">{{ item.instituteName }}</p>
+                <p>{{ item.getLocalizedProperty("description") }}</p>
+              </article>
+            </div>
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+
+        <v-expansion-panel elevation="0">
+          <v-expansion-panel-title>
+            {{ $t("about_content.achievements", { count: achievementList.length }) }}
+          </v-expansion-panel-title>
+          <v-expansion-panel-text>
+            <div class="credential-list">
+              <article v-for="item in achievementList" :key="item.id" class="credential">
+                <div class="credential-heading">
+                  <h4><a class="text-link" :href="item.url" target="_blank" rel="noopener noreferrer">{{ item.title }}</a></h4>
+                  <span class="credential-date">{{ item.dateRange }}</span>
+                </div>
+                <p class="credential-institute">{{ item.location }}</p>
+                <p>{{ item.getLocalizedProperty("description") }}</p>
+              </article>
+            </div>
+          </v-expansion-panel-text>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
+import { mapState } from "pinia";
+import { useUserStore } from "@/stores/user.store";
 import { PortfolioService } from "@/services/portfolio.service";
+import { assetUrl } from "@/includes/assets";
 
 export default {
-  name: "AppSkills",
+  name: "AppSkillsCertificationAchievements",
   data() {
     return {
       certificationList: [],
-      skillList: [],
       achievementList: [],
+      skillGroups: [
+        { key: "backend", items: ["Go", "Java", "Spring Boot"] },
+        { key: "data", items: ["PostgreSQL", "MySQL", "Redis"] },
+        { key: "frontend", items: ["Vue", "Vuetify"] },
+        { key: "delivery", items: ["Docker", "GitHub", "GitHub Actions"] },
+      ],
     };
   },
-
+  computed: {
+    ...mapState(useUserStore, ["user"]),
+  },
+  methods: { assetUrl },
   async created() {
-    const technicalSkills = await PortfolioService.getTechnicalSkills();
-    this.skillList = technicalSkills;
-
-    const certifications = await PortfolioService.getCertifications();
-    this.certificationList = certifications;
-
-    const achievements = await PortfolioService.getAchievements();
-    this.achievementList = achievements;
+    [this.certificationList, this.achievementList] = await Promise.all([
+      PortfolioService.getCertifications(),
+      PortfolioService.getAchievements(),
+    ]);
   },
 };
 </script>
+
+<style scoped>
+.file-label { display: flex; flex-wrap: wrap; gap: .75rem; }
+.file-label > span + span { color: rgb(var(--v-theme-secondary)); }
+.about-introduction { display: grid; grid-template-columns: 192px minmax(0, 1fr); gap: 48px; align-items: center; max-width: 900px; }
+.profile-portrait { margin: 0; padding: 10px; border: 1px solid rgb(var(--v-theme-outline)); border-radius: 8px; }
+.profile-portrait img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 32%; border-radius: 4px; filter: saturate(.6); }
+.profile-portrait figcaption { margin-top: 10px; color: rgb(var(--v-theme-secondary)); font-size: .875rem; line-height: 1.5; overflow-wrap: anywhere; }
+.personal-note { margin-top: 20px; color: rgb(var(--v-theme-secondary)); line-height: 1.8; }
+.capabilities { margin-block: 48px; }
+.subsection-heading { font-size: 1.125rem; font-weight: 600; margin-bottom: 24px; }
+.skill-groups { margin: 0; border: 1px solid rgb(var(--v-theme-outline)); border-radius: 8px; overflow: hidden; background: rgb(var(--v-theme-surface)); }
+.skill-group { display: grid; grid-template-columns: 192px minmax(0, 1fr); gap: 32px; padding: 20px 24px; }
+.skill-group + .skill-group { border-top: 1px solid rgb(var(--v-theme-outline)); }
+.skill-group dt { font-family: var(--font-mono); font-size: .875rem; color: rgb(var(--v-theme-secondary)); line-height: 1.9; }
+.skill-group dd { margin: 0; min-width: 0; }
+.skill-group ul { display: flex; flex-wrap: wrap; gap: 8px 32px; list-style: none; padding: 0; font-weight: 500; }
+.skill-group li { overflow-wrap: anywhere; }
+.about-details { border-top: 1px solid rgb(var(--v-theme-outline)); }
+.about-details :deep(.v-expansion-panel) { color: rgb(var(--v-theme-on-surface)); background: transparent; border-bottom: 1px solid rgb(var(--v-theme-outline)); }
+.about-details :deep(.v-expansion-panel-title) { padding: 24px 0; min-height: 72px; font-size: 1rem; font-weight: 500; }
+.about-details :deep(.v-expansion-panel-text__wrapper) { padding: 0 0 24px; }
+.profile-copy { max-width: 74ch; white-space: pre-line; line-height: 1.9; color: rgb(var(--v-theme-secondary)); }
+.credential-list { display: grid; gap: 28px; }
+.credential + .credential { border-top: 1px solid rgb(var(--v-theme-outline)); padding-top: 28px; }
+.credential-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.credential h4 { font-weight: 500; font-size: 1rem; line-height: 1.6; }
+.credential-date { flex-shrink: 0; font-family: var(--font-mono); font-size: .875rem; color: rgb(var(--v-theme-secondary)); }
+.credential p { max-width: 76ch; color: rgb(var(--v-theme-secondary)); margin-top: 10px; line-height: 1.8; }
+.credential .credential-institute { margin-top: 4px; font-size: .875rem; }
+@media (max-width: 800px) {
+  .about-introduction { grid-template-columns: 144px minmax(0, 1fr); gap: 24px; }
+  .credential-heading { flex-direction: column; gap: 4px; }
+}
+@media (max-width: 599px) {
+  .about-introduction { grid-template-columns: 1fr; gap: 24px; }
+  .profile-portrait { width: 160px; }
+  .skill-group { grid-template-columns: minmax(0, 1fr); gap: 8px; padding: 16px 20px; }
+  .skill-group ul { gap: 8px 24px; }
+}
+</style>
