@@ -33,11 +33,8 @@
                     <div
                       class="inner change-cursor"
                       data-toggle="modal"
-                      :data-target="'#jdId' + item.id"
-                      @click.prevent="
-                        (itemId = 'jdId' + item.id),
-                          (companyData = item)
-                      "
+                      data-target="#job-details-modal"
+                      @click.prevent="companyData = item"
                     >
                       <div class="heading">
                         <div class="title">
@@ -47,24 +44,23 @@
                         <div class="date-of-time">
                           <span>
                             {{ item.dateRange }}
-                            </span>
-                          
+                          </span>
                         </div>
                       </div>
                       <p class="description justify-text">
                         <!-- {{ item.description }} -->
                         {{ item.getLocalizedProperty("shortDescription") }}
-                        <v-spacer />
+                      </p>
+                      <v-spacer />
 
-                        <div class="pt-5 d-flex justify-end">
+                      <div class="pt-5 d-flex justify-end">
                         <i class="pr-2 text-decoration-underline">
-                          See Details 
+                          See Details
                         </i>
                         <i
                           class="feather-arrow-up-right"
                         />
-                        </div>
-                      </p>
+                      </div>
                     </div>
                   </div>
                   <!-- End Single List  -->
@@ -77,10 +73,7 @@
       </div>
     </div>
   </div>
-  <JobDescriptionPopup
-  :itemId="itemId"
-    :company-data="companyData"
-  />
+  <JobDescriptionPopup :company-data="companyData" />
 </template>
 
 <script>
@@ -92,7 +85,6 @@ export default {
   components: { JobDescriptionPopup },
   data() {
     return {
-      itemId:'',
       companyData: null,
       timeline: [],
     };

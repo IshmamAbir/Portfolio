@@ -30,7 +30,6 @@ export const PortfolioService = {
   },
 
   async getUserInfo() {
-    console.log("getUserInfo ->", new UserInfoClass(userData));
     return new UserInfoClass(userData);
   },
 

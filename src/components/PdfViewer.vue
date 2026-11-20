@@ -22,26 +22,16 @@
             size="x-small"
             icon
           >
-            <span v-if="!fullscreen">
-              <v-icon size="x-large" color="#093d86">mdi-fullscreen</v-icon>
-              <v-tooltip
-                :open-delay="tooltipOpenDelay"
-                activator="parent"
-                location="bottom"
-              >
-                {{ $t("common.open_fullscreen") }}
-              </v-tooltip>
-            </span>
-            <span v-else>
+            <span>
               <v-icon size="x-large" color="#093d86">
-                mdi-fullscreen-exit
+                {{ fullscreen ? "mdi-fullscreen-exit" : "mdi-fullscreen" }}
               </v-icon>
               <v-tooltip
                 :open-delay="tooltipOpenDelay"
                 activator="parent"
                 location="bottom"
               >
-                {{ $t("common.close_fullscreen") }}
+                {{ $t(fullscreen ? "common.close_fullscreen" : "common.open_fullscreen") }}
               </v-tooltip>
             </span>
           </v-btn>
@@ -129,30 +119,20 @@ export default {
       width: "1150px",
       fullscreen: false,
       config: {
-        // secondaryToolbar: false,
         secondaryToolbar: {
-          secondaryPresentationMode: true,
           secondaryOpenFile: false,
           secondaryPrint: false,
           secondaryDownload: false,
           secondaryViewBookmark: false,
-          firstPage: true,
-          lastPage: true,
-          pageRotateCw: true,
-          pageRotateCcw: true,
-          cursorSelectTool: true,
-          cursorHandTool: true,
           scrollVertical: false,
           scrollHorizontal: false,
           scrollWrapped: false,
           spreadNone: false,
           spreadOdd: false,
           spreadEven: false,
-          documentProperties: true,
         },
         toolbar: {
           toolbarViewerRight: {
-            presentationMode: true,
             openFile: false,
             print: false,
             download: false,

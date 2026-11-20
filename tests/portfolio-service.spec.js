@@ -4,7 +4,11 @@ const { test } = require("node:test");
 
 test("article fetching preserves query parameters and rejects HTTP errors", async (t) => {
   const { createServer } = await import("vite");
-  const server = await createServer({ server: { middlewareMode: true } });
+  const server = await createServer({
+    server: { middlewareMode: true },
+    // This SSR check must not rewrite a running dev server's browser cache.
+    optimizeDeps: { disabled: true },
+  });
   t.after(() => server.close());
   const { PortfolioService } = await server.ssrLoadModule(
     "/src/services/portfolio.service.js"

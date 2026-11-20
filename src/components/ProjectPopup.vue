@@ -1,13 +1,13 @@
 <template>
   <div
     class="modal fade"
-    :id="projectId"
+    id="project-details-modal"
     tabindex="-1"
     role="dialog"
     aria-hidden="true"
   >
-    <div v-if="projectData" class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div v-if="projectData" class="modal-content">
         <div class="modal-header">
           <button
             type="button"
@@ -95,10 +95,6 @@ export default {
   props: {
     projectData: {
       type: ProjectClass,
-      required: true,
-    },
-    projectId: {
-      type: String,
       required: true,
     },
   },

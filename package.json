@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vite preview",
     "build": "vite build",
+    "postbuild": "node -e \"require('node:fs').cpSync('files', 'dist/files', { recursive: true })\"",
     "test": "node --test tests/*.spec.js",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "dev": "vite",
@@ -15,7 +16,6 @@
   "dependencies": {
     "@duskmoon/vue3-typed-js": "^0.0.4",
     "@mdi/font": "5.9.55",
-    "@vueform/toggle": "^2.1.4",
     "pinia": "^2.0.32",
     "vue": "^3.2.47",
     "vue-i18n": "^9.14.4",

@@ -6,7 +6,6 @@
     methods: function () {
       imJs.featherAtcivation();
       imJs.backToTopInit();
-      imJs.smothScroll_Two();
       imJs.contactForm();
       imJs.wowActive();
       imJs.awsActivation();
@@ -59,18 +58,6 @@
 
     wowActive: function () {
       new WOW().init();
-    },
-
-    smothScroll_Two: function () {
-      $(document).on("click", ".smoth-animation-two", function (event) {
-        event.preventDefault();
-        $("html, body").animate(
-          {
-            scrollTop: $($.attr(this, "href")).offset().top - 0,
-          },
-          300
-        );
-      });
     },
 
     featherAtcivation: function () {

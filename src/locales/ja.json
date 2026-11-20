@@ -8,6 +8,7 @@
     "print": "印刷する"
   },
   "header": {
+    "language": "言語",
     "home": "ホーム",
     "education": "学歴",
     "contact": "お問い合わせ",

@@ -1,17 +1,16 @@
 <template>
   <div
     class="modal fade"
-    :id="itemId"
+    id="job-details-modal"
     tabindex="-1"
     role="dialog"
     aria-hidden="true"
   >
     <div
-      v-if="companyData"
       class="modal-dialog modal-dialog-centered modal-news"
       role="document"
     >
-      <div class="modal-content">
+      <div v-if="companyData" class="modal-content">
         <div class="modal-header">
           <button
             type="button"
@@ -84,10 +83,6 @@ export default {
   props: {
     companyData: {
       type: ExperienceClass,
-      required: true,
-    },
-    itemId: {
-      type: String,
       required: true,
     },
   },

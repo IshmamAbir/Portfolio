@@ -8,6 +8,7 @@
     "print": "Print"
   },
   "header": {
+    "language": "Language",
     "home": "Home",
     "education": "Education",
     "contact": "Contacts",

@@ -31,22 +31,23 @@
         <!-- Child 1: The text (will stay on the left) -->
         <span
           style="display: flex; align-items: center"
-          :class="langValue === 'en' ? 'text-danger' : 'color-blue'"
+          :class="$i18n.locale === 'en' ? 'text-danger' : 'color-blue'"
         >
           <v-icon class="pr-2">mdi-translate</v-icon>
-          {{ langValue === "en" ? "English" : "日本語" }}
+          {{ $i18n.locale === "en" ? "English" : "日本語" }}
         </span>
         <v-spacer />
-        <!-- Child 2: The Toggle (will stay on the right) -->
-        <Toggle
-          size="default"
-          class="z-index-1 toggle-on-color toggle-off-color"
-          on-label="JA"
-          off-label="EN"
+        <v-switch
+          class="language-switch flex-grow-0"
+          density="compact"
+          hide-details
+          inset
+          color="#ff014f"
+          :label="$i18n.locale === 'en' ? 'EN' : 'JA'"
+          :aria-label="$t('header.language')"
           false-value="ja"
           true-value="en"
-          v-model="langValue"
-          @change="changeLanguage"
+          v-model="$i18n.locale"
         />
       </div>
 
@@ -84,13 +85,7 @@
   <!-- Header Mobile Bar  -->
   <div class="header-style-2 d-block d-lg-none">
     <div class="row align-items-center">
-      <div class="col-6">
-        <!-- <div class="logo">
-          <a href="#home">
-            <img src="@/assets/images/logo/logo-dark.png" alt="Logo" />
-          </a>
-        </div> -->
-      </div>
+      <div class="col-6"></div>
       <div class="col-6">
         <div class="header-right text-right">
           <div class="hamberger-menu">
@@ -139,19 +134,21 @@
       <i
         class="nav-link smoth-animation-two active d-flex justify-content-between align-items-center"
       >
-        <span :class="langValue === 'en' ? 'text-danger' : 'color-blue'">
+        <span :class="$i18n.locale === 'en' ? 'text-danger' : 'color-blue'">
           <v-icon class="pr-2">mdi-translate</v-icon>
-          {{ langValue === "en" ? "English" : "日本語" }}
+          {{ $i18n.locale === "en" ? "English" : "日本語" }}
         </span>
-        <Toggle
-          size="default"
-          class="z-index-1 toggle-on-color"
-          on-label="JA"
-          off-label="EN"
+        <v-switch
+          class="language-switch flex-grow-0"
+          density="compact"
+          hide-details
+          inset
+          color="#ff014f"
+          :label="$i18n.locale === 'en' ? 'EN' : 'JA'"
+          :aria-label="$t('header.language')"
           false-value="ja"
           true-value="en"
-          v-model="langValue"
-          @change="changeLanguage"
+          v-model="$i18n.locale"
         />
       </i>
       <v-divider />
@@ -190,17 +187,12 @@
   <!-- End Popup Mobile Menu  -->
 </template>
 <script>
-import Toggle from "@vueform/toggle";
-import "@vueform/toggle/themes/default.css";
 import { PortfolioService } from "../services/portfolio.service";
 import { mapState } from "pinia";
 import { useUserStore } from "../stores/user.store";
 
 export default {
   name: "AppHeader",
-  components: {
-    Toggle,
-  },
   data() {
     return {
       isMobileMenuOpen: false,
@@ -213,7 +205,6 @@ export default {
         { id: "blog", label: "blog", icon: "edit" },
         { id: "contacts", label: "contact", icon: "message-circle" },
       ],
-      langValue: navigator.languages[0].split("-")[0],
       // search social icons at https://feathericons.com/
       socialList: [],
     };
@@ -221,12 +212,6 @@ export default {
 
   computed: {
     ...mapState(useUserStore, ["user"]),
-  },
-
-  methods: {
-    changeLanguage(lang) {
-      this.$i18n.locale = lang;
-    },
   },
 
   watch: {
@@ -253,17 +238,8 @@ export default {
 </script>
 
 <style scoped>
-.toggle-on-color {
-  --toggle-width: 3rem;
-  --toggle-height: 1.25rem;
-  --toggle-border: 0.125rem;
-  --toggle-font-size: 0.75rem;
-  --toggle-bg-on: var(--color-primary);
-  --toggle-border-on: var(--color-subtitle);
-  --toggle-text-on: #ffffff;
-  --toggle-bg-off: #093d86e6;
-  --toggle-border-off: #093d86e6;
-  --toggle-text-off: #ffffff;
+.language-switch :deep(.v-switch__track) {
+  background-color: #093d86;
 }
 .color-blue {
   color: #093d86e6;

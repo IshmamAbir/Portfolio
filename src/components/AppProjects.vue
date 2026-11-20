@@ -31,10 +31,8 @@
           <div
             class="rn-portfolio"
             data-toggle="modal"
-            :data-target="'#projectId_' + item.id"
-            @click.prevent="
-              (projectId = 'projectId_' + item.id), (projectData = item)
-            "
+            data-target="#project-details-modal"
+            @click.prevent="projectData = item"
           >
             <div class="inner">
               <div
@@ -91,12 +89,11 @@
     </div>
   </div>
 
-  <project-popup :projectId="projectId" :projectData="projectData" />
+  <project-popup :projectData="projectData" />
 </template>
 
 <script>
 import ProjectPopup from "./ProjectPopup.vue";
-import { ProjectTypeList } from "@/enums/project-type";
 import { PortfolioService } from "@/services/portfolio.service";
 
 export default {
@@ -106,7 +103,6 @@ export default {
   },
   data() {
     return {
-      projectId: "",
       projectData: null,
       projectList: [],
     };
@@ -114,13 +110,7 @@ export default {
   methods: {
     getProjectType(code) {
       if (!code) return "";
-      var projectType = ProjectTypeList.find(
-        (x) => x.code === code.toUpperCase()
-      );
-      // return projectType ? projectType.name : code;
-      return (
-        this.$t(`project_type.${projectType?.name?.toLowerCase()}`) || code
-      );
+      return this.$t(`project_type.${code.toLowerCase()}`) || code;
     },
   },
 

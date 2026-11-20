@@ -41,7 +41,6 @@ The portfolio data is currently managed in `src/data/portfolio.data.js`. This mo
 │ │ ├── css/
 │ │ ├── fonts/
 │ │ ├── images/
-│ │ └── scss/
 │ ├── components/
 │ │ ├── AppBlog.vue
 │ │ ├── AppContact.vue
@@ -56,8 +55,6 @@ The portfolio data is currently managed in `src/data/portfolio.data.js`. This mo
 │ │ └── ProjectPopup.vue
 │ ├── data/
 │ │ └── portfolio.data.js
-│ ├── enums/
-│ │ └── project-type.js
 │ ├── includes/
 │ │ └── i18n.js
 │ ├── locales/
@@ -129,7 +126,7 @@ The page will reload if you make edits. You will also see any lint errors in the
 
 ### `npm run build`
 
-Builds the app for production to the `dist` folder. It correctly bundles Vue in production mode and optimizes the build for the best performance.
+Builds the app for production to the `dist` folder and copies `files/`, including images and the CV, into the build.
 
 ### `npm run serve` or `npm run preview`
 

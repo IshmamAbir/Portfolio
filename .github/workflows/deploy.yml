@@ -24,11 +24,6 @@ jobs:
       - name: build project
         run: npm run build
 
-      - name: Copy 'files' folder to dist
-        run: |
-          mkdir -p dist/files  # Ensure 'files' folder exists in 'dist'
-          cp -r files/* dist/files/  # Copy all contents from 'files' to 'dist/files'
-
       - name: Deploy to GitHub Pages
         run: |
           cd dist
