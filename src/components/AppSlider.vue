@@ -59,7 +59,6 @@
     </div>
     <PdfViewer
       v-model="showPdf"
-      pdf-name="dfd"
       :pdf-path="user.cv"
       title="CV"
     ></PdfViewer>

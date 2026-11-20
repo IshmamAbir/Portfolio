@@ -3,7 +3,6 @@
     <v-main>
       <!-- Header area -->
       <app-header />
-      <!-- <gpt-header /> -->
 
       <router-view />
 

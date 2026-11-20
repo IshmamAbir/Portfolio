@@ -14,26 +14,19 @@
 10. Header
 11. Nav
 12. Mobilemenu
-13. Rightdemo
-14. Button
-15. Accordion
-16. Section Title
-17. Banner
-18. Service
-19. Modal
-20. Skill
-21. Progressbar
-22. Testimonial
-23. Clients
-24. Pricing
-25. Contact
-26. About
-27. Brand
-28. Footer
-29. Portfolio
-30. Slickstyle
-31. Home Classic
-32. White Version
+13. Button
+14. Accordion
+15. Section Title
+16. Banner
+17. Modal
+18. Skill
+19. Progressbar
+20. Contact
+21. About
+22. Footer
+23. Portfolio
+24. Home Classic
+25. White Version
 ----------------------------*/
 
 /* Default  */
@@ -53,7 +46,6 @@
 @import'header/header';
 @import'header/nav';
 @import'header/mobilemenu';
-@import'header/rightdemo';
 
 
 
@@ -62,18 +54,12 @@
 @import'elements/accordion';
 @import'elements/section-title';
 @import'elements/banner';
-@import'elements/service';
 @import 'elements/modal';
 @import'elements/skill';
 @import'elements/progressbar';
-@import'elements/testimonial';
-@import'elements/clients';
-@import'elements/pricing';
 @import'elements/contact';
 @import'elements/about';
-@import'elements/brand';
 @import'elements/footer';
 @import'elements/portfolio';
-@import'elements/slickstyle';
 @import'elements/home-classic';
 @import'elements/white-version';

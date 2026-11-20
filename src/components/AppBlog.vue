@@ -89,30 +89,20 @@
 </template>
 
 <script>
+import { PortfolioService } from "@/services/portfolio.service";
+
 export default {
   name: "AppBlog",
-  components: {},
   data: () => ({
     devToUsername: "ishmam_abir",
     blogList: [],
   }),
-  methods: {
-    getBlogListFromDevTo() {
-      this.axios
-        .get("https://dev.to/api/articles?username=" + this.devToUsername, {
-          params: { order: "created_at desc" },
-        })
-        .then((response) => {
-          //   var result = response.data;
-          this.blogList = response.data;
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    },
-  },
   async created() {
-    this.getBlogListFromDevTo();
+    try {
+      this.blogList = await PortfolioService.getBlogArticles(this.devToUsername);
+    } catch (error) {
+      console.error("Failed to fetch articles:", error);
+    }
   },
 };
 </script>

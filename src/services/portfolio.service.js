@@ -1,4 +1,5 @@
-// Service is currently getting dummy data from `portfolio.data.js`
+/* eslint-env browser */
+// Portfolio content is local; articles are fetched from dev.to.
 
 import {
   achievements,
@@ -19,6 +20,15 @@ import { UserInfoClass } from "@/model/User.model";
 
 // replace with your data fetch code to get data from database
 export const PortfolioService = {
+  async getBlogArticles(username) {
+    const query = new URLSearchParams({ username, order: "created_at desc" });
+    const response = await fetch(`https://dev.to/api/articles?${query}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch articles (${response.status})`);
+    }
+    return response.json();
+  },
+
   async getUserInfo() {
     console.log("getUserInfo ->", new UserInfoClass(userData));
     return new UserInfoClass(userData);

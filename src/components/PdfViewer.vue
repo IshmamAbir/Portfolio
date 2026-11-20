@@ -1,4 +1,3 @@
-<!-- Dont enter any 'filePath' property if the pdf is in the src root folder  -->
 <template>
   <v-dialog
     scrollable
@@ -73,20 +72,10 @@
               : 'height: 75dvh'
           "
           page-scale="page-fit"
-          :pdf="pdfPath == null ? '../src/' + pdfName : pdfPath"
+          :pdf="pdfPath"
           :page-number="1"
-          :config="configValue"
-          @open="openHandler"
-        >
-          <template #toolbar-right-prepend>
-            <button
-              v-show="downloadButtonShow"
-              class="toolbarButton print hiddenMediumView vue-pdf-app-icon print-button"
-              :title="$t('common.print')"
-              @click.prevent="printPdf"
-            />
-          </template>
-        </vue-pdf-app>
+          :config="config"
+        />
       </v-card-text>
     </v-card>
   </v-dialog>
@@ -112,13 +101,6 @@ export default {
       type: String,
     },
     /**
-     * ファイル名
-     */
-    pdfName: {
-      required: true,
-      type: String,
-    },
-    /**
      * タイトルの横のアイコン
      */
     icon: {
@@ -134,11 +116,6 @@ export default {
       required: false,
     },
     modelValue: {
-      type: Boolean,
-      required: false,
-      default: false,
-    },
-    downloadButtonShow: {
       type: Boolean,
       required: false,
       default: false,
@@ -194,51 +171,12 @@ export default {
         this.$emit("update:modelValue", value);
       },
     },
-    configValue() {
-      var config = this.config;
-      if (this.downloadButtonShow) {
-        config.toolbar.toolbarViewerRight.download = true;
-        // config.toolbar.toolbarViewerRight.print = true
-      }
-      return config;
-    },
   },
   mounted() {
     this.mobileView =
       /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
       );
-    console.log(this.pdfPath);
-  },
-  methods: {
-    pagesRendered(pdfApp) {
-      console.log(">> pagesRendered -> ", pdfApp);
-      window._pdfApp = pdfApp;
-    },
-    openHandler(pdfApp) {
-      window._pdfApp = pdfApp;
-    },
-
-    async printPdf() {
-      console.log("printPdf clicked", this.pdfPath);
-
-      if (this.pdfPath) {
-        // var classes = this.$refs.pdfElement.classList.remove('v-overlay-scroll-blocked')
-        // console.log('>> classList => ', classes)
-        // var test = document.getElementById(pdfPrintId)
-        var elm = document.getElementsByClassName(
-          "v-overlay-scroll-blocked"
-        )[0];
-        console.log(">> elm => ", elm);
-        if (
-          elm.classList &&
-          elm.classList.contains("v-overlay-scroll-blocked")
-        ) {
-          elm.classList.remove("v-overlay-scroll-blocked");
-        }
-        window.print();
-      }
-    },
   },
 };
 </script>

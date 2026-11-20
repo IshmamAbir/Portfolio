@@ -69,8 +69,11 @@
                   :key="item"
                 >
                   <!-- Start Single Progressbar  -->
-                  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="progress-wrapper" v-if="index % 2 === 0">
+                  <div
+                    class="col-lg-6 col-md-6 col-12"
+                    :class="{ 'offset-lg-6 offset-md-6 mt_sm--60': index % 2 !== 0 }"
+                  >
+                    <div class="progress-wrapper">
                       <div class="content">
                         <!-- <span class="subtitle">Features</span>
                         <h4 class="maintitle">Design Skill</h4> -->
@@ -99,37 +102,7 @@
                     </div>
                   </div>
                   <!-- End Single Progressbar  -->
-                  <!-- Start Single Progressbar  -->
-                  <div class="col-lg-6 col-md-6 col-12 mt_sm--60">
-                    <div class="progress-wrapper" v-if="index % 2 !== 0">
-                      <div class="content">
-                        <!-- <span class="subtitle">Features</span>
-                        <h4 class="maintitle">Development Skill</h4> -->
-                        <!-- Start Single Progress Charts -->
-                        <div class="progress-charts">
-                          <h6 class="heading heading-h6">{{ item.name }}</h6>
-                          <div class="progress">
-                            <div
-                              class="progress-bar wow fadeInLeft"
-                              data-wow-duration="0.5s"
-                              data-wow-delay=".3s"
-                              role="progressbar"
-                              :style="'width: ' + item.percentage + '%'"
-                              aria-valuenow="85"
-                              aria-valuemin="0"
-                              aria-valuemax="100"
-                            >
-                              <span class="percent-label">
-                                {{ item.percentage }}%
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- End Single Progress Charts -->
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Single Progressbar  -->
+
                 </div>
               </div>
             </div>
@@ -204,7 +177,7 @@
                   <!-- Start Skill List Area  -->
                   <div
                     class="col-lg-6 col-md-12 col-12"
-                    v-for="(item, index) in achievementList"
+                    v-for="item in achievementList"
                     :key="item.id"
                   >
                     <div class="content">

@@ -53,54 +53,14 @@
       <nav id="sideNavs" class="mainmenu-nav navbar-example2">
         <v-divider color="red" />
         <ul class="primary-menu nav nav-pills" style="padding: 0 0 0 0">
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two active" href="#home">
-              <!-- <vue-feather type="home" /> -->
-              <i data-feather="home"></i>
-              {{ $t("header.home") }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#educations">
-              <!-- <vue-feather type="briefcase" /> -->
-              <i data-feather="book-open"></i>
-              {{ $t("header.education") }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#experience">
-              <!-- <vue-feather type="layers" /> -->
-              <i data-feather="briefcase"></i>
-              {{ $t("header.experience") }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#skills">
-              <!-- <vue-feather type="layers" /> -->
-              <i data-feather="award"></i>
-              {{ $t("header.skill") }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#project">
-              <!-- <vue-feather type="layers" /> -->
-              <i data-feather="code"></i>
-              {{ $t("header.projects") }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#blog">
-              <!-- <vue-feather type="layers" /> -->
-              <i data-feather="edit"></i>
-              {{ $t("header.blog") }}
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link smoth-animation-two" href="#contacts">
-              <!-- <vue-feather type="message-circle" /> -->
-              <i data-feather="message-circle"></i>
-              {{ $t("header.contact") }}
+          <li v-for="(item, index) in menuItems" :key="item.id" class="nav-item">
+            <a
+              class="nav-link smoth-animation-two"
+              :class="{ active: index === 0 }"
+              :href="'#' + item.id"
+            >
+              <i :data-feather="item.icon"></i>
+              {{ $t('header.' + item.label) }}
             </a>
           </li>
         </ul>
@@ -197,68 +157,14 @@
       <v-divider />
       <div class="content">
         <ul class="primary-menu nav nav-pills">
-          <li class="nav-item">
-            <a
-              class="nav-link smoth-animation-two active"
-              @click="isMobileMenuOpen = false"
-              href="#home"
-            >
-              {{ $t("header.home") }}
-            </a>
-          </li>
-          <li class="nav-item">
+          <li v-for="(item, index) in menuItems" :key="item.id" class="nav-item">
             <a
               class="nav-link smoth-animation-two"
+              :class="{ active: index === 0 }"
               @click="isMobileMenuOpen = false"
-              href="#educations"
+              :href="'#' + item.id"
             >
-              {{ $t("header.education") }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link smoth-animation-two"
-              @click="isMobileMenuOpen = false"
-              href="#experience"
-            >
-              {{ $t("header.experience") }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link smoth-animation-two"
-              @click="isMobileMenuOpen = false"
-              href="#skills"
-            >
-              {{ $t("header.skill") }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link smoth-animation-two"
-              @click="isMobileMenuOpen = false"
-              href="#project"
-            >
-              {{ $t("header.projects") }}
-            </a>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link smoth-animation-two"
-              @click="isMobileMenuOpen = false"
-              href="#blog"
-            >
-              {{ $t("header.blog") }}
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a
-              class="nav-link smoth-animation-two"
-              @click="isMobileMenuOpen = false"
-              href="#contacts"
-            >
-              {{ $t("header.contact") }}
+              {{ $t('header.' + item.label) }}
             </a>
           </li>
         </ul>
@@ -267,65 +173,13 @@
           <span class="title">{{ $t("header.find_me_in") }}</span>
           <ul class="social-share d-flex liststyle">
             <li class="facebook">
-              <a href="#"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-facebook"
-                >
-                  <path
-                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
-                  ></path></svg
-              ></a>
+              <a href="#"><i class="feather-facebook"></i></a>
             </li>
             <li class="instagram">
-              <a href="#"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-instagram"
-                >
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path
-                    d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
-                  ></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg
-              ></a>
+              <a href="#"><i class="feather-instagram"></i></a>
             </li>
             <li class="linkedin">
-              <a href="#"
-                ><svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="feather feather-linkedin"
-                >
-                  <path
-                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
-                  ></path>
-                  <rect x="2" y="9" width="4" height="12"></rect>
-                  <circle cx="4" cy="4" r="2"></circle></svg
-              ></a>
+              <a href="#"><i class="feather-linkedin"></i></a>
             </li>
           </ul>
         </div>
@@ -350,6 +204,15 @@ export default {
   data() {
     return {
       isMobileMenuOpen: false,
+      menuItems: [
+        { id: "home", label: "home", icon: "home" },
+        { id: "educations", label: "education", icon: "book-open" },
+        { id: "experience", label: "experience", icon: "briefcase" },
+        { id: "skills", label: "skill", icon: "award" },
+        { id: "project", label: "projects", icon: "code" },
+        { id: "blog", label: "blog", icon: "edit" },
+        { id: "contacts", label: "contact", icon: "message-circle" },
+      ],
       langValue: navigator.languages[0].split("-")[0],
       // search social icons at https://feathericons.com/
       socialList: [],

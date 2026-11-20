@@ -49,7 +49,6 @@ The portfolio data is currently managed in `src/data/portfolio.data.js`. This mo
 │ │ ├── AppFooter.vue
 │ │ ├── AppHeader.vue
 │ │ ├── AppJobExperience.vue
-│ │ ├── AppPortfolio.vue
 │ │ ├── AppProjects.vue
 │ │ ├── AppSkillsCertificationAchievements.vue
 │ │ ├── AppSlider.vue
@@ -75,7 +74,6 @@ The portfolio data is currently managed in `src/data/portfolio.data.js`. This mo
 │ │ └── User.model.js
 │ ├── plugins/
 │ │ ├── vuetify.js
-│ │ └── webfontloader.js
 │ ├── router/
 │ │ └── index.js
 │ ├── services/
@@ -137,6 +135,10 @@ Builds the app for production to the `dist` folder. It correctly bundles Vue in 
 
 Serves the production build locally. This is a good way to check if the production build is working correctly before deploying.
 
+### `npm test`
+
+Checks article request parameters and HTTP/network error handling using Node's built-in test runner.
+
 ### `npm run lint`
 
 Lints and fixes files.
@@ -156,7 +158,6 @@ This project uses the following key libraries:
 - **Vue Router:** The official router for Vue.js.
 - **Pinia:** The official state management library for Vue.js.
 - **Vuetify:** A Vue UI Library with beautifully handcrafted Material Components.
-- **Axios:** A promise-based HTTP client for the browser and node.js.
 - **vue-i18n:** Internationalization plugin for Vue.js.
 - **ESLint:** A tool for identifying and reporting on patterns found in ECMAScript/JavaScript code.
 
